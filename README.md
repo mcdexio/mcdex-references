@@ -1,23 +1,21 @@
 # References of McDEX
 
-## Menu
+## Basic
 
-### Basic
+### Overview
 
-#### Overview
+### Fees
 
-#### Fees
+## Smart contract on Ethereum
 
-### Smart contract on Ethereum
+### Market Protocol
 
-#### Market Protocol
+### Hydro-MP
 
-#### Hydro-MP
+## Contracts
 
-### Contracts
+### Bitcoin Index Futures
 
-#### Bitcoin Index Futures
+### Bitcoin Mining Eeranings Index Futures
 
-#### Bitcoin Mining Eeranings Index Futures
-
-### API
+## API
