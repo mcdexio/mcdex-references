@@ -2,24 +2,19 @@
 
 ## Basic
 
-### Overview
+### [Overview](en/overview.md)
 
-### Fees
+### [Fees](en/fees.md)
 
 ## Smart contract on Ethereum
 
-### Market Protocol
+### [Market Protocol](en/market-protocol.md)
 
-[EN](market-protocol-en.md)
-
-### Hydro-MP
-
-[EN](hydro-mp-en.md)
+### [Hydro-MP](en/hydro-mp.md)
 
 ## Contracts
 
-### Bitcoin Index Futures
-
-### Bitcoin Mining Eeranings Index Futures
+### [Bitcoin Index Futures](en/btc-mp.md)
+### [Bitcoin Mining Eeranings Index Futures](en/bmt-mp.md)
 
 ## API
