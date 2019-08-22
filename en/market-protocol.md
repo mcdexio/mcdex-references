@@ -110,5 +110,5 @@ The Market Protocol provides a secure framework that supports decentralized issu
 However, there are many inconveniences in direct trading position tokens. McDEX have designed a new smart contract Hydro-MP
 for convenient trading position tokens.
 
-See [the introduction to Hydro-MP](hydro-mp.md) for details.
+See [Hydro-MP](hydro-mp.md) for details.
 
