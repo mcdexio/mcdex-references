@@ -1,4 +1,4 @@
-For more complete information, please refer to the Market Protocol [white paper](https://marketprotocol.io/assets/MARKET_Protocol-Whitepaper.pdf).
+Please refer to the Market Protocol [white paper](https://marketprotocol.io/assets/MARKET_Protocol-Whitepaper.pdf) for more complete information.
 
 ## Overview
 
