@@ -15,6 +15,6 @@
 ## Contracts
 
 ### [Bitcoin Index Futures](en/btc-mp.md)
-### [Bitcoin Mining Eeranings Index Futures](en/bmt-mp.md)
+### [Bitcoin Mining Eeranings Index Futures](en/bme-mp.md)
 
 ## API
