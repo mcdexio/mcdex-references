@@ -10,7 +10,11 @@
 
 ### Market Protocol
 
+[EN](market-protocol-en.md)
+
 ### Hydro-MP
+
+[EN](hydro-mp-en.md)
 
 ## Contracts
 
