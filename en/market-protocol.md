@@ -104,11 +104,11 @@ evolve, we will implement additional resolution mechanisms into MARKET Protocol.
 Initially, MARKET Protocol has chosen to use an internally developed oracle service which
 allows for the team to get to launch the initial implementation.
 
-## Convenient Trading within McDEX
+## Convenient Trading on McDEX
 
 The Market Protocol provides a secure framework that supports decentralized issuance of index futures contracts. 
 However, there are many inconveniences in direct trading position tokens. McDEX have designed a new smart contract Hydro-MP
-for convenient trading position tokens.
+for convenient decentralized trading Market Protocol contracs.
 
 See [Hydro-MP](hydro-mp.md) for details.
 
