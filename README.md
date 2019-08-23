@@ -6,7 +6,7 @@
 
 ### [Fees](en/fees.md)
 
-## Smart contract on Ethereum
+## Smart contracts on Ethereum
 
 ### [Market Protocol](en/market-protocol.md)
 
