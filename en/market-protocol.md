@@ -108,7 +108,7 @@ allows for the team to get to launch the initial implementation.
 
 The Market Protocol provides a secure framework that supports decentralized issuance of index futures contracts. 
 However, there are many inconveniences in direct trading position tokens. McDEX have designed a new smart contract Hydro-MP
-for convenient decentralized trading Market Protocol contracs.
+for convenient decentralized trading Market Protocol contracts.
 
 See [Hydro-MP](hydro-mp.md) for details.
 
