@@ -75,4 +75,10 @@ Orders on the different side of the order book can be matched. Pairwise matching
 | Buy "long position token" | Buy "short position token" |Mint a pair of position tokens from Market Protocol, send the long position token to A and the short position token to B|
 | Sell "long position token"| Sell "short position token"|Redeem the pair of position tokens through Market Potocol and send the returned collateral tokens to A and B|
 
+When trading frequently, the position tokens may be redeemed immediately after be minted. In order to smooth this process and reduce 
+unnecessary minting and redeeming, a minting pool is set within Hydro-MP. Some position tokens are reserved in advance in the mint 
+pool. When minting is required, the tokens are feteched from the pool first. Only when the pool is insufficient, the tokens will be 
+minted from Market Protocol. When redeeming is required, the tokens are put to the pool first. Only when the pool is full, the tokens 
+will be redeemed through Market Protocol.
+
 ## Architecture
