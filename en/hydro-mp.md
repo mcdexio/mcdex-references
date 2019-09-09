@@ -31,13 +31,13 @@ protocol called "Hydro-MP" based on [Hydro Protocol](https://hydroprotocol.io/).
 ## Solution
 
 Hydro-MP build a trading platform that is very similar to traditional derivatives trarding platforms. Hydro-MP protocol encapsulates the 
-minting, exchange and redeeming operations for position tokens and provides only two operations (Long and Short) for echo Market 
+minting, exchange and redeeming operations for position tokens and provides only two operations, Buy and Sell, for echo Market 
 Protocol contract. 
 
-Traders do all trading processes through Long and Short operations within Hydro-MP. If the trader expects the underlying asset price to 
-rise, he can enter the long position at the asset price by Long operation. If the trader expects the underlying asset price to 
-fall, the he can enter the short position by Short operation. Besides, traders with long positions can decrease or close positions by 
-Short operation and traders with short positions can decrease or close positions by Long operation. The trader only need to place order
+Traders do all trading processes through Buy and Sell operations within Hydro-MP. If the trader expects the underlying asset price to 
+rise, he can enter the long position at the asset price by Buy operation. If the trader expects the underlying asset price to 
+fall, the he can enter the short position by Sell operation. Besides, traders with long positions can decrease or close positions by 
+Sell operation and traders with short positions can decrease or close positions by Buy operation. The trader only need to place order
 on the price of the underlying asset. Hydro-MP will automatically calculate the position token price corresponding to the price of the
 order.
 
@@ -48,15 +48,15 @@ Orders on the different side of the order book can be matched. According to the 
 different matching types. Hydro-MP smart contract performs different processes (exchange, minting or redeeming) for different match 
 types:
 
-| Trader A's Side | Trader A's Position | Trader B's Side  | Trader B's Position  | Hydro-MP process                                |
+| Trader A's Side | Trader A's Position | Trader B's Side  | Trader B's Position  | Hydro-MP smart contract process                 |
 |-----------------|---------------------|------------------|----------------------|-------------------------------------------------|
 | Buy             | Positive or Zero    |  Sell            |  Positive            | Transfer the long position token from B to A and transfer the collateral token from A to B |
 | Buy             | Positive or Zero    |  Sell            |  Negative or Zero    | Mint a pair of position tokens from Market Protocol, send the long position token to A and the short position token to B |
 | Buy             | Negative            |  Sell            |  Positive            | Redeem the pair of position tokens through Market Potocol and send the returned collateral tokens to A and B |
 | Buy             | Negative            |  Sell            |  Positive or Zero    | Mint a pair of position tokens from Market Protocol, send the long position token to A and the short position token to B |
 
-"Positive" means the trader has long position tokens. "Negative" means the trader has short position tokens. "Zero" means the trader has 
-no position token.
+*"Positive" means the trader has long position tokens. "Negative" means the trader has short position tokens. "Zero" means the trader
+has no position token.*
 
 When trading frequently, the position tokens may be redeemed immediately after be minted. In order to smooth this process and reduce 
 unnecessary minting and redeeming, a minting pool is set within Hydro-MP. Some position tokens are reserved in advance in the mint 
