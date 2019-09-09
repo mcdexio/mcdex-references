@@ -1,4 +1,4 @@
-# Hydro-MP
+# MCTrade: A Trading Protocol for Market Contracs
 
 ## Motivation
 
@@ -25,30 +25,31 @@ Third, traders need to deal with two kinds of position tokens (Long Position Tok
 each of which has both buy and sell operations. This also means that two order books are required to trade a Market
 Protocol's contract. This is very different from traditional derivatives trading, which makes traders confused.
 
-In order to solve the above problems and provide a trading experience similar to traditional derivatives, we design a new trading 
-protocol called "Hydro-MP" based on [Hydro Protocol](https://hydroprotocol.io/).
+In order to solve the above problems and provide a trading experience similar to traditional derivatives, inspired by Hydro Protocol, we 
+build a novel smart contract called "MCTrade Protocol" on Ethereum.
 
 ## Solution
 
-Hydro-MP build a trading platform that is very similar to traditional derivatives trarding platforms. Hydro-MP protocol encapsulates the 
+MCTrade build a trading platform that is very similar to traditional derivatives trarding platforms. MCTrade protocol encapsulates the 
 minting, exchange and redeeming operations for position tokens and provides only two operations, Buy and Sell, for echo Market 
 Protocol contract. 
 
-Traders do all trading processes through Buy and Sell operations within Hydro-MP. If the trader expects the underlying asset price to 
+Traders do all trading processes through Buy and Sell operations within MCTrade Protocol. If the trader expects the underlying asset
+price to 
 rise, he can enter the long position at the asset price by Buy operation. If the trader expects the underlying asset price to 
 fall, the he can enter the short position by Sell operation. Besides, traders with long positions can decrease or close positions by 
 Sell operation and traders with short positions can decrease or close positions by Buy operation. The trader only need to place order
-on the price of the underlying asset. Hydro-MP will automatically calculate the position token price corresponding to the price of the
+on the price of the underlying asset. MCTrade will automatically calculate the position token price corresponding to the price of the
 order.
 
-A unified order book is maintained for each Market Protocol contract within Hydro-MP. All the orders in the order book are sorted by the 
+A unified order book is maintained for each Market Protocol contract within MCTrade. All the orders in the order book are sorted by the 
 bidding/asking prices of the underlying asset.
 
 Orders on the different side of the order book can be matched. According to the positions of the two counterparties, there are 4 
-different matching types. Hydro-MP smart contract performs different processes (exchange, minting or redeeming) for different match 
+different matching types. MCTrade smart contract performs different processes (exchange, minting or redeeming) for different match 
 types:
 
-| Trader A's Side | Trader A's Position | Trader B's Side  | Trader B's Position  | Hydro-MP smart contract process                 |
+| Trader A's Side | Trader A's Position | Trader B's Side  | Trader B's Position  | MCTrade smart contract process                 |
 |-----------------|---------------------|------------------|----------------------|-------------------------------------------------|
 | Buy             | Positive or Zero    |  Sell            |  Positive            | Transfer the long position token from B to A and transfer the collateral token from A to B |
 | Buy             | Positive or Zero    |  Sell            |  Negative or Zero    | Mint a pair of position tokens from Market Protocol, send the long position token to A and the short position token to B |
@@ -59,8 +60,8 @@ types:
 has no position token.*
 
 When trading frequently, the position tokens may be redeemed immediately after be minted. In order to smooth this process and reduce 
-unnecessary minting and redeeming, a minting pool is set within Hydro-MP. Some position tokens are reserved in advance in the mint 
-pool. When minting is required, the tokens are feteched from the pool first. Only when the pool is insufficient, the tokens will be 
+unnecessary minting and redeeming, a minting pool is set within MCTrade Protocol. Some position tokens are reserved in advance in the
+mint pool. When minting is required, the tokens are feteched from the pool first. Only when the pool is insufficient, the tokens will be 
 minted from Market Protocol. When redeeming is required, the tokens are put to the pool first. Only when the pool is full, the tokens 
 will be redeemed through Market Protocol.
 
