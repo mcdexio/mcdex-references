@@ -34,7 +34,7 @@ The match engine can match the orders on the different side of the order book. A
 | Buy             | Positive or Zero    |  Sell            |  Positive            | Transfer the long position token from B to A and transfer the collateral token from A to B |
 | Buy             | Positive or Zero    |  Sell            |  Negative or Zero    | Mint a pair of position tokens from Market Protocol, send the long position token to A and the short position token to B |
 | Buy             | Negative            |  Sell            |  Positive            | Redeem the pair of position tokens through Market Protocol and send the returned collateral tokens to A and B |
-| Buy             | Negative            |  Sell            |  Positive or Zero    | Mint a pair of position tokens from Market Protocol, send the long position token to A and the short position token to B |
+| Buy             | Negative            |  Sell            |  Positive or Zero    | Transfer the short position token from A to B and transfer the collateral token from B to A |
 
 *"Positive" means the trader has long position tokens. "Negative" means the trader has short position tokens. "Zero" means the trader has no position token.*
 
