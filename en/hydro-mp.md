@@ -60,7 +60,7 @@ types:
 has no position token.*
 
 When trading frequently, the position tokens may be redeemed immediately after be minted. In order to smooth this process and reduce 
-unnecessary minting and redeeming, a minting pool is set within MCTrade Protocol. Some position tokens are reserved in advance in the
+unnecessary minting and redeeming, a minting pool is set within MCTrade. Some position tokens are reserved in advance in the
 mint pool. When minting is required, the tokens are feteched from the pool first. Only when the pool is insufficient, the tokens will be 
 minted from Market Protocol. When redeeming is required, the tokens are put to the pool first. Only when the pool is full, the tokens 
 will be redeemed through Market Protocol.
