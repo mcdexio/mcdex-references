@@ -37,43 +37,26 @@ Protocol contract.
 Traders do all trading processes through Long and Short operations within Hydro-MP. If the trader expects the underlying asset price to 
 rise, he can enter the long position at the asset price by Long operation. If the trader expects the underlying asset price to 
 fall, the he can enter the short position by Short operation. Besides, traders with long positions can decrease or close positions by 
-Short operation and traders with short positions can decrease or close positions by Long operation.
+Short operation and traders with short positions can decrease or close positions by Long operation. The trader only need to place order
+on the price of the underlying asset. Hydro-MP will automatically calculate the position token price corresponding to the price of the
+order.
 
-There are four types of orders, which are transparent to traders, inside Hydro-MP: 
-- Buy "long position token" in collateral token: increase the long position
-- Sell "long position token" for collateral token: decrease the long position
-- Buy "short position token" in collateral token: increase the short position
-- Sell "short position token" for collateral token: decrease the short position
+A unified order book is maintained for each Market Protocol contract within Hydro-MP. All the orders in the order book are sorted by the 
+bidding/asking prices of the underlying asset.
 
-At any time, the trader only needs to place an order to Long or Short the contract. Hydro-MP will automatically set the type of the 
-order according to the type of operation and the position of the trader:
+Orders on the different side of the order book can be matched. According to the positions of the two counterparties, there are 4 
+different matching types. Hydro-MP smart contract performs different processes (exchange, minting or redeeming) for different match 
+types:
 
-| Operation | Whether the trader has short position| Order Type                              |
-|-----------|--------------------------------------|-----------------------------------------|
-| Long      | No                                   |  Buy "long position token"              |
-| Long      | Yes                                  |  Sell "short position token"            |
+| Trader A's Side | Trader A's Position | Trader B's Side  | Trader B's Position  | Hydro-MP process                                |
+|-----------------|---------------------|------------------|----------------------|-------------------------------------------------|
+| Buy             | Positive or Zero    |  Sell            |  Positive            | Transfer the long position token from B to A and transfer the collateral token from A to B |
+| Buy             | Positive or Zero    |  Sell            |  Negative or Zero    | Mint a pair of position tokens from Market Protocol, send the long position token to A and the short position token to B |
+| Buy             | Negative            |  Sell            |  Positive            | Redeem the pair of position tokens through Market Potocol and send the returned collateral tokens to A and B |
+| Buy             | Negative            |  Sell            |  Positive or Zero    | Mint a pair of position tokens from Market Protocol, send the long position token to A and the short position token to B |
 
-| Operation | Whether the trader has long position| Order Type                              |
-|-----------|-------------------------------------|-----------------------------------------|
-| Short     | No                                  |  Buy "short position token"             |
-| Short     | Yes                                 |  Sell "long position token"             |
-
-The trader only need to place order on the price of the underlying asset. Hydro-MP will automatically calculate the position token price
-corresponding to the price of the order.
-
-A unified order book is maintained for each Market Protocol contract within Hydro-MP. The orders buying "long position token" and the 
-orders selling "short position token" are on the buy-side of the order book. The orders buying "short position token" and the orders 
-selling "long position token" are on the sell-side of the order book. All the orders in the order book are sorted by the bidding/asking 
-prices of the underlying asset.
-
-Orders on the different side of the order book can be matched. Pairwise matching forms four match types. Hydro-MP performs different processes (exchange, minting or redeeming) for different match types:
-
-| Part A                    | Part B                     | Hydro-MP process                                                     |
-|---------------------------|----------------------------|----------------------------------------------------------------------|
-| Buy "long position token" | Sell "long position token" |Send the long position token to A and the collateral token to B       |
-| Buy "short position token"| Sell "short position token"|Send the short position token to A and the collateral token to B      |
-| Buy "long position token" | Buy "short position token" |Mint a pair of position tokens from Market Protocol, send the long position token to A and the short position token to B|
-| Sell "long position token"| Sell "short position token"|Redeem the pair of position tokens through Market Potocol and send the returned collateral tokens to A and B|
+"Positive" means the trader has long position tokens. "Negative" means the trader has short position tokens. "Zero" means the trader has 
+no position token.
 
 When trading frequently, the position tokens may be redeemed immediately after be minted. In order to smooth this process and reduce 
 unnecessary minting and redeeming, a minting pool is set within Hydro-MP. Some position tokens are reserved in advance in the mint 
