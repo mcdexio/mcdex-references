@@ -1,12 +1,25 @@
-# Mai: A Trading Protocol for Market Contracts
+# Mai: A Protocol for Trading Decentralized Derivatives
 
 ## Motivation
+With the development of the DeFi ecosystem, more and more synthetic assets and derivatives, such as Market Protocol, UMA Protocol, and Yield Protocol, are born in the world of blockchain. These protocols are a good solution to the structural design of derivatives but often lack a simple, efficient, and easy to use trading mechanism. 
 
-The [Market Protocol](market-protocol.md) provides a secure framework that supports decentralized issuance of index futures contracts. The positions of the contracts are fully tokenized through Market Protocol. The position tokens of Market Protocol are standard ERC20 tokens, and traders can trade the tokens within any exchange. However, the user experience of directly trading position tokens is abysmal. The reasons are as follows:
+Existing trading protocols, such as 0x, Hydro, and Uniswap, have well solved ERC20 tokens exchange requirements. However, traders often have difficulty in trading ERC20 position tokens of those derivatives directly. There are usually two reasons for this difficulty. First of all, the trade of decentralized derivatives is usually accompanied by minting, redeeming, and exchange of position tokens. The existing ERC20 trading protocols can only complete the exchange, lacking the function of minting and redeeming. Furthermore, the pricing of derivatives is often different from that of position tokens. Traders need complex price conversion to trade position tokens directly.
+
+To solve the above difficulties, inspired by 0x and Hydro, we designed a new trading protocol called "Mai Protocol" on Ethereum. 
+
+**Mai Protocol's goal is to make trading decentralized derivatives simple and efficient.**
+
+The name Mai comes from two Chinese characters "买," which means buy and "卖," which means sell. Using pinyin (the modern system for transliterating Chinese characters to Latin letters) "买" is spelled Mǎi and "卖" is spelled Mài.
+
+We design and build Mai Protocol in stages. In the first release, Mai protocol first supports trading Market Protocol contracts. We will gradually add features for trading other derivatives in future versions.
+
+## Challenges in trading Market Protocol Contracts
+
+[Market Protocol](market-protocol.md) provides a secure framework that supports decentralized issuance of index futures contracts. Market Protocol succeeds in fully tokenizing the positions of contracts. The position tokens of Market Protocol are standard ERC20 tokens, and traders can trade the tokens within any exchange. However, the user experience of directly trading position tokens is abysmal. The reasons are as follows:
 
 First, a long trader and a short trader can not make a deal directly. Someone of them needs to mint a pair of position tokens (consisting of long position token and short position token) and sell the token of the opposite side to the counterparty to make the deal. For example, the long trader mint a pair of position tokens and sell the short position token to the short trader. Otherwise, to conclude the transaction, a market maker is needed to mint the position tokens.  The market sells the long position token to the long trader and sells the short position token to the short trader.
 
-Second, the pricing of the position token is not intuitive. The value of the position token is the margin of the position rather than the value of the underlying asset. As a result,  traders need to convert the assert price to corresponding position token price with the price range (PRICE_FLOOR and PRICE_CAP):
+Second, the pricing of the position token is not intuitive. The price of the position token does not equal to the price of the underlying asset.  The position token's value equals to the position's margin. As a result,  traders need to convert the assert price to the corresponding position token price with the price range (PRICE_FLOOR and PRICE_CAP):
 
 ```
 Long Position Token Price = Asset Price - PRICE_FLOOR
@@ -14,10 +27,6 @@ Short Position Token Price = PRICE_CAP -  Asset Price
 ```
 
 Third, traders need to deal with two kinds of position tokens (Long Position Token and Short Position Token), each of which has both buy and sell operations. It means that two order books are required to trade a Market Protocol's contract. It is very different from traditional derivatives trading, which makes traders confused.
-
-To solve the above problems and provide a trading experience similar to traditional derivatives, inspired by Hydro Protocol, we build a new smart contract called "Mai Protocol" on Ethereum.
-
-The name Mai comes from two Chinese characters "买," which means buy and "卖," which means sell. Using pinyin (the modern system for transliterating Chinese characters to Latin letters) "买" is spelled Mǎi and "卖" is spelled Mài.
 
 ## Solution
 
@@ -38,6 +47,6 @@ The match engine can match the orders on the different side of the order book. A
 
 *"Positive" means the trader has long position tokens. "Negative" means the trader has short position tokens. "Zero" means the trader has no position token.*
 
-When trading frequently, the position tokens may be redeemed immediately after be minted. To reduce redundant minting and redeeming operations,  Mai Protocol builds a minting pool. The pool reserves some position tokens are in advance. When minting is required, the tokens are fetched from the pool first. Only when the pool is insufficient, Mai Protocol mints the tokens from Market Protocol. When redeeming is required, the tokens are put to the pool first. Only when the pool is full, Mai Protocol redeems the tokens through Market Protocol.
+When trading frequently, the position tokens may be redeemed immediately after be minted. To reduce redundant minting and redeeming operations,  Mai Protocol builds a minting pool. The pool reserves some position tokens in advance. Mai protocol tries to mint or redeem from the pool first. Only when the pool is insufficient, Mai protocol calls Market Protocol's mint or redeem interfaces.
 
 ## Architecture
