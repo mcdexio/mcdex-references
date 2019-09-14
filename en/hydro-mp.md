@@ -11,11 +11,11 @@ To solve the above difficulties, inspired by 0x and Hydro, we designed a new tra
 
 The name Mai comes from two Chinese characters "买," which means buy and "卖," which means sell. Using pinyin (the modern system for transliterating Chinese characters to Latin letters) "买" is spelled Mǎi and "卖" is spelled Mài.
 
-We design and build Mai Protocol in stages. In the first release, Mai protocol first supports trading Market Protocol contracts. We will gradually add features for trading other derivatives in future versions.
+We design and build Mai Protocol in stages. In the first release, **Mai protocol first supports trading Market Protocol contracts**. We will gradually add features for trading other derivatives in future versions.
 
-## Challenges in trading Market Protocol Contracts
+## Challenges
 
-[Market Protocol](market-protocol.md) provides a secure framework that supports decentralized issuance of index futures contracts. Market Protocol succeeds in fully tokenizing the positions of contracts. The position tokens of Market Protocol are standard ERC20 tokens, and traders can trade the tokens within any exchange. However, the user experience of directly trading position tokens is abysmal. The reasons are as follows:
+[Market Protocol](market-protocol.md) provides a secure framework that supports decentralized issuance of index futures contracts. Market Protocol succeeds in fully tokenizing the positions of contracts. The position tokens of Market Protocol are standard ERC20 tokens, and traders can trade the tokens within any exchange. However, the user experience of directly trading position tokens is abysmal. The chanllenges are as follows:
 
 First, a long trader and a short trader can not make a deal directly. Someone of them needs to mint a pair of position tokens (consisting of long position token and short position token) and sell the token of the opposite side to the counterparty to make the deal. For example, the long trader mint a pair of position tokens and sell the short position token to the short trader. Otherwise, to conclude the transaction, a market maker is needed to mint the position tokens.  The market sells the long position token to the long trader and sells the short position token to the short trader.
 
