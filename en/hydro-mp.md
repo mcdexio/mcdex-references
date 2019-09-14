@@ -5,7 +5,7 @@ With the development of the DeFi ecosystem, more and more synthetic assets and d
 
 Existing trading protocols, such as 0x, Hydro, and Uniswap, have well solved ERC20 tokens exchange requirements. However, traders often have difficulty in trading ERC20 position tokens of those derivatives directly. There are usually two reasons for this difficulty. First of all, the trade of decentralized derivatives is usually accompanied by minting, redeeming, and exchange of position tokens. The existing ERC20 trading protocols can only complete the exchange, lacking the function of minting and redeeming. Furthermore, the pricing of derivatives is often different from that of position tokens. Traders need complex price conversion to trade position tokens directly.
 
-To solve the above difficulties, inspired by 0x and Hydro, we designed a new trading protocol called "Mai Protocol" on Ethereum. 
+To solve the above difficulties, we designed a new trading protocol called "Mai Protocol" on Ethereum. 
 
 **Mai Protocol's goal is to make trading decentralized derivatives easy and efficient.**
 
@@ -15,7 +15,7 @@ We design and build Mai Protocol in stages. In the first release, **Mai protocol
 
 ## Challenges
 
-[Market Protocol](market-protocol.md) provides a secure framework that supports decentralized issuance of index futures contracts. Market Protocol succeeds in fully tokenizing the positions of contracts. The position tokens of Market Protocol are standard ERC20 tokens, and traders can trade the tokens within any exchange. However, the user experience of directly trading position tokens is abysmal. The chanllenges are as follows:
+Market Protocol provides a secure framework that supports decentralized issuance of index futures contracts. Market Protocol succeeds in fully tokenizing the positions of contracts. The position tokens of Market Protocol are standard ERC20 tokens, and traders can trade the tokens within any exchange. However, the user experience of directly trading position tokens is abysmal. The chanllenges are as follows:
 
 First, a long trader and a short trader can not make a deal directly. Someone of them needs to mint a pair of position tokens (consisting of long position token and short position token) and sell the token of the opposite side to the counterparty to make the deal. For example, the long trader mint a pair of position tokens and sell the short position token to the short trader. Otherwise, to conclude the transaction, a market maker is needed to mint the position tokens.  The market sells the long position token to the long trader and sells the short position token to the short trader.
 
@@ -50,3 +50,8 @@ The match engine can match the orders on the different side of the order book. A
 When trading frequently, the position tokens may be redeemed immediately after be minted. To reduce redundant minting and redeeming operations,  Mai Protocol builds a minting pool. The pool reserves some position tokens in advance. Mai protocol tries to mint or redeem from the pool first. Only when the pool is insufficient, Mai protocol calls Market Protocol's mint or redeem interfaces.
 
 ## Architecture
+
+
+## Acknowledgments
+
+Mai is inspired by the [0x project](https://github.com/0xProject) and [Hydro](https://github.com/HydroProtocol)
