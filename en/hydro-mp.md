@@ -7,7 +7,7 @@ Existing trading protocols, such as 0x, Hydro, and Uniswap, have well solved ERC
 
 To solve the above difficulties, inspired by 0x and Hydro, we designed a new trading protocol called "Mai Protocol" on Ethereum. 
 
-**Mai Protocol's goal is to make trading decentralized derivatives simple and efficient.**
+**Mai Protocol's goal is to make trading decentralized derivatives easy and efficient.**
 
 The name Mai comes from two Chinese characters "买," which means buy and "卖," which means sell. Using pinyin (the modern system for transliterating Chinese characters to Latin letters) "买" is spelled Mǎi and "卖" is spelled Mài.
 
