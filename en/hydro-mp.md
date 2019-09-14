@@ -59,4 +59,5 @@ When trading frequently, the position tokens may be redeemed immediately after b
 
 ## Acknowledgments
 
-Mai is inspired by the [0x project](https://github.com/0xProject) and [Hydro](https://github.com/HydroProtocol)
+Mai is inspired by the [0x project](https://github.com/0xProject) and [Hydro](https://github.com/HydroProtocol).
+
