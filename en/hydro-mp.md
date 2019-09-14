@@ -17,13 +17,18 @@ We design and build Mai Protocol in stages. In the first release, **Mai protocol
 
 Market Protocol provides a secure framework that supports decentralized issuance of index futures contracts. Market Protocol succeeds in fully tokenizing the positions of contracts. The position tokens of Market Protocol are standard ERC20 tokens, and traders can trade the tokens within any exchange. However, the user experience of directly trading position tokens is abysmal. The chanllenges are as follows:
 
-First, a long trader and a short trader can not make a deal directly. Someone of them needs to mint a pair of position tokens (consisting of long position token and short position token) and sell the token of the opposite side to the counterparty to make the deal. For example, the long trader mint a pair of position tokens and sell the short position token to the short trader. Otherwise, to conclude the transaction, a market maker is needed to mint the position tokens.  The market sells the long position token to the long trader and sells the short position token to the short trader.
+First, a long trader and a short trader can not make a deal directly. Someone of them needs to mint a pair of position tokens (consisting of long position token and short position token) and sell the token of the opposite side to the counterparty to make the deal. For example, the long trader mint a pair of position tokens and sell the short position token to the short trader. Otherwise, to conclude the transaction, a market maker is needed to mint the position tokens. The market maker sells the long position token to the long trader and sells the short position token to the short trader.
 
-Second, the pricing of the position token is not intuitive. The price of the position token does not equal to the price of the underlying asset.  The position token's value equals to the position's margin. As a result,  traders need to convert the assert price to the corresponding position token price with the price range (PRICE_FLOOR and PRICE_CAP):
+Second, the pricing of the position token is not intuitive. The price of the position token does not equal to the price of the underlying asset. The position token's value equals to the position's margin. As a result, traders need to convert the asset price to the corresponding position token price with the price range (PRICE_FLOOR and PRICE_CAP):
 
 ```
-Long Position Token Price = Asset Price - PRICE_FLOOR
-Short Position Token Price = PRICE_CAP -  Asset Price
+For vanilla contract:
+Long Position Token Price = ASSET_PRICE - PRICE_FLOOR
+Short Position Token Price = PRICE_CAP - ASSET_RICE
+
+For inverse contract:
+Long Position Token Price = 1/PRICE_FLOOR - 1/(ASSET_PRICE)
+Short Position Token Price = 1/(ASSET_PRICE) - 1/(PRICE_CAP)
 ```
 
 Third, traders need to deal with two kinds of position tokens (Long Position Token and Short Position Token), each of which has both buy and sell operations. It means that two order books are required to trade a Market Protocol's contract. It is very different from traditional derivatives trading, which makes traders confused.
@@ -47,7 +52,7 @@ The match engine can match the orders on the different side of the order book. A
 
 *"Positive" means the trader has long position tokens. "Negative" means the trader has short position tokens. "Zero" means the trader has no position token.*
 
-When trading frequently, the position tokens may be redeemed immediately after be minted. To reduce redundant minting and redeeming operations,  Mai Protocol builds a minting pool. The pool reserves some position tokens in advance. Mai protocol tries to mint or redeem from the pool first. Only when the pool is insufficient, Mai protocol calls Market Protocol's mint or redeem interfaces.
+When trading frequently, the position tokens may be redeemed immediately after be minted. To reduce redundant minting and redeeming operations, Mai Protocol builds a minting pool. The pool reserves some position tokens in advance. Mai protocol tries to mint or redeem from the pool first. Only when the pool is insufficient, Mai protocol calls Market Protocol's mint or redeem interfaces.
 
 ## Architecture
 
