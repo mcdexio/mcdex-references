@@ -10,7 +10,7 @@
 
 ### [Market Protocol](en/market-protocol.md)
 
-### [Hydro-MP](en/hydro-mp.md)
+### [Mai Protocol](https://github.com/mcdexio/documents/blob/master/en/mai.md)
 
 ## Contracts
 
