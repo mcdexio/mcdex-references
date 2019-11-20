@@ -27,7 +27,7 @@ Each pair of long and short MARKET Protocol position tokens are administered acc
 
 MARKET Protocol position tokens offer continuous profit and loss exposure derived from a reference asset up to the limits of the PRICE_CAP and PRICE_FLOOR defined in the contract specification. All prices between the PRICE_CAP and PRICE_FLOOR are tradeable, outcomes are not binary. Traders can replicate uncapped payoff structures by utilizing a series of tokens.
 
-Unlike earlier versions of market protocol, If the high or low of the range is breached, the token is settled with the participant on one side receiving their maximum gain and the other side receiving nothing (their maximum loss). It is possible that neither the PRICE_CAP nor PRICE_FLOOR is breached; in that case, the token expires at its expiration date. This process is one of the most important features of the contract framework underlying MARKET Protocol and is discussed below.
+**Unlike the earlier versions of Market Protocol, if the high or low of the range is breached, the token is NOT settled. The token is settled after the contract is expired.** 
 
 ## Leverage
 
@@ -39,11 +39,13 @@ Leverage offered through MARKET Protocol differs from traditional leverage, whic
 
 ## Expiration & Settlement
 
-Price oracles will be used to determine if a contract’s price bands have been exceeded or if the contract has reached its expiration date. If either of these criteria are met, the contracts’ position tokens enter an expired state and the settlement process automatically begins, allocating profits and losses to position token holders.
+Price oracles will be used to determine if the contract has reached its expiration date. If such criteria is met, the contracts’ position tokens enter an expired state and the settlement process automatically begins, allocating profits and losses to position token holders.
 
 Tokens can be settled to the price of any actively traded ERC-20 token, cryptocurrency, or other listed asset by calling an oracle. For example, the defined token settlement terms could specify the last traded price of a reference asset on Kraken at a predetermined point in time. Oracle frameworks such as Thomson Reuters’ BlockOne IQ or Chainlink can be used to bring external data on to the blockchain, or an oracle can be written specifically for a contract.
 
-To avoid incorrect or inaccurate settlement prices, we will implement a time delay between the position token expiration and the time at which users may withdraw their funds. Initially, a small group of project supports and team members will be responsible for reviewing the values used for settlement. As crowd-based consensus mechanisms evolve, we will implement additional resolution mechanisms into MARKET Protocol.
+The settle price is the index price provided by the Oracle when the contract expires. If the index price is higher than the price cap, the settle price is set to the price cap. On the other hand, if the index price is lower than the price floor, the settle price is set to the price floor.
+
+Initially, a small group of project supports and team members will be responsible for reviewing the values used for settlement. As crowd-based consensus mechanisms evolve, we will implement additional resolution mechanisms into MARKET Protocol.
 
 Initially, MARKET Protocol has chosen to use an internally developed oracle service which allows for the team to get to launch the initial implementation.
 
