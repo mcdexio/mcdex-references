@@ -27,7 +27,7 @@ Each pair of long and short MARKET Protocol position tokens are administered acc
 
 MARKET Protocol position tokens offer continuous profit and loss exposure derived from a reference asset up to the limits of the PRICE_CAP and PRICE_FLOOR defined in the contract specification. All prices between the PRICE_CAP and PRICE_FLOOR are tradeable, outcomes are not binary. Traders can replicate uncapped payoff structures by utilizing a series of tokens.
 
-**Unlike the earlier versions of Market Protocol, if the high or low of the range is breached, the token is NOT settled. The token is settled only when the contract has reached its expiration date.** 
+**Unlike the earlier version of Market Protocol, if the high or low of the range is breached, the token is NOT settled. The token is settled only when the contract has reached its expiration date.** 
 
 ## Leverage
 
