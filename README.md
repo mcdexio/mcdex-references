@@ -1,8 +1,9 @@
 # References of McDEX
 
-## Basic
+## Basics
 
-### [About](en/overview.md)
+### [Overview](en/overview.md)
+
 
 ### [Fees](en/fees.md)
 
@@ -12,7 +13,7 @@
 
 ### [Market Protocol](en/market-protocol.md)
 
-## Contracts
+## Contracts 
 
 ### [Bitcoin Index Futures](en/btc-mp.md)
 
