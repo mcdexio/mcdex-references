@@ -8,10 +8,10 @@ Traders are able to gain exposure to crypto asset without taking custody of the 
 
 | Underlying asset/Ticker  | ETH Index          | 
 | -------------            |:-------------: | 
-| Trading hours            | 24h*7 days         |  
+| Trading hours            | 24h * 7 days         |  
 | Minimum tick size        |  0.05ETH             |   
-| Index Price Range        |   a Cap and Floor price,which is the ±25% of the Index Price when contract is made       | 
-| Expiration dates         |          |  
+| Index Price Range        |   A Cap and Floor price,which is the ±25% of the Index Price when contract is made       | 
+| Expiration dates         | Expirations are always at 12:30 UTC on Friday.         |  
 | Contract size            |        1ETH       |   
 | Settlement Dates         |     24h after expiration dates           |   
 | Settled price            |  Index price ,which will still be Cap price if the index price is higher than Cap price and still be Floor price if the index price is lower than the Floor price.            | 
