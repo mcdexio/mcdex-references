@@ -1,8 +1,14 @@
-Contract Specifications
+#Introduction
+Traders are able to gain exposure to crypto asset without taking custody of the underlying asset,by receiving cash settlement rather than the physical delievery.
 
-| Underlying asset  | BTC            | 
-| -------------     |:-------------:|
-| col 3 is          | right-aligned | 
-| col 2 is          | centered      |  
-| zebra stripes     | are neat      |   
 
+#Contract Specifications
+
+| Underlying asset/Ticker  | BTC            | 
+| -------------            |:-------------: |
+| Contract                 |                | 
+| Trading hours            | 7 days         |  
+| Minimum tick size        |                |   
+| Settlement               |                | 
+| Trading hours            | 7 days         |  
+| Minimum tick size        |                |   
