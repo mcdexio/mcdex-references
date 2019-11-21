@@ -7,20 +7,19 @@ Traders are able to gain exposure to crypto asset without taking custody of the 
 ## a.BTC Futures
 
 | Underlying asset/Ticker  | BTC Index          | 
-| -------------            |:-------------: |
-| Contract                 |                | 
+| -------------            |:-------------: | 
 | Trading hours            | 7 days         |  
-| Minimum tick size        |                |   
+| Minimum tick size        |  0.01BTC?              |   
 | Settlement               |   Weekly settlement at???             | 
 | Expiration dates         |          |  
-| Contract size            |                |   
-| Delivery/ Expiration     |                |   
+| Contract size            |               |   
+| Settlement Dates         |     24h after expiration dates           |   
 | Settled price            |  Index price ,which will still be Cap price if the index price is higher than Cap price and still be Floor price if the index price is lower than the Floor price.            | 
 | Settle Method            |    Cash settlement in Collateral      |  
-| Fees                     |                |   
+| Fees                     |   Gas fee and Market Protocol trading fee,refer to [fees](en/fees.md) for more details|   
 
 
-## a.ETH Futures
+## b.ETH Futures
 
 | Underlying asset/Ticker  | ETH Index          | 
 | -------------            |:-------------: |
