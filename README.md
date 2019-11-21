@@ -17,6 +17,6 @@
 
 ### Market Protocol Contracts
 
-### [BTC Index Futures](en/btc-mp.md)
+#### [BTC Index Futures](en/btc-mp.md)
 
-### [ETH Index Futures](en/eth-mp.md)
+#### [ETH Index Futures](en/eth-mp.md)
