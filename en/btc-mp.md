@@ -1,10 +1,10 @@
-#Introduction
+# Introduction
 Traders are able to gain exposure to crypto asset without taking custody of the underlying asset,by receiving cash settlement rather than the physical delievery.
 
 
-#Contract Specifications
+# Contract Specification 
 
-| Underlying asset/Ticker  | BTC            | 
+| Underlying asset/Ticker  | BTC Index          | 
 | -------------            |:-------------: |
 | Contract                 |                | 
 | Trading hours            | 7 days         |  
