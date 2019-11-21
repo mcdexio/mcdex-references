@@ -6,13 +6,13 @@ Traders are able to gain exposure to crypto asset without taking custody of the 
 
 ## a.BTC Futures
 
-| Underlying asset/Ticker  | BTC Index          | 
+| Underlying asset/Ticker  | BTC Index,provided by Market Protocol Oracle         | 
 | -------------            |:-------------: | 
-| Trading hours            | 7 days         |  
-| Minimum tick size        |  0.01BTC?              |   
-| Settlement               |   Weekly settlement at???             | 
+| Trading hours            | 24h*7 days         |  
+| Minimum tick size        |  0.001BTC              |   
+| Index Price Range        |   a Cap and Floor price,which is the ±25% of the Index Price when contract is made       | 
 | Expiration dates         |          |  
-| Contract size            |               |   
+| Contract size            |      1BTC         |   
 | Settlement Dates         |     24h after expiration dates           |   
 | Settled price            |  Index price ,which will still be Cap price if the index price is higher than Cap price and still be Floor price if the index price is lower than the Floor price.            | 
 | Settle Method            |    Cash settlement in Collateral      |  
@@ -22,14 +22,13 @@ Traders are able to gain exposure to crypto asset without taking custody of the 
 ## b.ETH Futures
 
 | Underlying asset/Ticker  | ETH Index          | 
-| -------------            |:-------------: |
-| Contract                 |                | 
-| Trading hours            | 7 days         |  
-| Minimum tick size        |                |   
-| Settlement               |   Weekly settlement at???             | 
+| -------------            |:-------------: | 
+| Trading hours            | 24h*7 days         |  
+| Minimum tick size        |  0.05ETH             |   
+| Index Price Range        |   a Cap and Floor price,which is the ±25% of the Index Price when contract is made       | 
 | Expiration dates         |          |  
-| Contract size            |                |   
-| Delivery/ Expiration     |                |   
+| Contract size            |        1ETH       |   
+| Settlement Dates         |     24h after expiration dates           |   
 | Settled price            |  Index price ,which will still be Cap price if the index price is higher than Cap price and still be Floor price if the index price is lower than the Floor price.            | 
 | Settle Method            |    Cash settlement in Collateral      |  
-| Fees                     |                |   
+| Fees                     |   Gas fee and Market Protocol trading fee,refer to [fees](en/fees.md) for more details|   
