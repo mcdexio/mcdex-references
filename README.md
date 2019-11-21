@@ -1,4 +1,4 @@
-# References of McDEX
+# References of MCDEX
 
 ## Basics
 
@@ -7,7 +7,7 @@
 
 ### [Fees](en/fees.md)
 
-## Smart contracts on Ethereum
+## Protocols on Ethereum
 
 ### [Mai Protocol](https://github.com/mcdexio/documents/blob/master/en/mai.md)
 
@@ -15,7 +15,8 @@
 
 ## Contracts 
 
-### [Bitcoin Index Futures](en/btc-mp.md)
+### Market Protocol Contracts
 
+### [BTC Index Futures](en/btc-mp.md)
 
-## API
+### [ETH Index Futures](en/eth-mp.md)
