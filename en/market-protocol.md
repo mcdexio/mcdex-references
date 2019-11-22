@@ -1,6 +1,6 @@
 # Market Protocol
 
-Please refer to the Market Protocol [white paper](https://marketprotocol.io/assets/MARKET_Protocol-Whitepaper.pdf) for more complete information.
+Please refer to the Market Protocol [white paper](https://marketprotocol.io/assets/MARKET_Protocol-Whitepaper.pdf) and [GitHub](https://github.com/MARKETProtocol/MARKETProtocol) for more complete information.
 
 ## Overview
 
