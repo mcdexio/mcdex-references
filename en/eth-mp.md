@@ -10,7 +10,7 @@ Traders are able to gain exposure to crypto asset without taking custody of the 
 | -------------            |:-------------: | 
 | Protocols                | Market Protocol + Mai Protocol V1 |
 | Trading Hours            | 24h * 7 days         |  
-| Minimum Tick Size        |  0.01 ETH             |   
+| Minimum Tick Size        |  0.1 ETH             |   
 | Index Price Range        |   A Cap and Floor price, which is the ±25% of the Index Price when contract is made       | 
 | Contract Size            |        1 ETH       |   
 | Margin                   |      Long Position Margin = (Entry Price - Floor Price) * Quantity<br/>Short Position Margin = (Cap Price - Entry Price) * Quantity<br/>Margin is locked in the smart contract until the position is closed or the contract is settled.<br/>There is NO margin call or liquidation.       |  
