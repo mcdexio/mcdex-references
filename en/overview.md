@@ -1,4 +1,4 @@
-# Overveiw
+# Overview
 
 Monte Carlo Decentralized Exchange (MCDEX), powered by Mai Protocol smart contract on Ethereum, is a decentralized derivatives trading platform, enabling efficient and secure trading with leverages. 
 
