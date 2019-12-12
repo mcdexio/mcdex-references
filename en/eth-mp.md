@@ -10,11 +10,12 @@ Traders are able to gain exposure to crypto asset without taking custody of the 
 | -------------            |:-------------: | 
 | Protocols                | Market Protocol + Mai Protocol V1 |
 | Trading Hours            | 24h * 7 days         |  
-| Minimum Tick Size        |  0.1 ETH             |   
+| Tick Size                | $0.1. minimum price movement |   
+| Lot Size                 | 0.1 ETH. minimum order quantity movement |
 | Index Price Range        |   A Cap and Floor price, which is the ±25% of the Index Price when contract is made       | 
 | Contract Size            |        1 ETH       |   
 | Margin                   |      Long Position Margin = (Entry Price - Floor Price) * Quantity<br/>Short Position Margin = (Cap Price - Entry Price) * Quantity<br/>Margin is locked in the smart contract until the position is closed or the contract is settled.<br/>There is NO margin call or liquidation.       |  
-| Expiration Dates         |Expirations are always at 08:00 UTC on Friday. Currently there are 2 weekly futures (collateraled in USDT and DAI). A new future with new expiry date will be added 1 hour after the expiration of the front future.         |
+| Expiration Dates         | Expirations are always at 08:00 UTC on Friday. Currently there are 2 weekly futures (collateraled in USDT and DAI). A new futures contract with new expiry date will be added 1 hour after the expiration of the front futures contract.         |
 | Settlement Dates         |   24 hours after expiration dates.          |
 | Settlement Price         |  The index price upon expiration, which will still be Cap price if the index price is higher than Cap price and still be Floor price if the index price is lower than the Floor price.            | 
 | Settle Method            |   Cash settlement in collateral tokens      |  
