@@ -1647,3 +1647,12 @@ Error Code | Meaning
 -13 | http error
 -14 | api rate-limit error
 -15 | order expires must in range [5m, 30days]
+-16 | the contract is settled, forbidden to place orders
+-17 | invalid price, long price is greater than or equal to the settlement price
+-18 | invalid price, short price is less than or equal to the settlement price
+-19 | can not enter position by market order when the contract is expired
+-20 | no more active orders in this market
+
+
+
+
