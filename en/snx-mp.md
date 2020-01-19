@@ -4,7 +4,7 @@ Traders are able to gain exposure to crypto asset without taking custody of the 
 
 # Contract Specification 
 
-## BTC Futures
+## SNX Futures
 
 | Underlying Asset  | SNX Index, provided by Market Protocol Oracle         | 
 | -------------            |:-------------: |
