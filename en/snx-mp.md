@@ -10,7 +10,7 @@ Traders are able to gain exposure to crypto asset without taking custody of the 
 | -------------            |:-------------: |
 | Protocols                | Market Protocol + Mai Protocol V1 |
 | Trading Hours            | 24h * 7 days         |  
-| Tick Size                | $0.1. minimum price movement |   
+| Tick Size                | $0.0001. minimum price movement |   
 | Lot Size                 | 1 SNX. minimum order quantity movement |
 | Index Price Range        |   A Cap and Floor price, which is the ±25% of the Index Price when contract is made       | 
 | Contract Size            |      1 SNX         |   
