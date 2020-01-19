@@ -20,3 +20,5 @@
 #### [BTC Futures](en/btc-mp.md)
 
 #### [ETH Futures](en/eth-mp.md)
+
+#### [SNX Futures](en/eth-mp.md)
