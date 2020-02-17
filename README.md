@@ -23,4 +23,4 @@
 
 #### [SNX Futures](en/snx-mp.md)
 
-#### [TRUMP Futures](en/snx-mp.md)
+#### [TRUMP Futures](en/trump-mp.md)
