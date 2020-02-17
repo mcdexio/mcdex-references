@@ -22,3 +22,5 @@
 #### [ETH Futures](en/eth-mp.md)
 
 #### [SNX Futures](en/snx-mp.md)
+
+#### [TRUMP Futures](en/snx-mp.md)
