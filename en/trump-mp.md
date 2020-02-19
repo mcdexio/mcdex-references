@@ -6,16 +6,16 @@ Inspried by FTX, TRUMP 2020 is a futures contract on MCDEX.
 
 ## TRUMP 2020 Futures
 
-| Underlying Asset  | TRUMP Index, provided by Market Protocol Oracle.      | 
+| Underlying Asset  | TRUMP Index, provided by Market Protocol Oracle. Refer to "What TRUMP expires to" in the attached for details     | 
 | -------------            |:-------------: |
 | Protocols                | Market Protocol + Mai Protocol V1 |
 | Trading Hours            | 24h * 7 days         |  
-| Tick Size                | $0.0001. minimum price movement |   
+| Tick Size                | $0.001. minimum price movement |   
 | Lot Size                 | 1 TRUMP. minimum order quantity movement |
 | Index Price Range        | Cap price($1) and Floor price($0), TRUMP expires to $1 if Donald Trump wins the 2020 US presidential elections, and $0 otherwise.        | 
 | Contract Size            |      1 TRUMP         |   
 | Margin                   |      Long Position Margin = (Entry Price - Floor Price) * Quantity<br/>Short Position Margin = (Cap Price - Entry Price) * Quantity<br/>Margin is locked in the smart contract until the position is closed or the contract is settled.<br/>There is NO margin call or liquidation.       |  
-| Expiration Dates         |   Refer to "What TRUMP expires to" in the attached |  
+| Expiration Dates         |  2020-11-5 00:00:00 UTC  |    
 | Settlement Dates         |   24 hours after expiration dates.          |
 | Settlement Price         |   TRUMP expires to $1 if Donald Trump wins the 2020 US presidential elections, and $0 otherwise.             | 
 | Settle Method            |   Cash settlement in collateral tokens      |  
