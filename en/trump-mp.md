@@ -23,7 +23,7 @@ Inspried by FTX, TRUMP 2020 is a futures contract on MCDEX.
 | Fees                     |   Gas fee and Market Protocol trading fee, refer to [fees](fees.md) for more details|   
 
 ## What will TRUMP expire to?
-1.This contract will settle to 1 in the event that Donald Trump is elected president of the United States, and to 0 otherwise.
+1.This contract will settle to $1 in the event that Donald Trump is elected president of the United States, and to $0 otherwise.
 
 2.The election held in the United States on November 3, 2020 will determine who is elected president, and any person projected to receive at fewest 270 electoral votes per the electoral college system will be considered to have been elected president. 
 
