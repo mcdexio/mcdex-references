@@ -35,7 +35,7 @@ The trading fee is calculated as follows:
 |----------------|----------------|
 | ~~0.05%~~ 0%   | ~~0.1%~~  0%   |
 
-*To celebrate the launch of MCDEX, the fee rate is 0% before the end of January 2020.*
+*To celebrate the launch of MCDEX, the fee rate is 0% for BTC/DAI and ETH/DAI.*
 
 For example, the Market Protocol Contract's price floor is 7000 DAI and price cap is 15000 DAI. Some taker buys 10 contracts from a maker.
 The taker fee is `(7000 + 15000) * 0.5 * 10 * 0.1% = 110 DAI` and the maker fee is `(7000 + 15000) * 0.5 * 10 * 0.05% = 55 DAI`.
