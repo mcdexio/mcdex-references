@@ -20,7 +20,7 @@ Inspried by FTX, TRUMP 2020 is a futures contract on MCDEX.
 | Settlement Price         |   TRUMP expires to $1 if Donald Trump wins the 2020 US presidential elections, and $0 otherwise.             | 
 | Settle Method            |   Cash settlement in collateral tokens      |  
 | Between Expiration and Settlement | During this period, you can still close your position by placing an order at any appropriate price (e.g. settlement price). But you are only allowed to enter into a long position at a price lower than the settlement price or enter into a short position at a price higher than the settlement price. |
-| Fees                     |   Gas fee and Market Protocol trading fee, refer to [fees](fees.md) for more details|   
+| Fees                     |   Gas fee:refer to [fees](fees.md) for more details.       Market Protocol trading fee: Maker: 0.02%; Taker: 0.07%. |   
 
 ## What will TRUMP expire to?
 1.This contract will settle to $1 in the event that Donald Trump is elected president of the United States, and to $0 otherwise.
