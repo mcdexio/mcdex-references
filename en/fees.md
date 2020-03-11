@@ -2,7 +2,7 @@
 
 ##  NO Gas Fee
 
-All transactions on the Ethereum network cost gas, a fee that is paid to miners in order to process the transaction.Currently, MCDEX charge no gas fees.
+All transactions on the Ethereum network cost gas, a fee that is paid to miners in order to process the transaction. Currently, MCDEX charge no gas fees.
 
 We will reivew the fee structure in Sep. 2020.
 
