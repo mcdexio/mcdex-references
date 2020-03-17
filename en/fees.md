@@ -25,4 +25,4 @@ The trading fee is calculated as follows:
 
 
 For example, the Market Protocol Contract's price floor is 7000 DAI and price cap is 15000 DAI. Some taker buys 10 contracts from a maker.
-The taker fee is `(7000 + 15000) * 0.5 * 10 * 0.1% = 110 DAI` and the maker fee is `(7000 + 15000) * 0.5 * 10 * 0.05% = 55 DAI`.
+The taker fee is `(7000 + 15000) * 0.5 * 10 * 0.02% = 22 DAI` and the maker fee is `(7000 + 15000) * 0.5 * 10 * 0.07% = 77 DAI`.
