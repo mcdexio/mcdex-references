@@ -109,15 +109,15 @@ Here are the two key goals for MCDEX:
 
 In order to achieve these goals, MCDEX introduced an Automated Market Maker(AMM) to its Perpetual Smart Contract. The AMM provided on-chain liquidity. Using AMM, the traders can trade at any time at a price determined by the AMM’s price formula.
 
-When design the AMM, there are several options of the price formula. To caution, we adopted the constant product (x * y = k) model as the price model at the beginning. The advantage of this model is that it has been widely used in Uniswap and has been well verified. The disadvantage of this model used in the Perpetual contract is low capital efficiency. Based on thorough research, we will upgrade the pricing formula of AMM in the future to obtain better capital efficiency.
+When designing the AMM, there are several options of the price formula. To be cautious, we adopted the constant product (x * y = k) model as the price model for now. The advantage of this model is that it has been widely used in Uniswap and has been well verified. The disadvantage of this model used in the Perpetual contract is lack of capital efficiency. Based on thorough research, we will upgrade the pricing formula of AMM in the future to achieve better capital efficiency.
 
-The AMM has a long position and collateral tokens in its liquidity pool. Let x be the available margin of the AMM’s liquidity pool. Let y be the long position size of the pool.
+The AMM has a vanilla long position and collateral tokens in its liquidity pool. Let x be the available margin of the AMM’s liquidity pool. Let y be the long position size of the pool.
 
-We make the leverage of the long position is 1x always. Thus, when the long position of the pool increases/decreases by Δy at trading price P:
+We make the leverage of the long position 1x. Thus, when the long position of the pool increases/decreases by Δy at trading price P:
 - the margin occupied by the position increases/decreases by Δy * P
 - the available margin x decreases/increases by Δy * P. 
 
-This setting makes the position of AMM always fully collateralized (the, thus the position of AMM will never be liquidated. As a result, the Funding Rate & Mark Price, which is derived from the Mid Price of the AMM, is always available on the chain.
+This setting makes the position of AMM always fully collateralized (thus the position of AMM will never be liquidated. As a result, the Funding Rate & Mark Price, which is derived from the Mid Price of the AMM, are always available on the chain.
 
 The trading price is determined by the ratio of x and y so that the product x * y is preserved. 
 The formula for the trading price P can be derived from the x * y constraint:
@@ -127,7 +127,7 @@ P( Δy ) = x / ( y + Δy )
 P( Δy ) = x / ( y + Δy )
 ```
 
-Where, |Δy| is the amount which the trader want to trade. When the trader sells to the pool, Δy is positive. When the trader buys from the pool, Δy is negative. After trading, the x and y parameters are updated as follows:
+Where, |Δy| is the amount which the trader wants to trade. When the trader sells to the pool, Δy is positive. When the trader buys from the pool, Δy is negative. After trading, the x and y parameters are updated as follows:
 
 ```
 Δx = P( Δy )∙Δy
@@ -143,7 +143,7 @@ x∙y = x'∙y'
 ```
 The value of ```x/y``` is called the “Mid Price” of the AMM. And it is used for calculating the Funding Rate and Mark Price.
 
-Trade with the AMM cost a 0.075% trading fee. Among them, 0.025% is the dev fee, and 0.05% will be left in the pool as a fee for the liquidity provider.
+Trading with the AMM costs trading fee at 0.075%,among which 0.025% is the dev fee, and 0.05% will be left in the pool as a fee for the liquidity provider.
 
 ## Provide liquidity to AMM
 
@@ -179,17 +179,17 @@ It can be proved that the Mid Price ```x/y``` is not changed after this operatio
 
 
 ## Trade with the Order Book
-In order to improve the liquidity, MCDEX Provides an off-chain order book for trading the Perpetual contract. The order book server can only match the orders for the traders. The server can never touch the trader’s on-china margin account. 
+In order to improve the liquidity, MCDEX Provides an off-chain order book fto trade the Perpetual contract. The order book server can only match the traders' orders and can never touch the trader’s on-chain margin account. 
 
-To trade with the order book, the trader sign their orders and send the orders to the order book server. The order book server matches the orders in the order book and send match result to the smart contract on the block chain. The smart contract first validate the order’s signature and match result. If the validation passed, the trades are made according to the match result for the orders’ owners.
+To trade with the order book, the trader sign their orders and send the orders to the order book server. The order book server matches the orders in the order book and send match result to the smart contract on the block chain. The smart contract first validate the order’s signature and match result. If the validation passed, the trades are made according to the match result.
 
 ### Target Leverage
 
 No matter trade with the AMM or with the order book, the effective leverage of the position is always the ```Position Value / Margin Balance``` and the maximum leverage to open position is ```1 / Initial Margin rate```
 
-However, the trader could set a “Target Leverage” when trade with the order book. The order book engine uses the target leverage to calculate the Position Margin and Order margin and automatically cancel the orders that may push the position’s leverage above the target leverage. 
+However, the trader could set a “Target Leverage” when trading with the order book. The order book engine uses the target leverage to calculate the Position Margin and Order margin,also automatically cancel the orders that may push the position’s leverage above the target leverage. 
 
-Remember that the target leverage is only a setting in the off-chain order book server. Even the trader sets low target leverage, the effective leverage of the on-chain position may be higher or lower than the target leverage. For example, the trader withdraws collateral tokens from the margin account, leading to the increment of the effective leverage. Another example, the profit of the position increases continuously, which results in an increase in the margin balance and the decrease of effective leverage.
+Remember that the target leverage is only a setting in the off-chain order book server. Even the trader sets low target leverage, the effective leverage of the on-chain position may be higher or lower than the target leverage. For example, the trader withdraws collateral tokens from the margin account, leading to the increase of the effective leverage. Another example, the profit of the position increases continuously, which results in an increase in the margin balance and the decrease of effective leverage.
 
 ### Position & Order Margin
 The order book server calculates the available margin for placing new orders as follow: (as the vanilla contract)
@@ -199,7 +199,7 @@ Available = Margin Balance – Position Margin – Order Margin – Withdraw Loc
 Position Margin = Mark Price * Position Size / Target Leverage
 ```
 
-```Order Margin``` is the margin balance reserved for the active orders by order book server. The order which closes position cost no order margin. For the orders that open positions, the order is calculated:
+```Order Margin``` is the margin balance reserved for the active orders by order book server. The orders that close later cost no order margin. For the orders that goes to positions, the order margin is calculated:
 ```
 Open Order Margin = Order Price * Order Amount / Target Leverage + Potential Loss + Fee
 Buy Order Potential Loss = Max((Order Price – Mark Price) * Order Amount, 0)
@@ -212,9 +212,9 @@ Order Margin = Max(Buy Orders’ Margin, Sell Orders’ Margin)
 ```
 
 Withdraw Locked is the amount of margin reserved for withdrawal. See more information about the Withdraw Locked in the next section.
-Broker & Withdraw Time Lock
+### Broker & Withdraw Time Lock
 
-Because the order book server can only match the orders for the trader and cannot really lock any margin balance like the centralized exchange. A trader could terminate the transaction that is already matched and sent to the block chain’s memory pool but has not executed by the miners, by withdrawing the margin or trading with the AMM to make the available margin insufficient. The trader terminates the transactions may because of the price changes to an unconformable price. However, the termination, which can be seen as a kind of so-called “front run”, breaks the orders’ match result and deprives the trading opportunities of the other traders.
+Because the order book server can only match the orders for the trader and cannot really lock any margin balance like the centralized exchange, a trader could terminate the transaction that is already matched and sent to the block chain’s memory pool but has not executed by the miners, by withdrawing the margin or trading with the AMM to make the available margin insufficient. The trader terminates the transactions may because of the price changes to an unconformable price. However, the termination, which can be seen as a kind of so-called “front run”, breaks the orders’ match result and deprives the trading opportunities of the other traders.
 
 To prevent this kind of termination, the order book server needs to be able to detect changes in the margin account in time and cancel orders that cannot be executed on the block chain. As a result, the trader has more rules to follow when trade with the order book:
 
