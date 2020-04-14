@@ -1,7 +1,7 @@
 # General Information
 
 ## Introduction
-[Monte Carlo Decentralized Exchange](https://mcdex.io/) (MCDEX) is a decentralized derivatives exchange - a trading platform enabling efficient and transparent trading with leverages.
+Monte Carlo Decentralized Exchange (MCDEX) is a decentralized derivatives exchange - a trading platform enabling efficient and transparent trading with leverages.
 
 At present, there are two types of contracts live on MCDEX:
 
