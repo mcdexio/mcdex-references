@@ -1,26 +1,29 @@
-# References of MCDEX
 
-## Basics
+# [Gerneral Information](en/general-information.md)
 
-### [Overview](en/overview.md)
+## [Introduction](en/general-information.md#introduction)
+
+## [Order Type](en/general-information.md#order-types)
+
+## [Fee](en/general-information.md#fee)
 
 
-### [Fees](en/fees.md)
+# [Perpetual](en/perpetual.md)
 
-## Protocols on Ethereum
+## [Introduction](en/perpetual.md#introduction)
 
-### [Mai Protocol](https://github.com/mcdexio/documents/blob/master/en/mai.md)
+...
 
-### [Market Protocol](en/market-protocol.md)
+# [MP Futures](en/mp-futures.md)
 
-## Contracts 
+## [Introduction](en/mp-futures.md#introduction)
 
-### Market Protocol Contracts
+### Contract Specifications
 
-#### [BTC Futures](en/btc-mp.md)
+## [BTC Futures](en/mp-futures.md#BTC)
 
-#### [ETH Futures](en/eth-mp.md)
+## [ETH Futures](en/mp-futures.md#ETH)
 
-#### [SNX Futures](en/snx-mp.md)
+## [TRUMP Futures](en/mp-futures.md#TRUMP)
 
-#### [TRUMP Futures](en/trump-mp.md)
+## [Oracle](en/mp-futures.md#Oralce)
