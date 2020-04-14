@@ -124,7 +124,7 @@ The formula for the trading price P can be derived from the x * y constraint:
 
 ```
 P( Δy ) = x / ( y + Δy )
-P( Δy ) = x / ( y + Δy )
+P( Δy ) = x / ( y - Δy )
 ```
 
 Where, |Δy| is the amount which the trader wants to trade. When the trader sells to the pool, Δy is positive. When the trader buys from the pool, Δy is negative. After trading, the x and y parameters are updated as follows:
@@ -132,7 +132,7 @@ Where, |Δy| is the amount which the trader wants to trade. When the trader sell
 ```
 Δx = P( Δy )∙Δy
 
-x' = x- Δx
+x' = x - Δx
 
 y' = y + Δy
 ```
