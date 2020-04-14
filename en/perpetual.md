@@ -1,6 +1,6 @@
 # Perpetual Contract
 
-## 1. Introduction
+## Introduction
 
 MCDEX Perpetual is a derivative product similar to the Futures but without an expiry date. 
 
@@ -19,7 +19,7 @@ MCDEX Perpetual continuously measures the difference between Mark Price of the P
 
 Funding payments are automatically calculated every second and are added to or subtracted from the available trading balance in your realized PNL account (which is also part of your available trading balance). You can withdraw your realized PNL balance from your Margin account at any time.
 
-## 2. Contract Specifications
+## Contract Specifications
 
 
 |Contract Symbol           | 	ETH-PERP                                                |
@@ -36,7 +36,7 @@ Funding payments are automatically calculated every second and are added to or s
 |Fees|	Taker fee -0.025% / Maker fee 0.075%. (no rebate). Liquidation trades are charged at 0.9% (0.825% insurance fund fees).|
 
 
-## 3. Vanilla & Inverse Contract
+## Vanilla & Inverse Contract
 Consider a futures contract on ETH which is quoted in USD. Here, ETH is the base currency and USD is the quote currency. 
 
 In a typical (aka vanilla) futures contract, the margin and profit/loss are denominated in the quote currency. Thus, a vanilla futures on ETH which is quoted in USD and is margined and settled in USD.
@@ -48,7 +48,7 @@ In the other hand, the inverse contract mentioned above can also be considered a
 In MCDEX Mai 2 protocol smart contract, there is only vanilla contract. However, to improve the user experience, MCDEX performs the above conversion of ETH-PERP on UI/UX to provide an inverse contract trading experience.
 
 
-## 4. Funding Rate
+## Funding Rate
 Calculations of the funding rate for the Perpetual contracts are identical.
 
 When there is a positive funding rate longs pay funding to shorts; when we have a negative funding rate, shorts pay funding to the longs. The funding rate percentage, expressed as an 8-hourly interest rate, is calculated as follows at any given point in time:
@@ -111,7 +111,7 @@ The funding payed or received is continuously added to your cash balance.
 
 No fees on funding: MCDEX does not charge any fees on funding and all funding is transferred between participants in the Perpetual contracts. This makes the funding a zero sum game, where longs receive all funding from shorts, or shorts receive all funding from longs.
 
-## 5. Mark Price
+## Mark Price
 The mark price is the price at which the Perpetual contract will be valued during trading hours. This can (temporarily) vary from the actual perpetual market prices to protect against manipulative trading.
 
 It is important to understand how the Mark Price is being calculated. We start with determining a "Fair Price". To make the Mark Price and Funding Rate independent to any off-chain facilities, MCDEX uses the “Mid Price” of the on-chain AMM as the “Fair Price”. See more details about the “Mid Price” of the AMM in the corresponding chapter.
@@ -124,7 +124,7 @@ Further the Mark Price is hard limited by MCDEX Index +/- 0.5%, so under no circ
 
 The 600 seconds EMA is recalculated every second, so there are in total 600 time periods, where the measurement of the latest second has a weight of 2 / (600 + 1) = 0.333%
 
-## 6. Isolated margin
+## Isolated margin
 
 MCDEX Perpetual contract use the Isolated Margin mode.
 
@@ -136,7 +136,7 @@ As the effective leverage of the position is equal to the ```Position Value / Ma
 
 Trader can increase their position size whenever the margin balance is larger than the initial margin. And the position will get liquidated when the margin balance is less than the maintenance margin.
 
-## 7. Automated Market Maker
+## Automated Market Maker
 MCDEX tries to make the Perpetual contract as decentralized as possible. There are two key goals to achieve:
 1. The Funding Rate & Mark Price must be derived on the block chain.
 2. The traders can trade the contract without any off-chain facilities.
@@ -179,7 +179,7 @@ The value of ```x/y``` is called the “Mid Price” of the AMM. And it is used 
 
 Trade with the AMM cost a 0.075% trading fee. Among them, 0.025% is the dev fee, and 0.05% will be left in the pool as a fee for the liquidity provider.
 
-## 8. Provide liquidity to AMM
+## Provide liquidity to AMM
 
 ### Add Liquidity
 
@@ -212,7 +212,7 @@ Share token holders can remove liquidity from the pool and redeem the share toke
 It can be proved that the Mid Price ```x/y``` is not changed after this operation.
 
 
-## 9. Trade with the Order Book
+## Trade with the Order Book
 In order to improve the liquidity, MCDEX Provides an off-chain order book for trading the Perpetual contract. The order book server can only match the orders for the traders. The server can never touch the trader’s on-china margin account. 
 
 To trade with the order book, the trader sign their orders and send the orders to the order book server. The order book server matches the orders in the order book and send match result to the smart contract on the block chain. The smart contract first validate the order’s signature and match result. If the validation passed, the trades are made according to the match result for the orders’ owners.
@@ -256,11 +256,11 @@ To prevent this kind of termination, the order book server needs to be able to d
 
 2.	The trader needs to "apply" before withdrawing from margin balance when use an order book. The application will take effect after 3 block confirmations (time lock) automatically without anyone’s permission. The order book server takes the applied amount as “Withdraw Locked”. The 3 block time is long enough for the order book server to cancel orders if the margin balance is insufficient. The trader need not apply before withdrawal if his/her “broker” is the AMM.
 
-## 10. Index Oracle
+## Index Oracle
 
 The Index Price feed is from Chainlink. MCDEX Perpetual relies on the fairness and correctness of the index Oracle. Some crypto projects are committed to providing decentralized Oracle services. Although not perfect, we think that using Chainlink as an oracle in the early days is a good choice.
 
-## 11. Auto liquidation
+## Auto liquidation
 
 Mai2 Perpetual smart contract calculates the margin account as follows (as the vanilla contract):
 
@@ -280,5 +280,5 @@ Anyone can liquidate the unsafe margin account without the account owner’s per
 
 If the Mark Price is worse than the Bankrupt Price when liquidation, the difference between Mark Price and Bankrupt Price is the loss of the liquidation. The loss is first made up by the insurance fund. If the fund is insufficient to cover the loss, the smart contract will socialize the loss. In this case, all the opponent position holders share the loss according to their position size.
 
-## 12. Global Settlement
+## Global Settlement
 Because of the inefficieny of the block chain infrastructure, liquidation mechanism is limited. In extreame situations, there will be mass social loss.During this time, MCDEX will evaluate the situation and set the settlement price if necessary and put the contract into global settlement situation. When into this situation, all trades will be aborted.The accounts without enough margin will be liquidated at settlment price. When liquidation ends, users can settle his positions with settlement price and withdraw all the remain margin balance.
