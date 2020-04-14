@@ -1,20 +1,17 @@
 # General Information
 
 ## Introduction
-Currently, MCDEX Perpetual has two trading pages:
+[Monte Carlo Decentralized Exchange](https://mcdex.io/) (MCDEX) is a decentralized derivatives exchange - a trading platform enabling efficient and transparent trading with leverages.
 
-- **Order Book**(order book trading)
-- **AMM (Automatic Market Maker)**- AMM acts as a counterparty
+At present, there are two types of contracts live on MCDEX:
 
-MCDEX Perpetual features funding payments to soft-peg the price of the perpetual contract to the ETH price.
+**MP Futures**
+- MP Futures is an innovative financial tool with an expiration date. The leverage is set by the Cap and Floor price.
+- It is a fully collateralized margin system with no margin calls. It means that the price above the Cap price is treated as the Cap price and the price below the Floor price is treated as the Floor price.
 
-If Perpetual trades higher than the Index price, the long position holders make a funding payment to the short position holders. This increases the holding cost for long position holders because of which they eventually execute sell orders thereby pushing the Perpetual price down towards the Index price.
-
-Similarly, If Perpetual trades lower than the Index price, the short position holders make a funding payment to the long position holders. This increases the holding cost for short position holders because of which they eventually execute buy orders thereby pushing the Perpetual price up towards the Index price.
-
-MCDEX Perpetual continuously measures the difference between Mark Price of the Perpetual contract and Chainlink’s ETH/USD Index. The percentage difference between these two prices acts as the basis for the 8-hourly funding rate applied to all outstanding perpetual contracts.
-
-Funding payments are automatically calculated every second and are added to or subtracted from the available trading balance in your realized PNL account (which is also part of your available trading balance). You can withdraw your realized PNL balance from your Margin account at any time.
+**Perpetual Contracts**
+- PERPETUAL is a Futures contract but without an expiry date.
+- The market price is soft-pegged to the spot price of the underlying asset via a funding mechanism.
 
 ## Types of Orders
 **Market Order**
