@@ -1,25 +1,25 @@
-# Perpetual Contract
+# Perpetual
 
 ## Introduction
 
-MCDEX Perpetual is a derivative product similar to the Futures but without an expiry date. 
+MCDEX Perpetual is a derivative product similar to the Futures but without an expiry date.
 
 Currently, MCDEX Perpetual has two trading pages:
 
 - **Order Book** (order book trading)
 - **AMM (Automatic Market Maker)** - AMM acts as a counterparty
 
-MCDEX Perpetual features funding payments to soft-peg the price of the perpetual contract to the ETH price. 
+MCDEX Perpetual features funding payments to soft-peg the price of the perpetual contract to the ETH price.
 
-If Perpetual trades higher than the Index price, the long position holders make a funding payment to the short position holders. This increases the holding cost for long position holders because of which they eventually execute sell orders thereby pushing the Perpetual price down towards the Index price. 
+If Perpetual trades higher than the Index price, the long position holders make a funding payment to the short position holders. This increases the holding cost for long position holders because of which they eventually execute sell orders thereby pushing the Perpetual price down towards the Index price.
 
-Similarly, If Perpetual trades lower than the Index price, the short position holders make a funding payment to the long position holders. This increases the holding cost for short position holders because of which they eventually execute buy orders thereby pushing the Perpetual price up towards the Index price. 
+Similarly, If Perpetual trades lower than the Index price, the short position holders make a funding payment to the long position holders. This increases the holding cost for short position holders because of which they eventually execute buy orders thereby pushing the Perpetual price up towards the Index price.
 
 MCDEX Perpetual continuously measures the difference between Mark Price of the Perpetual contract and Chainlink’s ETH/USD Index. The percentage difference between these two prices acts as the basis for the 8-hourly funding rate applied to all outstanding perpetual contracts.
 
 Funding payments are automatically calculated every second and are added to or subtracted from the available trading balance in your realized PNL account (which is also part of your available trading balance). You can withdraw your realized PNL balance from your Margin account at any time.
 
-## Contract Specifications
+## Contract Specification
 
 
 |Contract Symbol           | 	ETH-PERP                                                |
@@ -37,7 +37,7 @@ Funding payments are automatically calculated every second and are added to or s
 
 
 ## Vanilla & Inverse Contract
-Consider a futures contract on ETH which is quoted in USD. Here, ETH is the base currency and USD is the quote currency. 
+Consider a futures contract on ETH which is quoted in USD. Here, ETH is the base currency and USD is the quote currency.
 
 In a typical (aka vanilla) futures contract, the margin and profit/loss are denominated in the quote currency. Thus, a vanilla futures on ETH which is quoted in USD and is collateralized and settled in USD.
 
@@ -89,7 +89,7 @@ Further, the Mark Price is hard limited by MCDEX’s Index Price by +/- 0.5%. Un
 
 The 600 seconds EMA is recalculated every second, so there are in total 600 time periods, where the measurement of the latest second has a weight of 2 / (600 + 1) = 0.333%
 
-## Isolated margin
+## Isolated Margin
 
 MCDEX Perpetual contract use the Isolated Margin mode.
 
@@ -115,15 +115,15 @@ The AMM has a vanilla long position and collateral tokens in its liquidity pool.
 
 We make the leverage of the long position 1x. Thus, when the long position of the pool increases/decreases by Δy at trading price P:
 - the margin occupied by the position increases/decreases by Δy * P
-- the available margin x decreases/increases by Δy * P. 
+- the available margin x decreases/increases by Δy * P.
 
 This setting makes the position of AMM always fully collateralized (thus the position of AMM will never be liquidated. As a result, the Funding Rate & Mark Price, which is derived from the Mid Price of the AMM, are always available on the chain.
 
-The trading price is determined by the ratio of x and y so that the product x * y is preserved. 
+The trading price is determined by the ratio of x and y so that the product x * y is preserved.
 The formula for the trading price P can be derived from the x * y constraint:
 
 ```
-P( Δy ) = x / ( y + Δy )  
+P( Δy ) = x / ( y + Δy )
 P( Δy ) = x / ( y + Δy )
 ```
 
@@ -145,7 +145,7 @@ The value of ```x/y``` is called the “Mid Price” of the AMM. And it is used 
 
 Trading with the AMM costs trading fee at 0.075%,among which 0.025% is the dev fee, and 0.05% will be left in the pool as a fee for the liquidity provider.
 
-## Provide liquidity to AMM
+## Provide Liquidity to AMM
 
 ### Add Liquidity
 
@@ -173,13 +173,13 @@ Suppose the trader has no position at first. After adding liquidity to the AMM, 
 ### Remove Liquidity
 Share token holders can remove liquidity from the pool and redeem the share tokens. Let s be the trader’s share (percent) of the pool. To remove liquidity, the trader calls smart contract to do as follows:
 1. Trade with the AMM as a long at the Mid Price ```x/y```. The amount of the trade is ```c = y∙s```
-2. Get ```2x∙s``` collateral tokens from the pool. 
+2. Get ```2x∙s``` collateral tokens from the pool.
 
 It can be proved that the Mid Price ```x/y``` is not changed after this operation.
 
 
 ## Trade with the Order Book
-In order to improve the liquidity, MCDEX Provides an off-chain order book fto trade the Perpetual contract. The order book server can only match the traders' orders and can never touch the trader’s on-chain margin account. 
+In order to improve the liquidity, MCDEX Provides an off-chain order book for trading the Perpetual contract. The order book server can only match the orders for the traders. The server can never touch the trader’s on-china margin account.
 
 To trade with the order book, the trader sign their orders and send the orders to the order book server. The order book server matches the orders in the order book and send match result to the smart contract on the block chain. The smart contract first validate the order’s signature and match result. If the validation passed, the trades are made according to the match result.
 
@@ -187,7 +187,7 @@ To trade with the order book, the trader sign their orders and send the orders t
 
 No matter trade with the AMM or with the order book, the effective leverage of the position is always the ```Position Value / Margin Balance``` and the maximum leverage to open position is ```1 / Initial Margin rate```
 
-However, the trader could set a “Target Leverage” when trading with the order book. The order book engine uses the target leverage to calculate the Position Margin and Order margin,also automatically cancel the orders that may push the position’s leverage above the target leverage. 
+However, the trader could set a “Target Leverage” when trade with the order book. The order book engine uses the target leverage to calculate the Position Margin and the Order Margin and automatically cancel the orders that may push the position’s leverage above the target leverage.
 
 Remember that the target leverage is only a setting in the off-chain order book server. Even the trader sets low target leverage, the effective leverage of the on-chain position may be higher or lower than the target leverage. For example, the trader withdraws collateral tokens from the margin account, leading to the increase of the effective leverage. Another example, the profit of the position increases continuously, which results in an increase in the margin balance and the decrease of effective leverage.
 
@@ -226,7 +226,7 @@ To prevent this kind of termination, the order book server needs to be able to d
 
 The Index Price feed is from Chainlink. MCDEX Perpetual relies on the fairness and correctness of the index Oracle. Some crypto projects are committed to providing decentralized Oracle services. Although not perfect, we think that using Chainlink as an oracle in the early days is a good choice.
 
-## Auto liquidation
+## Auto Liquidation
 
 Mai2 Perpetual smart contract calculates the margin account as follows (as the vanilla contract):
 
