@@ -27,14 +27,14 @@ This type of order is matched when the market price reaches the limit price set 
 - Takers: 0.07%
 
 **Perpetual contracts**
-Trade with order book:
+***Trade with order book:
 - Trading Fees: -0.025% for makers and 0.075% for takers.            
 - Gas Fees: NIL (Gas costs for alltrades are completely covered by MCDEX)
 
-Trade wiht AMM:
+***Trade wiht AMM:
 - trading Fees: 0.075% (since users will always be the takers)
 - Gas Fees: Users will pay gas fees by themselves.
 
-For both:
+***For both
 - Deposits and Withdrawals: No fees associated with depositsand withdrawals on MCDEX. However, the user is responsible for the gas costs of deposit and withdrawal transactions.
 - Liquidations: Liquidations are charged a higher fee than normal. The surplus fees of liquidations will automatically fund the insurance fund. 1% penalty fee - 0.5% goes to the liquidator, 0.5% goes to the insurance fund.
