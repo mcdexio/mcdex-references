@@ -143,7 +143,7 @@ x∙y = x'∙y'
 ```
 The value of ```x/y``` is called the "Mid Price" of the AMM. And it is used for calculating the Funding Rate and Mark Price.
 
-Trading with the AMM costs trading fee at 0.075%,among which 0.025% is the dev fee, and 0.05% will be left in the pool as a fee for the liquidity provider.
+Trading with the AMM costs trading fee at 0.075%,among which 0.015% is the dev fee, and 0.06% will be left in the pool as a fee for the liquidity provider.
 
 ## Provide Liquidity to AMM
 
