@@ -15,7 +15,7 @@ If Perpetual trades higher than the Index price, the long position holders make 
 
 Similarly, If Perpetual trades lower than the Index price, the short position holders make a funding payment to the long position holders. This increases the holding cost for short position holders because of which they eventually execute buy orders thereby pushing the Perpetual price up towards the Index price.
 
-MCDEX Perpetual continuously measures the difference between Mark Price of the Perpetual contract and Chainlink’s ETH/USD Index. The percentage difference between these two prices acts as the basis for the 8-hourly funding rate applied to all outstanding perpetual contracts.
+MCDEX Perpetual continuously measures the difference between Mark Price of the Perpetual contract and Chainlink's ETH/USD Index. The percentage difference between these two prices acts as the basis for the 8-hourly funding rate applied to all outstanding perpetual contracts.
 
 Funding payments are automatically calculated every second and are added to or subtracted from the available trading balance in your realized PNL account (which is also part of your available trading balance). You can withdraw your realized PNL balance from your Margin account at any time.
 
@@ -80,12 +80,12 @@ No fees on Funding: MCDEX does not charge any fees on Funding and all Funding is
 ## Mark Price
 Mark Price is the price at which the Perpetual Contract gets valued during trading hours. Mark Price may (temporarily) vary from actual perpetual market prices to protect against manipulative trading.
 
-It is important to understand how the Mark Price is being calculated. We start with determining a "Fair Price". To make the Mark Price and Funding Rate independent to any off-chain facilities, MCDEX uses the “Mid Price” of the on-chain AMM as the “Fair Price”. See more details about the “Mid Price” of the AMM in the corresponding chapter.
+It is important to understand how the Mark Price is being calculated. We start with determining a "Fair Price". To make the Mark Price and Funding Rate independent to any off-chain facilities, MCDEX uses the "Mid Price" of the on-chain AMM as the "Fair Price". See more details about the "Mid Price" of the AMM in the corresponding chapter.
 
 The Mark Price is derived using both the Index and the Fair Price, by adding to the Index the 600 seconds exponential moving average (EMA) of the Fair Price - MCDEX Index.
 
 ```Mark Price = Index + 600 seconds EMA (Fair Price - Index)```
-Further, the Mark Price is hard limited by MCDEX’s Index Price by +/- 0.5%. Under no circumstance, the future Mark Price will deviate from the MCDEX Index Price by more than 0.5%.
+Further, the Mark Price is hard limited by MCDEX's Index Price by +/- 0.5%. Under no circumstance, the future Mark Price will deviate from the MCDEX Index Price by more than 0.5%.
 
 The 600 seconds EMA is recalculated every second, so there are in total 600 time periods, where the measurement of the latest second has a weight of 2 / (600 + 1) = 0.333%
 
@@ -95,9 +95,9 @@ MCDEX Perpetual contract use the Isolated Margin mode.
 
 Isolated Margin is the margin balance allocated to an individual position. Isolated Margin mode allows traders to manage risks on individual positions by restricting the amount of margin allocated to each one. The allocated margin balance for every position can be adjusted individually.
 
-With isolated Margin mode, the trader will never incur a loss more than the margin balance. In such a case, the trader’s position gets liquidated along with the isolated margin balance.
+With isolated Margin mode, the trader will never incur a loss more than the margin balance. In such a case, the trader's position gets liquidated along with the isolated margin balance.
 
-As the effective leverage of the position is equal to the Position Value / Margin Balance, traders can change their position’s leverage by adjusting the margin balance. Depositing more collateral to the Isolated Margin reduces the effective leverage while withdrawing collateral from the Isolated Margin increase the effective leverage.
+As the effective leverage of the position is equal to the Position Value / Margin Balance, traders can change their position's leverage by adjusting the margin balance. Depositing more collateral to the Isolated Margin reduces the effective leverage while withdrawing collateral from the Isolated Margin increase the effective leverage.
 
 The traders can increase their position size whenever the margin balance is greater than the initial margin. In such a case, the position will get liquidated when the margin balance is less than the maintenance margin.
 
@@ -107,11 +107,11 @@ Here are the two key goals for MCDEX:
 1. The Funding Rate & Mark Price must be derived on the blockchain.
 2. The traders must be able to trade the contract without any off-chain facilities.
 
-In order to achieve these goals, MCDEX introduced an Automated Market Maker(AMM) to its Perpetual Smart Contract. The AMM provided on-chain liquidity. Using AMM, the traders can trade at any time at a price determined by the AMM’s price formula.
+In order to achieve these goals, MCDEX introduced an Automated Market Maker(AMM) to its Perpetual Smart Contract. The AMM provided on-chain liquidity. Using AMM, the traders can trade at any time at a price determined by the AMM's price formula.
 
 When designing the AMM, there are several options of the price formula. To be cautious, we adopted the constant product (x * y = k) model as the price model for now. The advantage of this model is that it has been widely used in Uniswap and has been well verified. The disadvantage of this model used in the Perpetual contract is lack of capital efficiency. Based on thorough research, we will upgrade the pricing formula of AMM in the future to achieve better capital efficiency.
 
-The AMM has a vanilla long position and collateral tokens in its liquidity pool. Let x be the available margin of the AMM’s liquidity pool. Let y be the long position size of the pool.
+The AMM has a vanilla long position and collateral tokens in its liquidity pool. Let x be the available margin of the AMM's liquidity pool. Let y be the long position size of the pool.
 
 We make the leverage of the long position 1x. Thus, when the long position of the pool increases/decreases by Δy at trading price P:
 - the margin occupied by the position increases/decreases by Δy * P
@@ -141,7 +141,7 @@ It can be proved that:
 ```
 x∙y = x'∙y'
 ```
-The value of ```x/y``` is called the “Mid Price” of the AMM. And it is used for calculating the Funding Rate and Mark Price.
+The value of ```x/y``` is called the "Mid Price" of the AMM. And it is used for calculating the Funding Rate and Mark Price.
 
 Trading with the AMM costs trading fee at 0.075%,among which 0.025% is the dev fee, and 0.05% will be left in the pool as a fee for the liquidity provider.
 
@@ -149,7 +149,7 @@ Trading with the AMM costs trading fee at 0.075%,among which 0.025% is the dev f
 
 ### Add Liquidity
 
-Anyone can add liquidity to the AMM’s liquidity pool and get shares of the pool. To add liquidity, the trader calls the smart contract to do as follows:
+Anyone can add liquidity to the AMM's liquidity pool and get shares of the pool. To add liquidity, the trader calls the smart contract to do as follows:
 1. Send collateral tokens to the pool. Let c be the amount of the collateral tokens.
 2. Trade with the AMM as a short at the Mid Price x/y. The amount of the trade is calculated as follows:
 
@@ -171,7 +171,7 @@ The liquidity provider gets the share tokens of the pool.
 Suppose the trader has no position at first. After adding liquidity to the AMM, the trader will have a short position in the margin account. However, considering the trader has shares of the long position in the pool simultaneously, the net position size of the trader is still zero.
 
 ### Remove Liquidity
-Share token holders can remove liquidity from the pool and redeem the share tokens. Let s be the trader’s share (percent) of the pool. To remove liquidity, the trader calls smart contract to do as follows:
+Share token holders can remove liquidity from the pool and redeem the share tokens. Let s be the trader's share (percent) of the pool. To remove liquidity, the trader calls smart contract to do as follows:
 1. Trade with the AMM as a long at the Mid Price ```x/y```. The amount of the trade is ```c = y∙s```
 2. Get ```2x∙s``` collateral tokens from the pool.
 
@@ -179,15 +179,15 @@ It can be proved that the Mid Price ```x/y``` is not changed after this operatio
 
 
 ## Trade with the Order Book
-In order to improve the liquidity, MCDEX Provides an off-chain order book to trade the Perpetual contract. The order book server can only match the orders for the traders. The server can never access the trader’s on-china margin account.
+In order to improve the liquidity, MCDEX Provides an off-chain order book to trade the Perpetual contract. The order book server can only match the orders for the traders. The server can never access the trader's on-china margin account.
 
-To trade with the order book, the trader sign their orders and send the orders to the order book server. The order book server matches the orders in the order book and send match result to the smart contract on the block chain. The smart contract first validate the order’s signature and match result. If the validation passed, the trades are made according to the match result.
+To trade with the order book, the trader sign their orders and send the orders to the order book server. The order book server matches the orders in the order book and send match result to the smart contract on the block chain. The smart contract first validate the order's signature and match result. If the validation passed, the trades are made according to the match result.
 
 ### Target Leverage
 
 No matter trade with the AMM or with the order book, the effective leverage of the position is always the ```Position Value / Margin Balance``` and the maximum leverage to open position is ```1 / Initial Margin rate```
 
-However, the trader could set a “Target Leverage” when trade with the order book. The order book engine uses the target leverage to calculate the Position Margin and the Order Margin and automatically cancel the orders that may push the position’s leverage above the target leverage.
+However, the trader could set a "Target Leverage" when trade with the order book. The order book engine uses the target leverage to calculate the Position Margin and the Order Margin and automatically cancel the orders that may push the position's leverage above the target leverage.
 
 Remember that the target leverage is only a setting in the off-chain order book server. Even the trader sets low target leverage, the effective leverage of the on-chain position may be higher or lower than the target leverage. For example, the trader withdraws collateral tokens from the margin account, leading to the increase of the effective leverage. Another example, the profit of the position increases continuously, which results in an increase in the margin balance and the decrease of effective leverage.
 
@@ -208,19 +208,19 @@ Sell Order Potential Loss = Max((Mark Price – Order Price) * Order Amount, 0)
 
 The order margin of the buy orders and sell orders are calculated separately. And the total order margin is:
 ```
-Order Margin = Max(Buy Orders’ Margin, Sell Orders’ Margin)
+Order Margin = Max(Buy Orders' Margin, Sell Orders' Margin)
 ```
 
 Withdraw Locked is the amount of margin reserved for withdrawal. See more information about the Withdraw Locked in the next section.
 ### Broker & Withdraw Time Lock
 
-Because the order book server can only match the orders for the trader and cannot really lock any margin balance like the centralized exchange, a trader could terminate the transaction that is already matched and sent to the block chain’s memory pool but has not executed by the miners, by withdrawing the margin or trading with the AMM to make the available margin insufficient. The trader terminates the transactions may because of the price changes to an unconformable price. However, the termination, which can be seen as a kind of so-called “front run”, breaks the orders’ match result and deprives the trading opportunities of the other traders.
+Because the order book server can only match the orders for the trader and cannot really lock any margin balance like the centralized exchange, a trader could terminate the transaction that is already matched and sent to the block chain's memory pool but has not executed by the miners, by withdrawing the margin or trading with the AMM to make the available margin insufficient. The trader terminates the transactions may because of the price changes to an unconformable price. However, the termination, which can be seen as a kind of so-called "front run", breaks the orders' match result and deprives the trading opportunities of the other traders.
 
 To prevent this kind of termination, the order book server needs to be able to detect changes in the margin account in time and cancel orders that cannot be executed on the block chain. As a result, the trader has more rules to follow when trade with the order book:
 
-1.	The trader needs to declare the order book server as his/her “broker” to match order for him/her. The declaration will take effect after 3 block confirmations (time lock). And the AMM is also a special "broker". Thus switching broker between the order book server and AMM requires declaration.
+1.	The trader needs to declare the order book server as his/her "broker" to match order for him/her. The declaration will take effect after 3 block confirmations (time lock). And the AMM is also a special "broker". Thus switching broker between the order book server and AMM requires declaration.
 
-2.	The trader needs to "apply" before withdrawing from margin balance when use an order book. The application will take effect after 3 block confirmations (time lock) automatically without anyone’s permission. The order book server takes the applied amount as “Withdraw Locked”. The 3 block time is long enough for the order book server to cancel orders if the margin balance is insufficient. The trader need not apply before withdrawal if his/her “broker” is the AMM.
+2.	The trader needs to "apply" before withdrawing from margin balance when use an order book. The application will take effect after 3 block confirmations (time lock) automatically without anyone's permission. The order book server takes the applied amount as "Withdraw Locked". The 3 block time is long enough for the order book server to cancel orders if the margin balance is insufficient. The trader need not apply before withdrawal if his/her "broker" is the AMM.
 
 ## Index Oracle
 
@@ -232,17 +232,17 @@ Mai2 Perpetual smart contract calculates the margin account as follows (as the v
 
 ```
 Margin Balance = Cash Balance + UPNL
-Long’s PNL = (Mark Price – Entry Price) * Position Size
-Short’s PNL = (Entry Price - Mark Price) * Position Size
+Long's PNL = (Mark Price – Entry Price) * Position Size
+Short's PNL = (Entry Price - Mark Price) * Position Size
 Maintenance Margin = Mark Price * Position Size * Maintenance Margin Rate
 Initial Margin = Mark Price * Position Size * Maintenance Margin Rate
 ```
 
 Bankrupt Price is the mark price which makes the margin balance to zero.
 
-When an account ‘s margin balance is lower than the maintenance margin, positions in the account will be incrementally reduced to keep the initial margin lower than the equity in the account.
+When an account's margin balance is lower than the maintenance margin, positions in the account will be incrementally reduced to keep the initial margin lower than the equity in the account.
 
-Anyone can liquidate the unsafe margin account without the account owner’s permission. The liquidator takes over the unsafe positions at the Mark Price, and the account pays a liquidation penalty to both the liquidator and the insurance fund. As the unsafe positions are transferred to the liquidator after the liquidation, the liquidator must have enough margin balance to keep the position safe.
+Anyone can liquidate the unsafe margin account without the account owner's permission. The liquidator takes over the unsafe positions at the Mark Price, and the account pays a liquidation penalty to both the liquidator and the insurance fund. As the unsafe positions are transferred to the liquidator after the liquidation, the liquidator must have enough margin balance to keep the position safe.
 
 If the Mark Price is worse than the Bankrupt Price when liquidation, the difference between Mark Price and Bankrupt Price is the loss of the liquidation. The loss is first made up by the insurance fund. If the fund is insufficient to cover the loss, the smart contract will socialize the loss. In this case, all the opponent position holders share the loss according to their position size.
 
