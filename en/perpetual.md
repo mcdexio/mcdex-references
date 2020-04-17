@@ -178,7 +178,7 @@ It can be proved that the Mid Price ```x/y``` is not changed after this operatio
 
 
 ## Trade with the Order Book
-In order to improve the liquidity, MCDEX Provides an off-chain order book to trade the Perpetual contract. The order book server can only match the orders for the traders. The server can never access the trader's on-china margin account.
+In order to improve the liquidity, MCDEX Provides an off-chain order book to trade the Perpetual contract. The order book server can only match the orders for the traders. The server can never access the trader's on-chain margin account.
 
 To trade with the order book, the trader sign their orders and send the orders to the order book server. The order book server matches the orders in the order book and send match result to the smart contract on the block chain. The smart contract first validate the order's signature and match result. If the validation passed, the trades are made according to the match result.
 
