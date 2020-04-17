@@ -6,8 +6,8 @@ MCDEX Perpetual is a derivative product similar to the Futures but without an ex
 
 Currently, MCDEX Perpetual has two trading pages:
 
-- **Order Book** (order book trading)
-- **AMM (Automatic Market Maker)** - AMM acts as a counterparty
+- **Order Book**: order book trading
+- **AMM (Automatic Market Maker)**: AMM acts as a counterparty
 
 MCDEX Perpetual features funding payments to soft-peg the price of the perpetual contract to the ETH price.
 
