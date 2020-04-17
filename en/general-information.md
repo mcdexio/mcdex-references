@@ -15,9 +15,11 @@ At present, there are two types of contracts live on MCDEX:
 
 ## Types of Orders
 **Market Order**
+
 This type of orders matched by the best possible price (market price) at the current instant. Market orders are immediately filled.
 
 **Limit Order**
+
 This type of order is matched when the market price reaches the limit price set by the user. Abuy order is associated with a maximum limit (buy) price which means that the order will not be matched above the buy limit price. A sell order is associated with a minimum limit (sell) price which means that the order will not be matched below the sell limit price.
 
 ## Fee
@@ -29,7 +31,7 @@ This type of order is matched when the market price reaches the limit price set 
 **Perpetual contracts**
 
 Trade with order book:
-- Trading Fees: -0.025% for makers and 0.075% for takers.            
+- Trading Fees: -0.025% for makers and 0.075% for takers.      
 - Gas Fees: NIL (Gas costs for alltrades are completely covered by MCDEX)
 
 Trade wiht AMM:

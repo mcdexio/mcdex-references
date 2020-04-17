@@ -33,8 +33,6 @@ Funding payments are automatically calculated every second and are added to or s
 |Mark Price|It is the price at which the Perpetual contract is valued during trading hours. This can (temporarily) vary from the actual Perpetual Market Price to protect against manipulative trading. Mark Price is calculated as Index price + 600 seconds EMA of (Perpetual Fair Price - Index Price).  The Perpetual Fair Price is the Mid Price of AMM.
 |Delivery/Expiration|	No Delivery/Expiration|
 |Delivery Method|	Cash settlement in ETH|
-|Fees|	Taker fee -0.025% / Maker fee 0.075%. (no rebate). Liquidation trades are charged at 1% (0.5% goes to insurance fund,0.5% goes to liquidators).|
-
 
 ## Vanilla & Inverse Contract
 Consider a futures contract on ETH which is quoted in USD. Here, ETH is the base currency and USD is the quote currency.
@@ -131,9 +129,7 @@ Where, |Δy| is the amount which the trader wants to trade. When the trader sell
 
 ```
 Δx = P( Δy )∙Δy
-
 x' = x - Δx
-
 y' = y + Δy
 ```
 
@@ -168,7 +164,8 @@ x'/y' = (x+c/2)/(y+cy/2x) = (x(2x+c))/(y(2x+c)) = x/y
 The Mid Price ```x/y``` is not changed after this operation.
 The liquidity provider gets the share tokens of the pool.
 
-Suppose the trader has no position at first. After adding liquidity to the AMM, the trader will have a short position in the margin account. However, considering the trader has shares of the long position in the pool simultaneously, the net position size of the trader is still zero.
+When adding liquidity, the provider adds both collateral tokens & long position to the pool: 1.the provider sends collateral to the pool; 2. meanwhile the provider trade as a seller with the pool, which will increase the long position size of the pool. After adding, the provider has a short position in his/her margin account and shares of the pool's long position, the net position should be zero. However, when other trader trade with the pool, the position size of the pool changes. As a result, the provider's net position size is not zero, which is risk exposure. The provider gets the trading fee as an incentive.
+
 
 ### Remove Liquidity
 Share token holders can remove liquidity from the pool and redeem the share tokens. Let s be the trader's share (percent) of the pool. To remove liquidity, the trader calls smart contract to do as follows:
@@ -247,4 +244,11 @@ Anyone can liquidate the unsafe margin account without the account owner's permi
 If the Mark Price is worse than the Bankrupt Price when liquidation, the difference between Mark Price and Bankrupt Price is the loss of the liquidation. The loss is first made up by the insurance fund. If the fund is insufficient to cover the loss, the smart contract will socialize the loss. In this case, all the opponent position holders share the loss according to their position size.
 
 ## Global Settlement
-Because of the inefficieny of the block chain infrastructure, liquidation mechanism is limited. In extreame situations, there will be mass social loss.During this time, MCDEX will evaluate the situation and set the settlement price if necessary and put the contract into global settlement situation. When into this situation, all trades will be aborted.The accounts without enough margin will be liquidated at settlment price. When liquidation ends, users can settle his positions with settlement price and withdraw all the remain margin balance.
+
+Because of the inefficiency of the blockchain infrastructure, the liquidation mechanism is limited. In extreme situations such as dramatic price changes, wrong index feed, etc, there will be a mass social loss. During this time, MCDEX will evaluate the situation and set the settlement price if necessary and put the contract into the global settlement situation. When into this situation, all trades will be aborted. The accounts without enough margin will be liquidated at settlement price. And the system loss will be socialized. When liquidation ends, users can settle his/her position at settlement price and withdraw all the remaining margin balance.
+
+Due to the importance of global liquidation, MCDEX will establish a community-led governance committee as soon as possible, and the committee will develop detailed global liquidation trigger mechanisms and processing procedures.
+
+
+
+
