@@ -234,7 +234,7 @@ Margin Balance = Cash Balance + PNL
 Long's PNL = (Mark Price – Entry Price) * Position Size
 Short's PNL = (Entry Price - Mark Price) * Position Size
 Maintenance Margin = Mark Price * Position Size * Maintenance Margin Rate
-Initial Margin = Mark Price * Position Size * Maintenance Margin Rate
+Initial Margin = Mark Price * Position Size * Initial Margin Rate
 ```
 
 Bankrupt Price is the mark price which makes the margin balance to zero.
