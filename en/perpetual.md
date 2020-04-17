@@ -62,6 +62,7 @@ If the premium rate is lower than -0.05%, then the Funding Rate will be Premium 
 If the premium rate is higher than 0.05%, then the Funding Rate will be Premium Rate - 0.05%.
 
 In general, Funding Rate = Maximum (0.05%, Premium Rate) + Minimum (-0.05%, Premium Rate)
+
 **Finally we calculate the Time Fraction**
 
 ```Time Fraction = Funding Rate Time Period / 8 hours```
