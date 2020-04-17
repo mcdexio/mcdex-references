@@ -35,12 +35,10 @@ Trade with order book:
 - Gas Fees: NIL (Gas costs for alltrades are completely covered by MCDEX)
 
 Trade with AMM:
-- trading Fees: 0.075% (since users will always be the takers)
-  20%(0.015%) goes to dev team and 80%(0.06% goes to the liquidity provider)
+- trading Fees: 0.075% (since users will always be the takers). 
+  20%(0.015%) goes to dev team and 80%(0.06%) goes to the liquidity provider
 - Gas Fees: Users will pay gas fees by themselves.
 
 For Orderbook & AMM:
-- Deposits and Withdrawals: No fees associated with depositsand withdrawals on MCDEX. However, the user is responsible for the gas costs of deposit and withdrawal transactions.
+- Deposits and Withdrawals: No fees associated with deposits and withdrawals on MCDEX. However, the user is responsible for the gas costs of deposit and withdrawal transactions.
 - Liquidations: Liquidations are charged a higher fee than normal. The surplus fees of liquidations will automatically fund the insurance fund. 1% penalty fee - 0.5% goes to the liquidator, 0.5% goes to the insurance fund.
-
-
