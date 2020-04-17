@@ -152,15 +152,15 @@ Anyone can add liquidity to the AMM's liquidity pool and get shares of the pool.
 2. Trade with the AMM as a short at the Mid Price x/y. The amount of the trade is calculated as follows:
 
 ```
-Liquidity(c) = c / (2x / y) = (c y)/(2x)
+Liquidity(c) = c / (2x / y) = c∙y/(2x)
 ```
 
 After this operation, the x and y parameters are updated as follows:
 
 ```
 x' = x + c/2
-y' = y + Liquidity(c) = y + (c y)/(2x)
-x'/y' = (x + c/2) / (y + (c y)/(2x)) = (x(2x + c))/(y(2x + c)) = x/y
+y' = y + Liquidity(c) = y + c∙y/(2x)
+x'/y' = (x + c/2) / (y + c∙y/(2x)) = (x∙(2x + c))/(y∙(2x + c)) = x/y
 ```
 
 The Mid Price ```x/y``` is not changed after this operation.
