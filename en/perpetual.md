@@ -230,7 +230,7 @@ The Index Price feed is from Chainlink. MCDEX Perpetual relies on the fairness a
 Mai2 Perpetual smart contract calculates the margin account as follows (as the vanilla contract):
 
 ```
-Margin Balance = Cash Balance + UPNL
+Margin Balance = Cash Balance + PNL
 Long's PNL = (Mark Price – Entry Price) * Position Size
 Short's PNL = (Entry Price - Mark Price) * Position Size
 Maintenance Margin = Mark Price * Position Size * Maintenance Margin Rate
