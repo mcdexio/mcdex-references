@@ -141,7 +141,7 @@ x∙y = x'∙y'
 ```
 The value of ```x/y``` is called the "Mid Price" of the AMM. And it is used for calculating the Funding Rate and Mark Price.
 
-Trading with the AMM costs trading fee at 0.075%,among which 0.015% is the dev fee, and 0.06% will be left in the pool as a fee for the liquidity provider.
+Trading with the AMM costs trading fee at 0.075%, among which 0.015% is the dev fee, and 0.06% will be left in the pool as a fee for the liquidity provider.
 
 ## Provide Liquidity to AMM
 
@@ -152,21 +152,21 @@ Anyone can add liquidity to the AMM's liquidity pool and get shares of the pool.
 2. Trade with the AMM as a short at the Mid Price x/y. The amount of the trade is calculated as follows:
 
 ```
-Liquidity(c) = c/(2x/y) = cy/2x
+Liquidity(c) = c / (2x / y) = (c y)/(2x)
 ```
 
 After this operation, the x and y parameters are updated as follows:
 
 ```
-x' = x+c/2
-y' = y + Liquidity(c) = y + cy/2x
-x'/y' = (x+c/2)/(y+cy/2x) = (x(2x+c))/(y(2x+c)) = x/y
+x' = x + c/2
+y' = y + Liquidity(c) = y + (c y)/(2x)
+x'/y' = (x + c/2) / (y + (c y)/(2x)) = (x(2x + c))/(y(2x + c)) = x/y
 ```
 
 The Mid Price ```x/y``` is not changed after this operation.
 The liquidity provider gets the share tokens of the pool.
 
-When adding liquidity, the provider adds both collateral tokens & long position to the pool: 1.the provider sends collateral to the pool; 2. meanwhile the provider trade as a seller with the pool, which will increase the long position size of the pool. After adding, the provider has a short position in his/her margin account and shares of the pool's long position, the net position should be zero. However, when other trader trade with the pool, the position size of the pool changes. As a result, the provider's net position size is not zero, which is risk exposure. The provider gets the trading fee as an incentive.
+When adding liquidity, the provider adds both collateral tokens & long position to the pool: 1.the provider sends collateral to the pool; 2. meanwhile the provider trade as a seller with the pool, which will increase the long position size of the pool. After adding, the provider has a short position in his/her margin account and shares of the pool's long position, the net position should be zero. However, when other traders trade with the pool, the position size of the pool changes. As a result, the provider's net position size is not zero, which is risk exposure. The provider gets the trading fee as an incentive.
 
 
 ### Remove Liquidity
