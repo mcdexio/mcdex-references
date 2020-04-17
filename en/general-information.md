@@ -34,7 +34,7 @@ Trade with order book:
 - Trading Fees: -0.025% for makers and 0.075% for takers.      
 - Gas Fees: NIL (Gas costs for alltrades are completely covered by MCDEX)
 
-Trade wiht AMM:
+Trade with AMM:
 - trading Fees: 0.075% (since users will always be the takers)
   20%(0.015%) goes to dev team and 80%(0.06% goes to the liquidity provider)
 - Gas Fees: Users will pay gas fees by themselves.
