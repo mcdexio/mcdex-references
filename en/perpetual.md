@@ -84,6 +84,7 @@ It is important to understand how the Mark Price is being calculated. We start w
 The Mark Price is derived using both the Index and the Fair Price, by adding to the Index the 600 seconds exponential moving average (EMA) of the Fair Price - MCDEX Index.
 
 ```Mark Price = Index + 600 seconds EMA (Fair Price - Index)```
+
 Further, the Mark Price is hard limited by MCDEX's Index Price by +/- 0.5%. Under no circumstance, the future Mark Price will deviate from the MCDEX Index Price by more than 0.5%.
 
 The 600 seconds EMA is recalculated every second, so there are in total 600 time periods, where the measurement of the latest second has a weight of 2 / (600 + 1) = 0.333%
