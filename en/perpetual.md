@@ -123,8 +123,8 @@ The trading price is determined by the ratio of x and y so that the product x * 
 The formula for the trading price P can be derived from the x * y constraint:
 
 ```
-P( Δy ) = x / ( y + Δy )
-P( Δy ) = x / ( y - Δy )
+Buy Δy contracts Price: P( Δy ) = x / ( y - Δy )
+Sell Δy contracts Price: P( Δy ) = x / ( y + Δy )
 ```
 
 Where, |Δy| is the amount which the trader wants to trade. When the trader sells to the pool, Δy is positive. When the trader buys from the pool, Δy is negative. After trading, the x and y parameters are updated as follows:
