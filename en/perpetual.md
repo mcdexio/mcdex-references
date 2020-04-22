@@ -251,6 +251,18 @@ Because of the inefficiency of the blockchain infrastructure, the liquidation me
 
 Due to the importance of global liquidation, MCDEX will establish a community-led governance committee as soon as possible, and the committee will develop detailed global liquidation trigger mechanisms and processing procedures.
 
+## Deployed Contracts
 
+Perpetual [0x92c506D3dd51A37650Cc8e352a7551c26E2c607d](https://etherscan.io/address/0x92c506D3dd51A37650Cc8e352a7551c26E2c607d)
 
+AMM [0xF4CE6d5E9Cdcd6c91e303B87E27688f01B9Bb7bf](https://etherscan.io/address/0xF4CE6d5E9Cdcd6c91e303B87E27688f01B9Bb7bf)
 
+Exchange [0xb95B9fb0539Ec84DeD2855Ed1C9C686Af9A4e8b3](https://etherscan.io/address/0xb95B9fb0539Ec84DeD2855Ed1C9C686Af9A4e8b3)
+
+Price Feeder [0x133906776302D10A2005ec2eD0C92ab6F2cbd903](https://etherscan.io/address/0x133906776302D10A2005ec2eD0C92ab6F2cbd903)
+
+Share Token[0x6d5B330523017E2D4EC36ff973a49A440aB763EF](https://etherscan.io/address/0x6d5B330523017E2D4EC36ff973a49A440aB763EF)
+
+Proxy [0xDA9f6FB1ef188E081CFBeA74ec820A3718E91f21](https://etherscan.io/address/0xDA9f6FB1ef188E081CFBeA74ec820A3718E91f21)
+
+Global Config [0x77C073a91B53B35382C7C4cdF4079b7E312d552d](https://etherscan.io/address/0x77C073a91B53B35382C7C4cdF4079b7E312d552d)
