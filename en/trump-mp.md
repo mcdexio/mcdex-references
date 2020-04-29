@@ -1,5 +1,5 @@
 # Introduction
-Inspried by FTX, TRUMP 2020 is a futures contract on MCDEX.
+Inspired by FTX, TRUMP 2020 is a futures contract on MCDEX.
 
 
 # Contract Specification 

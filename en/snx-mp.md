@@ -1,5 +1,5 @@
 # Introduction
-Traders are able to gain exposure to crypto asset without taking custody of the underlying asset,by receiving cash settlement rather than the physical delievery.
+Traders are able to gain exposure to crypto asset without taking custody of the underlying asset, by receiving cash settlement rather than the physical delivery.
 
 
 # Contract Specification 

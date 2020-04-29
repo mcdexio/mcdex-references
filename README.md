@@ -1,5 +1,5 @@
 
-# [Gerneral Information](en/general-information.md)
+# [General Information](en/general-information.md)
 
 ## [Introduction](en/general-information.md#introduction)
 
@@ -8,11 +8,11 @@
 ## [Fee](en/general-information.md#fee)
 
 
+
 # [Perpetual](en/perpetual.md)
 
 ## [Introduction](en/perpetual.md#introduction)
 
-...
 
 # [MP Futures](en/mp-futures.md)
 
