@@ -8,7 +8,7 @@ Similarities with Futures:
 - With leverages
 
 Differences from Futures:
-- Each contract comes with a price cap and price floor.Any price goes beyond price cap or below price floor will be regarded price cap/price floor.
+- Each contract comes with a price cap and price floor. Any price goes beyond price cap or below price floor will be regarded price cap/price floor.
 - Margin is fully collateralized, with no margin call.
 
 ## BTC Futures Contract Specifications
