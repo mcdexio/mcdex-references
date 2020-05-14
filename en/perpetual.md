@@ -23,6 +23,7 @@ Funding payments are automatically calculated every second and are added to or s
 
 ## Contract Specification
 
+### ETH-PERP
 
 |Contract Symbol           | 	ETH-PERP                                                |
 | -------------------------|:---------------------------------------------------------: |
@@ -254,6 +255,8 @@ Because of the inefficiency of the blockchain infrastructure, the liquidation me
 Due to the importance of global liquidation, MCDEX will establish a community-led governance committee as soon as possible, and the committee will develop detailed global liquidation trigger mechanisms and processing procedures.
 
 ## Deployed Contracts
+
+### ETH-PERP
 
 |Contract|Description|Address|
 |---|---|---|
