@@ -1,5 +1,7 @@
 # Perpetual
 
+![https://github.com/mcdexio/mai-protocol-v2](https://img.shields.io/badge/GitHub-mcdexio%2Fmai-protocol-v2)
+
 ## Introduction
 
 MCDEX Perpetual is a derivative product similar to the Futures but without an expiry date.
