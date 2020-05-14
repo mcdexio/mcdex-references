@@ -38,11 +38,11 @@ Funding payments are automatically calculated every second and are added to or s
 |Delivery Method|	Cash settlement in ETH|
 
 ## Vanilla & Inverse Contract
-Consider a futures contract on ETH which is quoted in USD. Here, ETH is the base currency and USD is the quote currency.
+Consider a contract on ETH which is quoted in USD. Here, ETH is the base currency and USD is the quote currency.
 
-In a typical (aka vanilla) futures contract, the margin and profit/loss are denominated in the quote currency. Thus, a vanilla futures on ETH which is quoted in USD and is collateralized and settled in USD.
+In a typical (aka vanilla) contract, the margin and profit/loss are denominated in the quote currency. Thus, a vanilla contract on ETH which is quoted in USD and is collateralized and settled in USD.
 
-However, in the case of an inverse contract, margin and profit/loss are denominated in the base currency. Thus, an inverse futures on ETH that is quoted in USD is collateralized and settled in ETH.
+However, in the case of an inverse contract, margin and profit/loss are denominated in the base currency. Thus, an inverse contract on ETH that is quoted in USD is collateralized and settled in ETH.
 
 On the other hand, the inverse contract mentioned above can also be considered as a corresponding vanilla contract on USD  in ETH and collateralized and settled in ETH. Just do the reciprocal of the price quoted in USD and inverse the buy/sell-side to convert the Inverse Contract to the corresponding Vanilla Contract.
 In the MCDEX Mai2 smart contract protocol, there is only a Vanilla Contract. However, to improve user experience, MCDEX performs the above conversion of ETH-PERP on the frontend to provide an Inverse Contract trading experience.
