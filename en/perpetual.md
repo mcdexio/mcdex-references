@@ -184,6 +184,8 @@ Share token holders can remove liquidity from the pool and redeem the share toke
 
 It can be proved that the Mid Price ```x/y``` is not changed after this operation.
 
+Further reading:
+* [How To Add Liquidity To AMM](https://github.com/mcdexio/documents/blob/master/en/how-to-add-liquidity-to-amm.md)
 
 ## Trade with the Order Book
 In order to improve the liquidity, MCDEX Provides an off-chain order book to trade the Perpetual contract. The order book server can only match the orders for the traders. The server can never access the trader's on-chain margin account.
@@ -219,6 +221,10 @@ Order Margin = Max(Buy Orders' Margin, Sell Orders' Margin)
 ```
 
 Withdraw Locked is the amount of margin reserved for withdrawal. See more information about the Withdraw Locked in the next section.
+
+Further reading:
+* [The Margin Account Model](https://github.com/mcdexio/documents/blob/master/en/margin-account-model.md)
+
 ### Broker & Withdraw Time Lock
 
 Because the order book server can only match the orders for the trader and cannot really lock any margin balance like the centralized exchange, a trader could terminate the transaction that is already matched and sent to the block chain's memory pool but has not executed by the miners, by withdrawing the margin or trading with the AMM to make the available margin insufficient. The trader terminates the transactions may because of the price changes to an unconformable price. However, the termination, which can be seen as a kind of so-called "front run", breaks the orders' match result and deprives the trading opportunities of the other traders.
