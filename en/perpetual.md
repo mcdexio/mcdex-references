@@ -280,3 +280,6 @@ Due to the importance of global liquidation, MCDEX will establish a community-le
 |ShareToken     |Share token of the AMM                                  |[0x6d5B330523017E2D4EC36ff973a49A440aB763EF](https://etherscan.io/address/0x6d5B330523017E2D4EC36ff973a49A440aB763EF)|
 |ContractReader |A batch reader in order to reduce calling consumption   |[0xEd1051ef1BFaFA9358341517598D225d852C7796](https://etherscan.io/address/0xEd1051ef1BFaFA9358341517598D225d852C7796)|
   
+## Documents
+
+There are many Perpetual design details not presented in this article, you can check the [MCDEX Documents](https://github.com/mcdexio/documents) to learn more.
