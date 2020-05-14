@@ -1,6 +1,6 @@
 # Perpetual
 
-![https://github.com/mcdexio/mai-protocol-v2](https://img.shields.io/badge/GitHub-mcdexio%2Fmai-protocol-v2)
+![https://github.com/mcdexio/mai-protocol-v2](https://img.shields.io/badge/GitHub-mcdexio%2Fmai--protocol--v2-success)
 
 ## Introduction
 
