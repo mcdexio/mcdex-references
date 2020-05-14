@@ -11,7 +11,7 @@ Currently, MCDEX Perpetual has two trading pages:
 - **Order Book**: order book trading
 - **AMM (Automatic Market Maker)**: AMM acts as a counterparty
 
-MCDEX Perpetual features funding payments to soft-peg the price of the perpetual contract to the ETH price.
+MCDEX Perpetual features [funding payments](#funding-rate) to soft-peg the price of the perpetual contract to the [Index price](#index-oracle).
 
 If Perpetual trades higher than the Index price, the long position holders make a funding payment to the short position holders. This increases the holding cost for long position holders because of which they eventually execute sell orders thereby pushing the Perpetual price down towards the Index price.
 
@@ -36,6 +36,7 @@ Funding payments are automatically calculated every second and are added to or s
 |Mark Price|It is the price at which the Perpetual contract is valued during trading hours. This can (temporarily) vary from the actual Perpetual Market Price to protect against manipulative trading. Mark Price is calculated as Index price + 600 seconds EMA of (Perpetual Fair Price - Index Price).  The Perpetual Fair Price is the Mid Price of AMM.
 |Delivery/Expiration|	No Delivery/Expiration|
 |Delivery Method|	Cash settlement in ETH|
+|Contract Type| [Inverse Contract](#vanilla--inverse-contract) |
 
 ## Vanilla & Inverse Contract
 Consider a contract on ETH which is quoted in USD. Here, ETH is the base currency and USD is the quote currency.
@@ -72,8 +73,6 @@ In general, Funding Rate = Maximum (0.05%, Premium Rate) + Minimum (-0.05%, Prem
 
 The actual Funding Payment is calculated by multiplying the Funding Rate by the position size in ETH and the Time Fraction in hours.
 ```Funding Payment = Funding Rate * Position Size ETH * Time Fraction```
-
-
 
 The funding payed or received is continuously added to your cash balance.
 
