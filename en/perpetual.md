@@ -8,8 +8,10 @@ MCDEX Perpetual is a derivative product similar to the Futures but without an ex
 
 Currently, MCDEX Perpetual has two trading pages:
 
-- **Order Book**: order book trading
-- **AMM (Automatic Market Maker)**: AMM acts as a counterparty
+- **Order Book**: An off-chain order book trading interface.
+- **AMM (Automatic Market Maker)**: An on-chain trading interface which is always online and acts as a counterparty.
+
+The AMM is always online, and providing trading services at a predefined pricing formula. Traders can also choose the order book for a better liquidity, better slippage, and similar experience with Perpetual on centralized exchanges. 
 
 MCDEX Perpetual features [funding payments](#funding-rate) to soft-peg the price of the perpetual contract to the [Index price](#index-oracle).
 
@@ -20,6 +22,10 @@ Similarly, If Perpetual trades lower than the Index price, the short position ho
 MCDEX Perpetual continuously measures the difference between Mark Price of the Perpetual contract and Chainlink's ETH/USD Index. The percentage difference between these two prices acts as the basis for the 8-hourly funding rate applied to all outstanding perpetual contracts.
 
 Funding payments are automatically calculated every second and are added to or subtracted from the available trading balance in your realized PNL account (which is also part of your available trading balance). You can withdraw your realized PNL balance from your Margin account at any time.
+
+Further reading:
+* If you are interested in the architecture of order book and AMM, you can refer to the [Architecture](https://github.com/mcdexio/documents/blob/master/en/perpetual-onchain-and-offchain-architecture.md).
+* If you are interested in why we design AMM, you can refer to [Why AMM Is Crucial To Decentralized Perpetual Contracts](https://medium.com/@montecarlodex/why-amm-is-crucial-to-decentralized-perpetual-contracts-70e3159d270d).
 
 ## Contract Specification
 
