@@ -1,6 +1,6 @@
 # MP Futures
 
-![https://github.com/mcdexio/mai-protocol](https://img.shields.io/badge/GitHub-mcdexio%2Fmai-protocol)
+![https://github.com/mcdexio/mai-protocol](https://img.shields.io/badge/Github-mcdex%2Fmai--protocol-success)
 
 ## Introduction
 MP Futures is a financial tool innovation.
