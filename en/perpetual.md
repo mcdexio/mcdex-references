@@ -103,7 +103,7 @@ Isolated Margin is the margin balance allocated to an individual position. Isola
 
 With isolated Margin mode, the trader will never incur a loss more than the margin balance. In such a case, the trader's position gets liquidated along with the isolated margin balance.
 
-As the effective leverage of the position is equal to the Position Value / Margin Balance, traders can change their position's leverage by adjusting the margin balance. Depositing more collateral to the Isolated Margin reduces the effective leverage while withdrawing collateral from the Isolated Margin increase the effective leverage.
+As the effective leverage of the position is equal to the `Position Value / Margin Balance`, traders can change their position's leverage by adjusting the margin balance. Depositing more collateral to the Isolated Margin reduces the effective leverage while withdrawing collateral from the Isolated Margin increase the effective leverage.
 
 The traders can increase their position size whenever the margin balance is greater than the initial margin. In such a case, the position will get liquidated when the margin balance is less than the maintenance margin.
 
