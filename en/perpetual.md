@@ -39,7 +39,7 @@ Funding payments are automatically calculated every second and are added to or s
 |Delivery Method|	Cash settlement in ETH|
 |Contract Type| [Inverse Contract](#vanilla-amp-inverse-contract) |
 
-## Quick Start
+## Trading Example
 
 Each trader has an [isolated margin](#isolated-margin) account. A margin account consists of `Margin Balance` and `Position`. Trader deposits to the `Margin Balance` and PNL is automatically added to the `Margin Balance`. The calculation method of PNL is related to the contract type, which we explain in the following examples.
 
@@ -47,12 +47,12 @@ Each trader has an [isolated margin](#isolated-margin) account. A margin account
 
 ETH-PERP is an [Inverse Contract](#vanilla-amp-inverse-contract). The collateral is ETH, and contract size is 1 USD.
 
-| Action | Margin Balance | Position | Index Price | Explain |
-| ------ | -------------- | -------- | ----------- | ------- |
-| Deposit 1 ETH | 1 ETH | 0 USD | 200 USD/ETH | Deposit collateral into margin account |
-| Buy/Long 100 USD at price 200 | 1 ETH | +100 USD | 200 USD/ETH | `Entry Price` = 200 |
-| On-chain Index rises | 1.0122 ETH | +100 USD | 205 USD/ETH | `Long's PNL = (1 / Entry Price - 1 / Exit Price) * Position`(&ast;&ast;) |
-| Sell/Short 100 USD at price 205 | 1.0122 ETH | 0 USD | 205 USD/ETH | Close the position |
+| Action | Margin Balance | Position | Index Price (USD/ETH) | Explain |
+| ------ | :------------: | :------: | :-------------------: | ------- |
+| Deposit 1 ETH | **1 ETH** | 0 USD | 200 | Deposit collateral into margin account |
+| Buy/Long 1000 USD at price 200 | 1 ETH | **+1000 USD** | 200 | `Entry Price = 200`, `Leverage = (1000 / 200) / 1 = 5x` |
+| On-chain Index rises | **1.122 ETH** | +1000 USD | 205 | `Long's PNL = (1 / Entry Price - 1 / Exit Price) * Position`(&ast;&ast;), `Leverage = (1000 / 205) / 1.122 = 4.35x` |
+| Sell/Short 100 USD at price 205 | 1.122 ETH | **0 USD** | 205 | Close the position |
 
 &ast;&ast; This example assumes [Mark Price](#mark-price) = [Index Price](#index-oracle)
 
