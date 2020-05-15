@@ -1,75 +1,75 @@
-# [General Information](en/general-information.md)
+## [General Information](en/general-information.md)
 
-## [Introduction](en/general-information.md#introduction)
+### [Introduction](en/general-information.md#introduction)
 
-## [Types of Orders](en/general-information.md#types-of-orders)
+### [Types of Orders](en/general-information.md#types-of-orders)
 
-## [Fee](en/general-information.md#fee)
-
-
-
-# [Perpetual](en/perpetual.md)
-
-## [Introduction](en/perpetual.md#introduction)
-
-## [Contract Specification](en/perpetual.md#contract-specification)
-
-## [Trading Examples](en/perpetual.md#trading-examples)
-
-## [Vanilla & Inverse Contract](en/perpetual.md#vanilla--inverse-contract)
-
-## [Funding Rate](en/perpetual.md#funding-rate)
-
-## [Mark Price](en/perpetual.md#mark-price)
-
-## [Isolated Margin](en/perpetual.md#isolated-margin)
-
-## [Automated Market Maker](en/perpetual.md#automated-market-maker)
-
-## [Provide Liquidity to AMM](en/perpetual.md#provide-liquidity-to-amm)
-
-## [Trade with the Order Book](en/perpetual.md#trade-with-the-order-book)
-
-## [Connection Between AMM & Order Book](en/perpetual.md#connection-between-amm--order-book)
-
-## [Index Oracle](en/perpetual.md#index-oracle)
-
-## [Auto Liquidation](en/perpetual.md#auto-liquidation)
-
-## [Global Settlement](en/perpetual.md#global-settlement)
-
-## [Deployed Contracts](en/perpetual.md#deployed-contracts)
+### [Fee](en/general-information.md#fee)
 
 
-# [Perpetual Technical Guide](en/perpetual-tech.md)
 
-## [Architecture](en/perpetual-tech.md#architecture)
+## [Perpetual](en/perpetual.md)
 
-## [Margin Account](en/perpetual-tech.md#margin-account)
+### [Introduction](en/perpetual.md#introduction)
 
-## [How to Add Liquidity to AMM](en/perpetual-tech.md#how-to-add-liquidity-to-amm)
+### [Contract Specification](en/perpetual.md#contract-specification)
 
-## [Contract Architecture](en/perpetual-tech.md#contract-architecture)
+### [Trading Examples](en/perpetual.md#trading-examples)
 
-## [Contract Interfaces](en/perpetual-tech.md#contract-interfaces)
+### [Vanilla & Inverse Contract](en/perpetual.md#vanilla--inverse-contract)
 
-## [Admin Functions](en/perpetual-tech.md#admin-functions)
+### [Funding Rate](en/perpetual.md#funding-rate)
 
-## [How to Build The Contracts](en/perpetual-tech.md#how-to-build-the-contracts)
+### [Mark Price](en/perpetual.md#mark-price)
 
-## [Development Resources](en/perpetual-tech.md#development-resources)
+### [Isolated Margin](en/perpetual.md#isolated-margin)
+
+### [Automated Market Maker](en/perpetual.md#automated-market-maker)
+
+### [Provide Liquidity to AMM](en/perpetual.md#provide-liquidity-to-amm)
+
+### [Trade with the Order Book](en/perpetual.md#trade-with-the-order-book)
+
+### [Connection Between AMM & Order Book](en/perpetual.md#connection-between-amm--order-book)
+
+### [Index Oracle](en/perpetual.md#index-oracle)
+
+### [Auto Liquidation](en/perpetual.md#auto-liquidation)
+
+### [Global Settlement](en/perpetual.md#global-settlement)
+
+### [Deployed Contracts](en/perpetual.md#deployed-contracts)
 
 
-# [MP Futures](en/mp-futures.md)
+## [Perpetual Technical Guide](en/perpetual-tech.md)
 
-## [Introduction](en/mp-futures.md#introduction)
+### [Architecture](en/perpetual-tech.md#architecture)
 
-## [BTC Futures Contract Specifications](en/mp-futures.md#btc-futures-contract-specifications)
+### [Margin Account](en/perpetual-tech.md#margin-account)
 
-## [ETH Futures Contract Specifications](en/mp-futures.md#eth-futures-contract-specifications)
+### [How to Add Liquidity to AMM](en/perpetual-tech.md#how-to-add-liquidity-to-amm)
 
-## [TRUMP 2020 Contract Specifications](en/mp-futures.md#trump-2020-contract-specifications)
+### [Contract Architecture](en/perpetual-tech.md#contract-architecture)
 
-## [Oracle](en/mp-futures.md#oracle)
+### [Contract Interfaces](en/perpetual-tech.md#contract-interfaces)
 
-## [Architecture](en/mp-futures.md#architecture)
+### [Admin Functions](en/perpetual-tech.md#admin-functions)
+
+### [How to Build The Contracts](en/perpetual-tech.md#how-to-build-the-contracts)
+
+### [Development Resources](en/perpetual-tech.md#development-resources)
+
+
+## [MP Futures](en/mp-futures.md)
+
+### [Introduction](en/mp-futures.md#introduction)
+
+### [BTC Futures Contract Specifications](en/mp-futures.md#btc-futures-contract-specifications)
+
+### [ETH Futures Contract Specifications](en/mp-futures.md#eth-futures-contract-specifications)
+
+### [TRUMP 2020 Contract Specifications](en/mp-futures.md#trump-2020-contract-specifications)
+
+### [Oracle](en/mp-futures.md#oracle)
+
+### [Architecture](en/mp-futures.md#architecture)
