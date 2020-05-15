@@ -20,14 +20,24 @@
 ## [Automated Market Maker](en/perpetual.md#automated-market-maker)
 ## [Provide Liquidity to AMM](en/perpetual.md#provide-liquidity-to-amm)
 ## [Trade with the Order Book](en/perpetual.md#trade-with-the-order-book)
-## [Connection Between AMM & Order Book](en/perpetual.md#connection-between-amm--orderbook)
+## [Connection Between AMM & Order Book](en/perpetual.md##connection-between-amm--order-book)
 ## [Index Oracle](en/perpetual.md#index-oracle)
 ## [Auto Liquidation](en/perpetual.md#auto-liquidation)
-## [Global Settlement](en/perpetual.md#globalsettlement)
-## [Deployed Contracts](en/perpetual.md#Deployed-contracts)
+## [Global Settlement](en/perpetual.md#global-settlement)
+## [Deployed Contracts](en/perpetual.md#deployed-contracts)
 
 
 # [Perpetual Technical Guide](en/perpetual-tech.md)
+## [Architecture](en/perpetual-tech.md#architecture)
+## [Margin Account](en/perpetual-tech.md#margin-account)
+## [How to Add Liquidity to AMM](en/perpetual-tech.md#how-to-add-liquidity-to-amm)
+## [How to Add Liquidity to AMM](en/perpetual-tech.md#how-to-add-liquidity-to-amm)
+## [Contract Architecture](en/perpetual-tech.md#contract-architecture)
+## [Contract Interfaces](en/perpetual-tech.md#contract-interfaces)
+## [Admin Functions](en/perpetual-tech.md#admin-functions)
+## [How to Build The Contracts](en/perpetual-tech.md#how-to-build-the-contracts)
+## [Development Resources](en/perpetual-tech.md#development-resources)
+
 
 
 # [MP Futures](en/mp-futures.md)
