@@ -39,7 +39,7 @@ Funding payments are automatically calculated every second and are added to or s
 |Delivery Method|	Cash settlement in ETH|
 |Contract Type| [Inverse Contract](#vanilla-amp-inverse-contract) |
 
-## Trading Example
+## Trading Examples
 
 Each trader has an [isolated margin](#isolated-margin) account. A margin account consists of `Margin Balance` and `Position`. Trader deposits to the `Margin Balance` and PNL is automatically added to the `Margin Balance`. The calculation method of PNL is related to the contract type, which we explain in the following examples.
 
