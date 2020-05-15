@@ -68,7 +68,7 @@
 
 ## [ETH Futures Contract Specifications](en/mp-futures.md#eth-futures-contract-specifications)
 
-## [TRUMP 2020 Contract Specifications](en/mp-futures.md#trump-futures-contract-specifications)
+## [TRUMP 2020 Contract Specifications](en/mp-futures.md#trump-2020-contract-specifications)
 
 ## [Oracle](en/mp-futures.md#oracle)
 
