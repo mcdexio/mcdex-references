@@ -1,4 +1,4 @@
-# Perpetual Technical Guidelines
+# Perpetual Technical Guide
 
 This document focuses on some technical details, especially the formulas of the contract.
 

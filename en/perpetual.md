@@ -250,7 +250,7 @@ To prevent this kind of termination, the order book server needs to be able to d
 
 2.	The trader needs to "apply" before withdrawing from margin balance when use an order book. The application will take effect after 3 block confirmations (time lock) automatically without anyone's permission. The order book server takes the applied amount as "Withdraw Locked". The 3 block time is long enough for the order book server to cancel orders if the margin balance is insufficient. The trader need not apply before withdrawal if his/her "broker" is the AMM.
 
-## Connection Between AMM and Order Book
+## Connection Between AMM & Order Book
 
 Note that our Perpetual contracts can work without the order book. If the order book is down for some reason, the perpetual system still works, with the funding rate derived from the AMM. The off-chain order book strengthens the whole system. With arbitragers moving liquidity between the order book and AMM, the AMM has better liquidity and price. The system is designed in a way to delight our users with magnificent on-chain experiences.
 

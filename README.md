@@ -14,7 +14,7 @@
 ## [Introduction](en/perpetual.md#introduction)
 
 
-# [Perpetual Technical Guidelines](en/perpetual-tech.md)
+# [Perpetual Technical Guide](en/perpetual-tech.md)
 
 
 # [MP Futures](en/mp-futures.md)
