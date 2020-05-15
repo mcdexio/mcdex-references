@@ -282,5 +282,4 @@ Due to the importance of global liquidation, MCDEX will establish a community-le
 
 There are many Perpetual design details not presented in this article, you can check the [MCDEX Documents](https://github.com/mcdexio/documents/blob/master/README.md#mai-protocol-v2---perpetual-docs) to learn more.
 
-![https://github.com/mcdexio/mai-protocol-v2](https://img.shields.io/badge/github-mcdex%2Fmai--protocol--v2-success)
-
+[![mcdexio/mai-protocol-v2](https://img.shields.io/badge/github-mcdex%2Fmai--protocol--v2-success)](https://github.com/mcdexio/mai-protocol-v2)
