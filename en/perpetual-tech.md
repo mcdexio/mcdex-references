@@ -677,13 +677,13 @@ This contract plays as the role of address holder for AMM contract.
 
 **Interact with collaterals (cash balance):**
 
-```solidity
+```javascript
 getCashBalance(address guy)
 ```
 
 Return cash balance storage variables of guy, which is defined as:
 
-```solidity
+```javascript
 struct CollateralAccount {
     // current deposited erc20 token amount, representing in decimals 18
     int256 balance;
@@ -697,7 +697,7 @@ struct CollateralAccount {
 
 See "Broker & Withdraw Time Lock" section in the [references page](en/perpetual#trade-with-the-order-book) for the design of time lock.
 
-```solidity
+```javascript
 deposit(uint256 amount) NORMAL
 ```
 Deposit transfer collaterals from caller's address to contract. It accept an amount parameter which indicates the total amount of collaterals that user wants to transfer to contract.
@@ -705,25 +705,25 @@ Approval is required;
 
 **amount should be a fixed float with token's decimals which will be convert to a decimals-18 representation. E.G. Jim deposits 1e6 USDT, later he will found 1e18 collaterals in his account of Mai protocol v2. This only affects internal calculation*
 
-```solidity
+```javascript
 depositEther() NORMAL
 ```
 
 Ether version of deposit, using msg.value instead. See description above for details. When using ether, the decimals will be automatically set to 18.
 
-```solidity
+```javascript
 applyForWithdrawal(uint256 amount) NORMAL
 ```
 
 Request for further withdrawal of caller's account. This method functions like approve of erc20. Trader could apply for the amount that far greater than actual balance he owned, but applied part is no longer available for position trading.
 
-```solidity
+```javascript
 withdraw(uint256 amount) NORMAL
 ```
 
 Withdraw given amount collateral back to caller's ethereum address. Note that withdraw doesn't distinguish between erc20 and ether.
 
-```solidity
+```javascript
 settle() SETTLED
 ```
 
@@ -732,7 +732,7 @@ Settle is a special version of withdraw which is only available when global sett
 Settle can be call multiple times but only the first successful call will actually do the job.
 
 
-```solidity
+```javascript
 depositToInsuranceFund(uint256 amount)
 depositEtherToInsuranceFund()
 ```
@@ -749,13 +749,13 @@ Calling trade method of perpetual may break constraints that long position shoul
 
 The only interface available to a typical trader is:
 
-```solidity
+```javascript
 getPosition(address guy)
 ```
 
 Return position storage variables of guy, which is defined as:
 
-```solidity
+```javascript
 struct PositionAccount {
     LibTypes.Side side;
     uint256 size;
@@ -765,7 +765,7 @@ struct PositionAccount {
 }
 ```
 
-```solidity
+```javascript
 totalSize(Side side)
 ```
 
@@ -773,19 +773,19 @@ Return total size of positions. Side has 3 available value: FLAT(0), SHORT(1) an
 
 *The constraint is that totalSize(SHORT) should always be equal to totalSize(LONG) and totalSize(FLAT) should always be zero.*
 
-```solidity
+```javascript
 socialLossPerContract(Side side)
 ```
 
 Return social loss per contract of given side. Normally, the value of each side should never decrease.
 
-```solidity
+```javascript
 positionMargin(address guy)
 ```
 
 Methods of calculating position value requires mark price from amm contract. This price will be replaced by settlement price set by administrator in settlement status (SETTLING, SETTLED).
 
-```solidity
+```javascript
 maintenanceMargin(address guy)
 ```
 
@@ -795,13 +795,13 @@ If the current value of positions falls below maintenance margin, the account wi
 
 When the value falls below zero, the account is 'bankrupt'.
 
-```solidity
+```javascript
 pnl(address guy)
 ```
 
 Return profit and loss of account base on current mark price. This value would be added to balance on remargin, which is usually happens on withdrawal and settlement.
 
-```solidity
+```javascript
 availableMargin(address guy)
 ```
 
@@ -809,7 +809,7 @@ Return available margin of account base on current mark price.
 
 The pnl is already included.
 
-```solidity
+```javascript
 drawableBalance(address guy)
 ```
 
@@ -817,7 +817,7 @@ Return drawable balance of account base on current mark price. Trader could get 
 
 The pnl is already included.
 
-```solidity
+```javascript
 isIMSafe(address guy)       // is initial margin safe.
 isSafe(address guy)         // is maintainance margin safe;
 isBankrupt(address guy)
@@ -825,7 +825,7 @@ isBankrupt(address guy)
 
 These three test method is used to test current status of an account.
 
-```solidity
+```javascript
 insuranceFundBalance()
 ```
 
@@ -859,20 +859,20 @@ There is a delay mechanism on setting broker address, see "Broker & Withdraw Tim
 
 Perpetual contract provider interface of setting brokers, but the applying delay is determined by global config.
 
-```solidity
+```javascript
 currentBroker(address trader)
 ```
 
 Return current broker's address of given trader address. If last setting is not applied, this function will return last applied broker address.
 
 
-```solidity
+```javascript
 setBroker(address broker)
 ```
 
 Set caller's broker to given account.
 
-```solidity
+```javascript
 getBroker(address trader)
 ```
 
@@ -883,7 +883,7 @@ Return broker storage of given account. For normal case, trader should call curr
 
 Exchange protocol dose exchange between one taker and some makers. Traders sign for their order content and another actor named broker call match method for them, claiming trading fee from both side.
 
-```solidity
+```javascript
 struct OrderParam {
     address trader;
     uint256 amount;
@@ -930,7 +930,7 @@ Some properties is encoded into data field:
 | reserved       | 8              |                                                              |
 
 
-```solidity
+```javascript
 matchOrderWithAMM(LibOrder.OrderParam memory takerOrderParam, address _perpetual, uint256 amount)
 ```
 
@@ -942,13 +942,13 @@ Match taker orders with amm. The main difference between this method and amm tra
 
 AMM has some Uniswap-like interfaces which allows trader to trade with internal assets pool.
 
-```solidity
+```javascript
 createPool(uint256 amount)
 ```
 
 Open asset pool by deposit to amm. Only available when pool is empty.
 
-```solidity
+```javascript
 buy(uint256 amount, uint256 limitPrice, uint256 deadline)
 ```
 
@@ -956,51 +956,51 @@ Buy position from amm. It could be open or close or both based on which side of 
 
 LimitPrice is the upperbound of bid price. Deadline is a unix-timestamp in seconds. Any unsatisfied condition will fail trading transaction.
 
-```solidity
+```javascript
 sell(uint256 amount, uint256 limitPrice, uint256 deadline)
 ```
 
 Similar to buy, but limitPrice is the lowerbond of bid price.
 
-```solidity
+```javascript
 addLiquidity(uint256 amount)
 ```
 
 Add liquidity to amm asset pool. See design of amm for details.
 
 
-```solidity
+```javascript
 removeLiquidity(uint256 shareAmount)
 ```
 
 Remove liquidity to amm asset pool. See design of amm for details.
 
 
-```solidity
+```javascript
 settleShare()
 ```
 
 A special method to remove liquidity only works in settled status. Use a different equation to calculate how much collateral should be returned for a share.
 
-```solidity
+```javascript
 updateIndex()
 ```
 
 Update index variable in amm. Caller will get some reward determined by governance parameter.
 
-```solidity
+```javascript
 shareTokenAddress()
 ```
 
 Return address of share token for current amm. One deployed instance of share token is only available to one amm contract.
 
-```solidity
+```javascript
 indexPrice()
 ```
 
 Return index read from oracle, updated through updateIndex call.
 
-```solidity
+```javascript
 currentFairPrice()
 positionSize()
 currentAvailableMargin()
@@ -1008,7 +1008,7 @@ currentAvailableMargin()
 
 Return position properties of amm contract.
 
-```solidity
+```javascript
 lastFundingState()
 lastFundingRate()
 currentFundingState()
@@ -1034,7 +1034,7 @@ Only admin can call the following functions. The main purpose includes:
   * Switch into "Emergency" status which (1) stops tradings and withdraws, (2) sets the global settlement price
   * Correct hacked (ex: Oracle price hack) data in "Emergency" status
 
-:warning: **Due to the importance of global liquidation, MCDEX will establish a community-led governance committee as soon as possible, and the committee will develop detailed global liquidation trigger mechanisms and processing procedures.**
+**WARNING: Due to the importance of global liquidation, MCDEX will establish a community-led governance committee as soon as possible, and the committee will develop detailed global liquidation trigger mechanisms and processing procedures.**
 
 ### Perpetual
 
