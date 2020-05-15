@@ -294,11 +294,3 @@ Due to the importance of global liquidation, MCDEX will establish a community-le
 |PriceFeeder    |Price oracle                                            |[0x133906776302D10A2005ec2eD0C92ab6F2cbd903](https://etherscan.io/address/0x133906776302D10A2005ec2eD0C92ab6F2cbd903)|
 |ShareToken     |Share token of the AMM                                  |[0x6d5B330523017E2D4EC36ff973a49A440aB763EF](https://etherscan.io/address/0x6d5B330523017E2D4EC36ff973a49A440aB763EF)|
 |ContractReader |A batch reader in order to reduce calling consumption   |[0xEd1051ef1BFaFA9358341517598D225d852C7796](https://etherscan.io/address/0xEd1051ef1BFaFA9358341517598D225d852C7796)|
-
-
-## News and Reports
-* [Introducing MCDEX V2- Perpetual](https://medium.com/@montecarlodex/introduce-mcdex-v2-perpetual-c97b18ff4e23)
-* [MCDEX's Perpetual Contracts to Leverage Chainlink Oracles for Index Prices](https://medium.com/@montecarlodex/mcdexs-perpetual-contracts-to-leverage-chainlink-oracles-for-index-prices-7af84eb319d9)
-* [MCDEX 2020 Prospect](https://medium.com/@montecarlodex/mcdex-2020-prospect-b47a74cd94d3)
-* [Why AMM is Crucial to Decentralized Perpetual Contracts](https://medium.com/@montecarlodex/why-amm-is-crucial-to-decentralized-perpetual-contracts-70e3159d270d)
-
