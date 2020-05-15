@@ -64,12 +64,12 @@
 
 ## [Introduction](en/mp-futures.md#introduction)
 
-## [BTC Futures](en/mp-futures.md#BTC)
+## [BTC Futures Contract Specifications](en/mp-futures.md#btc-futures-contract-specifications)
 
-## [ETH Futures](en/mp-futures.md#ETH)
+## [ETH Futures Contract Specifications](en/mp-futures.md#eth-futures-contract-specifications)
 
-## [TRUMP Futures](en/mp-futures.md#TRUMP)
+## [TRUMP 2020 Contract Specifications](en/mp-futures.md#trump-futures-contract-specifications)
 
-## [Oracle](en/mp-futures.md#Oracle)
+## [Oracle](en/mp-futures.md#oracle)
 
 ## [Architecture](en/mp-futures.md#architecture)
