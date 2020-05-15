@@ -76,4 +76,5 @@ MP futures use Coincap as price feed.
 
 There are many Perpetual design details not presented in this article, you can check the [MCDEX Documents](https://github.com/mcdexio/documents) to learn more.
 
-![https://github.com/mcdexio/mai-protocol](https://img.shields.io/badge/github-mcdex%2Fmai--protocol-success)
+[![mcdexio/mai-protocol](https://img.shields.io/badge/github-mcdex%2Fmai--protocol-success)](https://github.com/mcdexio/mai-protocol)
+
