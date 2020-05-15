@@ -2,12 +2,12 @@
 
 ## Introduction
 
-MCDEX Perpetual is a derivative product similar to the Futures but without an expiry date.
+MCDEX Perpetual is a derivative product similar to the Futures but without an expiry date. MCDEX Perpetual uses our new a [Mai Protocol V2](https://github.com/mcdexio/mai-protocol-v2) smart contract on Ethereum.
 
 Currently, MCDEX Perpetual has two trading pages:
 
 - **Order Book**: Similar to trading Perpetual contract on a centralized exchange.
-- **AMM (Automatic Market Maker)**: Fully decentralized trading interface, simple & intuitive UX.
+- [**AMM (Automatic Market Maker)**](#automated-market-maker): Fully decentralized trading interface, simple & intuitive UX.
 
 The AMM is always online, and providing trading services as a counterparty at a predefined pricing formula. Traders can also choose the order book for a better liquidity, better slippage, and similar experience with Perpetual on centralized exchanges. 
 
@@ -21,9 +21,6 @@ MCDEX Perpetual continuously measures the difference between Mark Price of the P
 
 Funding payments are automatically calculated every second and are added to or subtracted from the available trading balance in your realized PNL account (which is also part of your available trading balance). You can withdraw your realized PNL balance from your Margin account at any time.
 
-Further reading:
-* [The Architecture of Order Book and AMM](https://github.com/mcdexio/documents/blob/master/en/perpetual-onchain-and-offchain-architecture.md)
-* [Why AMM Is Crucial To Decentralized Perpetual Contracts](https://medium.com/@montecarlodex/why-amm-is-crucial-to-decentralized-perpetual-contracts-70e3159d270d)
 
 ## Contract Specification
 
@@ -42,7 +39,25 @@ Further reading:
 |Delivery Method|	Cash settlement in ETH|
 |Contract Type| [Inverse Contract](#vanilla--inverse-contract) |
 
+## Quick Start
+
+Each trader has an [isolated margin](#isolated-margin) account. A margin account consists of `Margin Balance` and `Position`. Trader deposits to the `Margin Balance` and PNL is automatically added to the `Margin Balance`. The calculation method of PNL is related to the contract type, which we explain in the following examples.
+
+### ETH-PERP
+
+ETH-PERP is an [Inverse Contract](#vanilla-amp-inverse-contract). The collateral is ETH, and contract size is 1 USD.
+
+| Action | Margin Balance | Position | Index Price | Explain |
+| ------ | -------------- | -------- | ----------- | ------- |
+| Deposit 1 ETH | 1 ETH | 0 USD | 200 USD/ETH | Deposit collateral into margin account |
+| Buy/Long 100 USD at price 200 | 1 ETH | +100 USD | 200 USD/ETH | `Entry Price` = 200 |
+| On-chain Index rises | 1.0122 ETH | +100 USD | 205 USD/ETH | `Long's PNL = (1 / Entry Price - 1 / Exit Price) * Position`(&ast;&ast;) |
+| Sell/Short 100 USD at price 205 | 1.0122 ETH | 0 USD | 205 USD/ETH | Close the position |
+
+&ast;&ast; This example assumes [Mark Price](#mark-price) = [Index Price](#index-oracle)
+
 ## Vanilla & Inverse Contract
+
 Consider a contract on ETH which is quoted in USD. Here, ETH is the base currency and USD is the quote currency.
 
 In a typical (aka vanilla) contract, the margin and profit/loss are denominated in the quote currency. Thus, a vanilla contract on ETH which is quoted in USD and is collateralized and settled in USD.
@@ -53,6 +68,7 @@ On the other hand, the inverse contract mentioned above can also be considered a
 In the MCDEX Mai2 smart contract protocol, there is only a Vanilla Contract. However, to improve user experience, MCDEX performs the above conversion of ETH-PERP on the frontend to provide an Inverse Contract trading experience.
 
 ## Funding Rate
+
 The Funding rate calculations in Perpetual Contracts for positive and negative Funding cases are identical in nature.
 
 A positive Funding rate means longs (long position holders) pay to fund shorts (short position holders). Similarly, a negative Funding rate means shorts (short position holders) pay to fund longs (long position holders). At any given point in time, the Funding rate percentage expressed as an 8-hourly interest rate is calculated as follows:
@@ -83,6 +99,7 @@ The funding payed or received is continuously added to your cash balance.
 No fees on Funding: MCDEX does not charge any fees on Funding and all Funding is transferred between participants in the Perpetual Contracts. This makes Funding a zero-sum game, where longs receive all Funding from shorts and vice versa.
 
 ## Mark Price
+
 Mark Price is the price at which the Perpetual Contract gets valued during trading hours. Mark Price may (temporarily) vary from actual perpetual market prices to protect against manipulative trading.
 
 It is important to understand how the Mark Price is being calculated. We start with determining a "Fair Price". To make the Mark Price and Funding Rate independent to any off-chain facilities, MCDEX uses the "Mid Price" of the on-chain AMM as the "Fair Price". See more details about the "Mid Price" of the AMM in the corresponding chapter.
@@ -108,6 +125,7 @@ As the effective leverage of the position is equal to the `Position Value / Marg
 The traders can increase their position size whenever the margin balance is greater than the initial margin. In such a case, the position will get liquidated when the margin balance is less than the maintenance margin.
 
 ## Automated Market Maker
+
 MCDEX has tried its best to make the Perpetual Contract as decentralized as possible.
 Here are the two key goals for MCDEX:
 1. The Funding Rate & Mark Price must be derived on the blockchain.
@@ -174,6 +192,8 @@ The liquidity provider gets the share tokens of the pool.
 
 When adding liquidity, the provider adds both collateral tokens & long position to the pool: 1.the provider sends collateral to the pool; 2. meanwhile the provider trade as a seller with the pool, which will increase the long position size of the pool. After adding, the provider has a short position in his/her margin account and shares of the pool's long position, the net position should be zero. However, when other traders trade with the pool, the position size of the pool changes. As a result, the provider's net position size is not zero, which is risk exposure. The provider gets the trading fee as an incentive.
 
+Check more examples [here](en/perpetual-tech#add-liquidity-to-amm).
+
 
 ### Remove Liquidity
 Share token holders can remove liquidity from the pool and redeem the share tokens. Let s be the trader's share (percent) of the pool. To remove liquidity, the trader calls smart contract to do as follows:
@@ -182,8 +202,8 @@ Share token holders can remove liquidity from the pool and redeem the share toke
 
 It can be proved that the Mid Price ```x/y``` is not changed after this operation.
 
-Further reading:
-* [How To Add Liquidity To AMM](https://github.com/mcdexio/documents/blob/master/en/how-to-add-liquidity-to-amm.md)
+Check more examples [here](en/perpetual-tech#remove-liquidity-from-amm).
+
 
 ## Trade with the Order Book
 In order to improve the liquidity, MCDEX Provides an off-chain order book to trade the Perpetual contract. The order book server can only match the orders for the traders. The server can never access the trader's on-chain margin account.
@@ -202,15 +222,15 @@ Remember that the target leverage is only a setting in the off-chain order book 
 The order book server calculates the available margin for placing new orders as follow: (as the vanilla contract)
 
 ```
-Available = Margin Balance – Position Margin – Order Margin – Withdraw Locked
+Available = Margin Balance - Position Margin - Order Margin - Withdraw Locked
 Position Margin = Mark Price * Position Size / Target Leverage
 ```
 
 ```Order Margin``` is the margin balance reserved for the active orders by order book server. The orders that close later cost no order margin. For the orders that goes to positions, the order margin is calculated:
 ```
 Open Order Margin = Order Price * Order Amount / Target Leverage + Potential Loss + Fee
-Buy Order Potential Loss = Max((Order Price – Mark Price) * Order Amount, 0)
-Sell Order Potential Loss = Max((Mark Price – Order Price) * Order Amount, 0)
+Buy Order Potential Loss = Max((Order Price - Mark Price) * Order Amount, 0)
+Sell Order Potential Loss = Max((Mark Price - Order Price) * Order Amount, 0)
 ```
 
 The order margin of the buy orders and sell orders are calculated separately. And the total order margin is:
@@ -219,9 +239,6 @@ Order Margin = Max(Buy Orders' Margin, Sell Orders' Margin)
 ```
 
 Withdraw Locked is the amount of margin reserved for withdrawal. See more information about the Withdraw Locked in the next section.
-
-Further reading:
-* [The Margin Account Model](https://github.com/mcdexio/documents/blob/master/en/margin-account-model.md)
 
 ### Broker & Withdraw Time Lock
 
@@ -277,9 +294,11 @@ Due to the importance of global liquidation, MCDEX will establish a community-le
 |PriceFeeder    |Price oracle                                            |[0x133906776302D10A2005ec2eD0C92ab6F2cbd903](https://etherscan.io/address/0x133906776302D10A2005ec2eD0C92ab6F2cbd903)|
 |ShareToken     |Share token of the AMM                                  |[0x6d5B330523017E2D4EC36ff973a49A440aB763EF](https://etherscan.io/address/0x6d5B330523017E2D4EC36ff973a49A440aB763EF)|
 |ContractReader |A batch reader in order to reduce calling consumption   |[0xEd1051ef1BFaFA9358341517598D225d852C7796](https://etherscan.io/address/0xEd1051ef1BFaFA9358341517598D225d852C7796)|
-  
-## Documents
 
-There are many Perpetual design details not presented in this article, you can check the [MCDEX Documents](https://github.com/mcdexio/documents/blob/master/README.md#mai-protocol-v2---perpetual-docs) to learn more.
 
-[![mcdexio/mai-protocol-v2](https://img.shields.io/badge/github-mcdex%2Fmai--protocol--v2-success)](https://github.com/mcdexio/mai-protocol-v2)
+## News and Reports
+* [Introducing MCDEX V2- Perpetual](https://medium.com/@montecarlodex/introduce-mcdex-v2-perpetual-c97b18ff4e23)
+* [MCDEX's Perpetual Contracts to Leverage Chainlink Oracles for Index Prices](https://medium.com/@montecarlodex/mcdexs-perpetual-contracts-to-leverage-chainlink-oracles-for-index-prices-7af84eb319d9)
+* [MCDEX 2020 Prospect](https://medium.com/@montecarlodex/mcdex-2020-prospect-b47a74cd94d3)
+* [Why AMM is Crucial to Decentralized Perpetual Contracts](https://medium.com/@montecarlodex/why-amm-is-crucial-to-decentralized-perpetual-contracts-70e3159d270d)
+

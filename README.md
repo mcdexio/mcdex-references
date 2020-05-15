@@ -3,7 +3,7 @@
 
 ## [Introduction](en/general-information.md#introduction)
 
-## [Order Type](en/general-information.md#order-types)
+## [Types of Orders](en/general-information.md#types-of-orders)
 
 ## [Fee](en/general-information.md#fee)
 
@@ -13,12 +13,12 @@
 
 ## [Introduction](en/perpetual.md#introduction)
 
+# [Perpetual Technical Guidelines](en/perpetual-tech.md)
+
 
 # [MP Futures](en/mp-futures.md)
 
 ## [Introduction](en/mp-futures.md#introduction)
-
-### Contract Specifications
 
 ## [BTC Futures](en/mp-futures.md#BTC)
 

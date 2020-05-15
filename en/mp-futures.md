@@ -71,10 +71,7 @@ Differences from Futures:
 ## Oracle
 
 MP futures use Coincap as price feed.
- 
-## Documents
 
-There are many Perpetual design details not presented in this article, you can check the [MCDEX Documents](https://github.com/mcdexio/documents) to learn more.
+## Architecture
 
-[![mcdexio/mai-protocol](https://img.shields.io/badge/github-mcdex%2Fmai--protocol-success)](https://github.com/mcdexio/mai-protocol)
-
+![mai-arch](asset/mai-arch.png)
