@@ -13,6 +13,7 @@
 
 ## [Introduction](en/perpetual.md#introduction)
 
+
 # [Perpetual Technical Guidelines](en/perpetual-tech.md)
 
 
@@ -26,4 +27,4 @@
 
 ## [TRUMP Futures](en/mp-futures.md#TRUMP)
 
-## [Oracle](en/mp-futures.md#Oralce)
+## [Oracle](en/mp-futures.md#Oracle)
