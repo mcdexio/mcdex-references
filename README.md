@@ -1,15 +1,9 @@
-
 # [General Information](en/general-information.md)
-
 ## [Introduction](en/general-information.md#introduction)
-
 ## [Types of Orders](en/general-information.md#types-of-orders)
-
 ## [Fee](en/general-information.md#fee)
 
-
 # [Perpetual](en/perpetual.md)
-
 ## [Introduction](en/perpetual.md#introduction)
 ## [Contract Specification](en/perpetual.md#contract-specification)
 ## [Trading Examples](en/perpetual.md#trading-examples)
@@ -20,17 +14,15 @@
 ## [Automated Market Maker](en/perpetual.md#automated-market-maker)
 ## [Provide Liquidity to AMM](en/perpetual.md#provide-liquidity-to-amm)
 ## [Trade with the Order Book](en/perpetual.md#trade-with-the-order-book)
-## [Connection Between AMM & Order Book](en/perpetual.md##connection-between-amm--order-book)
+## [Connection Between AMM & Order Book](en/perpetual.md#connection-between-amm--order-book)
 ## [Index Oracle](en/perpetual.md#index-oracle)
 ## [Auto Liquidation](en/perpetual.md#auto-liquidation)
 ## [Global Settlement](en/perpetual.md#global-settlement)
 ## [Deployed Contracts](en/perpetual.md#deployed-contracts)
 
-
 # [Perpetual Technical Guide](en/perpetual-tech.md)
 ## [Architecture](en/perpetual-tech.md#architecture)
 ## [Margin Account](en/perpetual-tech.md#margin-account)
-## [How to Add Liquidity to AMM](en/perpetual-tech.md#how-to-add-liquidity-to-amm)
 ## [How to Add Liquidity to AMM](en/perpetual-tech.md#how-to-add-liquidity-to-amm)
 ## [Contract Architecture](en/perpetual-tech.md#contract-architecture)
 ## [Contract Interfaces](en/perpetual-tech.md#contract-interfaces)
@@ -39,15 +31,10 @@
 ## [Development Resources](en/perpetual-tech.md#development-resources)
 
 
-
 # [MP Futures](en/mp-futures.md)
-
 ## [Introduction](en/mp-futures.md#introduction)
-
 ## [BTC Futures](en/mp-futures.md#BTC)
-
 ## [ETH Futures](en/mp-futures.md#ETH)
-
 ## [TRUMP Futures](en/mp-futures.md#TRUMP)
-
 ## [Oracle](en/mp-futures.md#Oracle)
+## [Architecture](en/mp-futures.md#architecture)
