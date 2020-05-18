@@ -294,7 +294,7 @@ Due to the importance of global liquidation, MCDEX will establish a community-le
 |AMM            |Automated Market Maker                                  |[0xF4CE6d5E9Cdcd6c91e303B87E27688f01B9Bb7bf](https://etherscan.io/address/0xF4CE6d5E9Cdcd6c91e303B87E27688f01B9Bb7bf)|
 |Proxy          |AMM margin account                                      |[0xDA9f6FB1ef188E081CFBeA74ec820A3718E91f21](https://etherscan.io/address/0xDA9f6FB1ef188E081CFBeA74ec820A3718E91f21)|
 |GlobalConfig   |Common governance parameters                            |[0x77C073a91B53B35382C7C4cdF4079b7E312d552d](https://etherscan.io/address/0x77C073a91B53B35382C7C4cdF4079b7E312d552d)|
-|Exchange       |Orderbook exchange logic                                |[0xb95B9fb0539Ec84DeD2855Ed1C9C686Af9A4e8b3](https://etherscan.io/address/0xb95B9fb0539Ec84DeD2855Ed1C9C686Af9A4e8b3)|
+|Exchange       |Order book exchange logic                                |[0xb95B9fb0539Ec84DeD2855Ed1C9C686Af9A4e8b3](https://etherscan.io/address/0xb95B9fb0539Ec84DeD2855Ed1C9C686Af9A4e8b3)|
 |PriceFeeder    |Price oracle                                            |[0x133906776302D10A2005ec2eD0C92ab6F2cbd903](https://etherscan.io/address/0x133906776302D10A2005ec2eD0C92ab6F2cbd903)|
 |ShareToken     |Share token of the AMM                                  |[0x6d5B330523017E2D4EC36ff973a49A440aB763EF](https://etherscan.io/address/0x6d5B330523017E2D4EC36ff973a49A440aB763EF)|
 |ContractReader |A batch reader in order to reduce calling consumption   |[0xEd1051ef1BFaFA9358341517598D225d852C7796](https://etherscan.io/address/0xEd1051ef1BFaFA9358341517598D225d852C7796)|
