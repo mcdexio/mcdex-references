@@ -10,7 +10,7 @@ At present, there are two types of contracts live on MCDEX:
 - It is a fully collateralized margin system with no margin calls. It means that the price above the Cap price is treated as the Cap price and the price below the Floor price is treated as the Floor price.
 
 **Perpetual Contracts**
-- PERPETUAL is a Futures contract but without an expiry date.
+- Perpetual is a Futures contract but without an expiry date.
 - The market price is soft-pegged to the spot price of the underlying asset via a funding mechanism.
 
 ## Types of Orders
