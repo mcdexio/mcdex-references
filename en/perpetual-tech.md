@@ -750,7 +750,7 @@ struct CollateralAccount {
 }
 ```
 
-See "Broker & Withdraw Time Lock" section in the [references page](en/perpetual#trade-with-the-order-book) for the design of time lock.
+See "Broker & Withdraw Time Lock" section in the [references page](/en/perpetual#broker-amp-withdraw-time-lock) for the design of time lock.
 
 ```javascript
 deposit(uint256 amount) NORMAL
