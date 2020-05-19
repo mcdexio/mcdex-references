@@ -798,7 +798,7 @@ Deposit collaterals from caller's address to contract. The funds will not go to 
 
 **Interact with positions:**
 
-There do exists interface to manipulate position and collateral for trading purpose, but basically the perpetual contract does not directly handle trading request from user. It only provider interfaces for whitelisted callers like **exchange** and **amm** contract.
+There do exists interface to manipulate position and collateral for trading purpose, but basically the perpetual contract does not directly handle trading request from user. It only provider interfaces for whitelisted callers like `Exchange` and `AMM` contract.
 
 Calling trade method of perpetual may break constraints that long position should always equals to short positions.
 
@@ -838,7 +838,7 @@ Return social loss per contract of given side. Normally, the value of each side 
 positionMargin(address guy)
 ```
 
-Methods of calculating position value requires mark price from amm contract. This price will be replaced by settlement price set by administrator in settlement status (SETTLING, SETTLED).
+Methods of calculating position value requires mark price from AMM contract. This price will be replaced by settlement price set by administrator in settlement status (SETTLING, SETTLED).
 
 ```javascript
 maintenanceMargin(address guy)
@@ -989,7 +989,7 @@ Some properties is encoded into data field:
 matchOrderWithAMM(LibOrder.OrderParam memory takerOrderParam, address _perpetual, uint256 amount)
 ```
 
-Match taker orders with amm. The main difference between this method and amm trading methods is that they require different broker setting.
+Match taker orders with AMM. The main difference between this method and AMM trading methods is that they require different broker setting.
 
 **Currently, broker CAN NOT profit from calling matchOrderWithAMM for trader like matchOrders. This method is designed for other purpose**
 
@@ -1001,34 +1001,34 @@ AMM has some Uniswap-like interfaces which allows trader to trade with internal 
 createPool(uint256 amount)
 ```
 
-Open asset pool by deposit to amm. Only available when pool is empty.
+Open asset pool by deposit to AMM. Only available when pool is empty.
 
 ```javascript
 buy(uint256 amount, uint256 limitPrice, uint256 deadline)
 ```
 
-Buy position from amm. It could be open or close or both based on which side of position a trader owns.
+Buy position from AMM. It could be open or close or both based on which side of position a trader owns.
 
-LimitPrice is the upperbound of bid price. Deadline is a unix-timestamp in seconds. Any unsatisfied condition will fail trading transaction.
+LimitPrice is the upper bound of bid price. Deadline is a unix-timestamp in seconds. Any unsatisfied condition will fail trading transaction.
 
 ```javascript
 sell(uint256 amount, uint256 limitPrice, uint256 deadline)
 ```
 
-Similar to buy, but limitPrice is the lowerbond of bid price.
+Similar to buy, but limitPrice is the lower bound of bid price.
 
 ```javascript
 addLiquidity(uint256 amount)
 ```
 
-Add liquidity to amm asset pool. See design of amm for details.
+Add liquidity to AMM asset pool. See design of AMM for details.
 
 
 ```javascript
 removeLiquidity(uint256 shareAmount)
 ```
 
-Remove liquidity to amm asset pool. See design of amm for details.
+Remove liquidity to AMM asset pool. See design of AMM for details.
 
 
 ```javascript
@@ -1041,13 +1041,13 @@ A special method to remove liquidity only works in settled status. Use a differe
 updateIndex()
 ```
 
-Update index variable in amm. Caller will get some reward determined by governance parameter.
+Update index variable in AMM. Caller will get some reward determined by governance parameter.
 
 ```javascript
 shareTokenAddress()
 ```
 
-Return address of share token for current amm. One deployed instance of share token is only available to one amm contract.
+Return address of share token for current AMM. One deployed instance of share token is only available to one AMM contract.
 
 ```javascript
 indexPrice()
@@ -1061,7 +1061,7 @@ positionSize()
 currentAvailableMargin()
 ```
 
-Return position properties of amm contract.
+Return position properties of AMM contract.
 
 ```javascript
 lastFundingState()
