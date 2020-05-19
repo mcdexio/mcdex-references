@@ -1211,6 +1211,6 @@ Feel free to try your fresh Mai Protocol V2.
 
 
 # Development Resources
-* [MCDex Order Book API](https://mcdex.io/doc/api)
+* [MCDEX Order Book API](https://mcdex.io/doc/api)
 * [Contract Documents](https://github.com/mcdexio/documents)
 * [Contract Source Code](https://github.com/mcdexio/mai-protocol-v2)
