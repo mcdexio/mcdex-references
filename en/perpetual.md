@@ -246,9 +246,9 @@ Because the order book server can only match the orders for the trader and canno
 
 To prevent this kind of termination, the order book server needs to be able to detect changes in the margin account in time and cancel orders that cannot be executed on the block chain. As a result, the trader has more rules to follow when trade with the order book:
 
-1.	The trader needs to declare the order book server as his/her "broker" to match order for him/her. The declaration will take effect after 3 block confirmations (time lock). And the AMM is also a special "broker". Thus switching broker between the order book server and AMM requires declaration.
+1. The trader needs to declare the order book server as his/her "broker" to match order for him/her. The declaration will take effect after 3 block confirmations (time lock). And the AMM is also a special "broker". Thus switching broker between the order book server and AMM requires declaration.
 
-2.	The trader needs to "apply" before withdrawing from margin balance when use an order book. The application will take effect after 3 block confirmations (time lock) automatically without anyone's permission. The order book server takes the applied amount as "Withdraw Locked". The 3 block time is long enough for the order book server to cancel orders if the margin balance is insufficient. The trader need not apply before withdrawal if his/her "broker" is the AMM.
+2. The trader needs to "apply" before withdrawing from margin balance when use an order book. The application will take effect after 3 block confirmations (time lock) automatically without anyone's permission. The order book server takes the applied amount as "Withdraw Locked". The 3 block time is long enough for the order book server to cancel orders if the margin balance is insufficient. The trader need not apply before withdrawal if his/her "broker" is the AMM.
 
 ## Connection Between AMM & Order Book
 
