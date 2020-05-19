@@ -52,6 +52,12 @@ The broker is the entry point for a trader to interact with the system. The brok
 
 For security reasons, MCDEX only allows traders to trade through one broker at the same time. Traders have to call "change broker" command to switch the broker.
 
+### Liquidity Provider
+
+We call the person who provides liquidity to AMM a Liquidity Provider. Anyone can provide AMM with liquidity and increase AMM's market making depth by adding inventory to AMM. Liquidity Providers are exposed to risks when imbalanced between long and short, and obtain trade fee income.
+
+Check [How to Add Liquidity to AMM](#how-to-add-liquidity-to-amm) for details.
+
 ### Oracle
 
 Another key component is the decentralized oracle for obtaining the index price (spot price). After extensive research into decentralized oracle solutions, MCDEX team unanimously concluded that Chainlink's Price Reference Contracts are the best option in the market for sourcing and securing data. Chainlink already has an ETH/USD Price Reference Contract live on the Ethereum mainnet that is used and supported by several other top DeFi protocols. We are currently leveraging Chainlink's ETH/USD price feed as the index price for the ETH-PERP contract.
@@ -63,7 +69,7 @@ Admin is a special account who has power to:
 * Upgrade contract
 * Global liquidation
 
-Check [this doc](#admin-functions) for all admin functions.
+Check [Admin Functions](#admin-functions) for details.
 
 :warning: **Due to the importance of global liquidation, MCDEX will establish a community-led governance committee as soon as possible, and the committee will develop detailed global liquidation trigger mechanisms and processing procedures.**
 
@@ -122,7 +128,7 @@ Because MCDEX Perpetual is a [vanilla contract](en/perpetual#vanilla-amp-inverse
 
 As a market participant, AMM's behavior is similar to traditional market makers: AMM gives bid and ask prices, and traders buy/long or sell/short with AMM. MCDEX Perpetual AMM currently uses a constant product pricing model. This is a pricing model that has been fully validated in Uniswap.
 
-Unlike traditional market makers, anyone can provide AMM with liquidity and increase AMM's market making depth by adding inventory to AMM. We call the person who provides liquidity to AMM a Liquidity Provider(LP). Liquidity Providers are exposed to risks when imbalanced between long and short, and obtain trade fee income.
+Unlike traditional market makers, anyone can provide AMM with liquidity and increase AMM's market making depth by adding inventory to AMM. We call the person who provides liquidity to AMM a Liquidity Provider. Liquidity Providers are exposed to risks when imbalanced between long and short, and obtain trade fee income.
 
 ### AMM's Margin Account
 
