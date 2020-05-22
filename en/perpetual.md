@@ -282,7 +282,7 @@ If the Mark Price is worse than the Bankrupt Price when liquidation, the differe
 
 Because of the inefficiency of the blockchain infrastructure, the liquidation mechanism is limited. In extreme situations such as dramatic price changes, wrong index feed, etc, there will be a mass social loss. During this time, MCDEX will evaluate the situation and set the settlement price if necessary and put the contract into the global settlement situation. When into this situation, all trades will be aborted. The accounts without enough margin will be liquidated at settlement price. And the system loss will be socialized. When liquidation ends, users can settle his/her position at settlement price and withdraw all the remaining margin balance.
 
-Due to the importance of global liquidation, MCDEX will establish a community-led governance committee as soon as possible, and the committee will develop detailed global liquidation trigger mechanisms and processing procedures.
+Due to the importance of global settlement, MCDEX will establish a community-led governance committee as soon as possible, and the committee will develop detailed global settlement trigger mechanisms and processing procedures.
 
 ## Deployed Contracts
 
