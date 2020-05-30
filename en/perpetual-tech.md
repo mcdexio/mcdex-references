@@ -753,7 +753,7 @@ struct CollateralAccount {
 See "Broker & Withdraw Time Lock" section in the [references page](/en/perpetual#broker-amp-withdraw-time-lock) for the design of time lock.
 
 ```javascript
-deposit(uint256 amount) NORMAL
+deposit(uint256 amount)
 ```
 Deposit transfer collaterals from caller's address to contract. It accept an amount parameter which indicates the total amount of collaterals that user wants to transfer to contract.
 Approval is required;
@@ -761,13 +761,13 @@ Approval is required;
 **amount should be a fixed float with token's decimals which will be convert to a decimals-18 representation. E.G. Jim deposits 1e6 USDT, later he will found 1e18 collaterals in his account of Mai protocol v2. This only affects internal calculation*
 
 ```javascript
-depositEther() NORMAL
+depositEther()
 ```
 
 Ether version of deposit, using msg.value instead. See description above for details. When using ether, the decimals will be automatically set to 18.
 
 ```javascript
-applyForWithdrawal(uint256 amount) NORMAL
+applyForWithdrawal(uint256 amount)
 ```
 
 Request for further withdrawal of caller's account. This method functions like approve of erc20. Trader could apply for the amount that far greater than actual balance he owned, but applied part is no longer available for position trading.
@@ -998,13 +998,13 @@ Match taker orders with AMM. The main difference between this method and AMM tra
 AMM has some Uniswap-like interfaces which allows trader to trade with internal assets pool.
 
 ```javascript
-createPool(uint256 amount)
+createPool(uint256 amount) NORMAL
 ```
 
 Open asset pool by deposit to AMM. Only available when pool is empty.
 
 ```javascript
-buy(uint256 amount, uint256 limitPrice, uint256 deadline)
+buy(uint256 amount, uint256 limitPrice, uint256 deadline) NORMAL
 ```
 
 Buy position from AMM. It could be open or close or both based on which side of position a trader owns.
@@ -1012,7 +1012,7 @@ Buy position from AMM. It could be open or close or both based on which side of 
 LimitPrice is the upper bound of bid price. Deadline is a unix-timestamp in seconds. Any unsatisfied condition will fail trading transaction.
 
 ```javascript
-sell(uint256 amount, uint256 limitPrice, uint256 deadline)
+sell(uint256 amount, uint256 limitPrice, uint256 deadline) NORMAL
 ```
 
 Similar to buy, but limitPrice is the lower bound of bid price.
