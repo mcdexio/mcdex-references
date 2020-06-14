@@ -67,6 +67,20 @@ However, in the case of an inverse contract, margin and profit/loss are denomina
 On the other hand, the inverse contract mentioned above can also be considered as a corresponding vanilla contract on USD  in ETH and collateralized and settled in ETH. Just do the reciprocal of the price quoted in USD and inverse the buy/sell-side to convert the Inverse Contract to the corresponding Vanilla Contract.
 In the MCDEX Mai2 smart contract protocol, there is only a Vanilla Contract. However, to improve user experience, MCDEX performs the above conversion of ETH-PERP on the frontend to provide an Inverse Contract trading experience.
 
+## Mark Price
+
+Mark Price is the price at which the Perpetual Contract gets valued during trading hours. Mark Price may (temporarily) vary from actual perpetual market prices to protect against manipulative trading.
+
+It is important to understand how the Mark Price is being calculated. We start with determining a "Fair Price". To make the Mark Price and Funding Rate independent to any off-chain facilities, MCDEX uses the "Mid Price" of the on-chain AMM as the "Fair Price". See more details about the "Mid Price" of the AMM in the corresponding chapter.
+
+The Mark Price is derived using both the Index and the Fair Price, by adding to the Index the 600 seconds exponential moving average (EMA) of the Fair Price - MCDEX Index.
+
+```Mark Price = Index + 600 seconds EMA (Fair Price - Index)```
+
+Further, the Mark Price is hard limited by MCDEX's Index Price by +/- 0.5%. Under no circumstance, the future Mark Price will deviate from the Index Price by more than 0.5%.
+
+The 600 seconds EMA is recalculated every second, so there are in total 600 time periods, where the measurement of the latest second has a weight of 2 / (600 + 1) = 0.333%
+
 ## Funding Rate
 
 The Funding rate calculations in Perpetual Contracts for positive and negative Funding cases are identical in nature.
@@ -97,20 +111,6 @@ The actual Funding Payment is calculated by multiplying the Funding Rate by the 
 The funding payed or received is continuously added to your cash balance.
 
 No fees on Funding: MCDEX does not charge any fees on Funding and all Funding is transferred between participants in the Perpetual Contracts. This makes Funding a zero-sum game, where longs receive all Funding from shorts and vice versa.
-
-## Mark Price
-
-Mark Price is the price at which the Perpetual Contract gets valued during trading hours. Mark Price may (temporarily) vary from actual perpetual market prices to protect against manipulative trading.
-
-It is important to understand how the Mark Price is being calculated. We start with determining a "Fair Price". To make the Mark Price and Funding Rate independent to any off-chain facilities, MCDEX uses the "Mid Price" of the on-chain AMM as the "Fair Price". See more details about the "Mid Price" of the AMM in the corresponding chapter.
-
-The Mark Price is derived using both the Index and the Fair Price, by adding to the Index the 600 seconds exponential moving average (EMA) of the Fair Price - MCDEX Index.
-
-```Mark Price = Index + 600 seconds EMA (Fair Price - Index)```
-
-Further, the Mark Price is hard limited by MCDEX's Index Price by +/- 0.5%. Under no circumstance, the future Mark Price will deviate from the Index Price by more than 0.5%.
-
-The 600 seconds EMA is recalculated every second, so there are in total 600 time periods, where the measurement of the latest second has a weight of 2 / (600 + 1) = 0.333%
 
 ## Isolated Margin
 
