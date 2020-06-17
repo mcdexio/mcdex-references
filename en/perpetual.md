@@ -240,15 +240,9 @@ Order Margin = Max(Buy Orders' Margin, Sell Orders' Margin)
 
 Withdraw Locked is the amount of margin reserved for withdrawal. See more information about the Withdraw Locked in the next section.
 
-### Broker & Withdraw Time Lock
+### Broker
 
-Because the order book server can only match the orders for the trader and cannot really lock any margin balance like the centralized exchange, a trader could terminate the transaction that is already matched and sent to the block chain's memory pool but has not executed by the miners, by withdrawing the margin or trading with the AMM to make the available margin insufficient. The trader terminates the transactions may because of the price changes to an unconformable price. However, the termination, which can be seen as a kind of so-called "front run", breaks the orders' match result and deprives the trading opportunities of the other traders.
-
-To prevent this kind of termination, the order book server needs to be able to detect changes in the margin account in time and cancel orders that cannot be executed on the block chain. As a result, the trader has more rules to follow when trade with the order book:
-
-1. The trader needs to declare the order book server as his/her "broker" to match order for him/her. The declaration will take effect after 3 block confirmations (time lock). And the AMM is also a special "broker". Thus switching broker between the order book server and AMM requires declaration.
-
-2. The trader needs to "apply" before withdrawing from margin balance when use an order book. The application will take effect after 3 block confirmations (time lock) automatically without anyone's permission. The order book server takes the applied amount as "Withdraw Locked". The 3 block time is long enough for the order book server to cancel orders if the margin balance is insufficient. The trader need not apply before withdrawal if his/her "broker" is the AMM.
+A Broker is an actor who helps trader to accomplish trading. It is a normal ETH address of the order book. The broker is set in the signature of every orders. To receive trading fee, a broker must assign positive maker/taker fee rate in order data structure. And if given a negative trading fee, the broker will pay trader for making / taking order.
 
 ## Connection Between AMM & Order Book
 
