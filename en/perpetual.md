@@ -30,7 +30,7 @@ Funding payments are automatically calculated every second and are added to or s
 | -------------------------|:---------------------------------------------------------: |
 |Underlying Asset/Ticker   |    ETH/USD price from Chainlink                            |
 |Trading Hours	           |24*7 days a week                                            |
-|Minimum Lot Size|10 USD|
+|Minimum Lot Size|100 USD|
 |Contract Size|1 USD|
 |Initial Margin|10%|
 |Maintenance Margin|7.5%|
@@ -237,8 +237,6 @@ The order margin of the buy orders and sell orders are calculated separately. An
 ```
 Order Margin = Max(Buy Orders' Margin, Sell Orders' Margin)
 ```
-
-Withdraw Locked is the amount of margin reserved for withdrawal. See more information about the Withdraw Locked in the next section.
 
 ### Broker
 
