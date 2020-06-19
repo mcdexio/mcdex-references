@@ -70,12 +70,6 @@
 
 <!-- ### [Introduction](en/mp-futures.md#introduction)
 
-### [BTC Futures Contract Specifications](en/mp-futures.md#btc-futures-contract-specifications)
-
-### [ETH Futures Contract Specifications](en/mp-futures.md#eth-futures-contract-specifications)
-
 ### [TRUMP 2020 Contract Specifications](en/mp-futures.md#trump-2020-contract-specifications)
-
-### [Oracle](en/mp-futures.md#oracle)
 
 ### [Architecture](en/mp-futures.md#architecture) -->
