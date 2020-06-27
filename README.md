@@ -1,5 +1,9 @@
 # REFERENCE
 
+<a href="#en/white-paper.md">
+  <h2>White Paper</h2>
+</a>
+
 <a href="#en/general-information.md">
   <h2>General Information</h2>
 </a>
