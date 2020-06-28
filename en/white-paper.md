@@ -240,7 +240,7 @@ We will use part of the MCB(see Chapter 4) token distribution to incentivize use
 
 We will take feedback from the community and work with them to create more structured products based on perpetual contracts to meet the needs of users with different risk preferences. For example, people can design a structured product having two layers: the bottom layer and the top layer. The bottom layer is a priority layer with a safety cushion for users with low-risk preference aimed at smaller returns. The upper layer is a high-risk layer without a safety cushion for users with high-risk preference aimed at bigger returns. 
  
-# 4. Governance and MCB
+## 4. Governance and MCB
 
 As we develop the various products on the MCDEX platform, we want to ensure that our products, once deployed, require no governance or tweaking; like the MCDEX V1 - Mai Protocol used for trading Market Protocol contracts. However, a relatively complex product like perpetual contracts has a lot of governance involved which includes:
 
