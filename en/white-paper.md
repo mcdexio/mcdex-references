@@ -288,10 +288,11 @@ As the platform continues to grow and evolve, new products will be launched on a
   - Decentralized leveraged tokens
   - IDO (Initial DEX Offering)
 
-- 2021 Enhancement of MCB
-  - Use of MCB to provide liquidity for AMM
-  - Use of MCB to cover social losses
-  - Use of MCB to capture liquidation penalties
+- 2021
+  - Enhancement of MCB
+    - Use of MCB to provide liquidity for AMM
+    - Use of MCB to cover social losses
+    - Use of MCB to capture liquidation penalties
   - Introducing an optimistic rollup mechanism to improve trading performance.
   - Introducing more types of financial assets to the MCDEX platform.
 
