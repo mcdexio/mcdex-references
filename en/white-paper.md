@@ -1,4 +1,5 @@
 # MCDEX: DeFi Platform for Trading Perpetuals
+[中文版](https://cdn2.minerbabe.com/AffiliateProgram/MCDEX-white-paper-cn.pdf)
 
 *By Liu Jie, Founder of MCDEX*
 
