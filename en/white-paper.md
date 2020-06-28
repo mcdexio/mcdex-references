@@ -279,7 +279,7 @@ As the platform continues to grow and evolve, new products will be launched on a
   - Initial MCB token sale
   - Liquidity mining
 
-- 2020 Q4
+- Q4 2020
   - New AMM formula for perpetual contracts
   - Decentralized leveraged tokens
   - MCB for AMM liquidity incentive
@@ -309,9 +309,3 @@ As the platform continues to grow and evolve, new products will be launched on a
 [6] [OPENZEPPELIN SECURITY, MCDEX Mai Protocol Audit.](https://blog.openzeppelin.com/mcdex-mai-protocol-audit)
 
 [7] [MCDEX documents.](https://github.com/mcdexio/documents)
-
-
-
-
-
-
