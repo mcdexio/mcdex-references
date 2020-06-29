@@ -226,7 +226,7 @@ Available = Margin Balance - Position Margin - Order Margin - Withdraw Locked
 Position Margin = Mark Price * Position Size / Target Leverage
 ```
 
-```Order Margin``` is the margin balance reserved by order book server for the active orders. The active orders that are closed later will cost nothing. For the orders that are filled and become positions, the order margin is calculated:
+```Order Margin``` is the margin balance reserved by order book server for the active orders. The active orders that are closed later will not cost order margin. For the orders that are filled and become positions, the order margin is calculated:
 ```
 Open Order Margin = Order Price * Order Amount / Target Leverage + Potential Loss + Fee
 Buy Order Potential Loss = Max((Order Price - Mark Price) * Order Amount, 0)
