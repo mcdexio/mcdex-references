@@ -5,29 +5,29 @@
 
 ## 1. Overview
 
-People have been continuously exploring scenarios where blockchain technology and its associated decentralized financial services can be leveraged to realize their potential. Some DeFi projects in the context of stable coins, lending, and trading have achieved initial success in terms of the number of users and the size of collateralized funds. However, the current DeFi products still have the following problems:
+People have been continuously exploring scenarios where blockchain technologycan realize its true potential through decentralized financial services. Some DeFi projects in the context of stable coins, lending, and trading have achieved initial success in terms of the number of users and the size of collateralized funds. However, the current DeFi products still have the following problems:
 
-- The Trading products are mainly aimed at traders having advanced trading skills and are not accessible to ordinary users.
-- We lack structured products that’ll meet the investment needs of users with different risk appetites.
+- Current DeFi products are mainly aimed at traders who have advanced trading skills and are not accessible to ordinary users.
+- The lack of structured products that will meet the investment needs of users with different risk appetites.
 
-**The mission of MCDEX is to make investing easier in DeFi** by creating a secure and easy-to-use decentralized financial platform based on blockchain technology.
+**The mission of MCDEX is to make investing in DeFi more accessible** by creating a secure and easy-to-use blockchain-based decentralized financial platform.
 
-Our main product currently available on the MCDEX platform is our fully Decentralized Perpetual Contract which is our most important underlying asset for providing financial services.
+Our main product currently available on the MCDEX platform is our fully functional Decentralized Perpetual Contract which is our most important underlying asset for providing financial services.
 
-The financial architecture of our perpetual contract is based on the proven design of perpetual contracts in the CeFi space. The trading price is soft pegged to the index price. The maximum leverage of MCDEX perpetual contract is 10x. Besides, we provide a working mechanism that can be completely decoupled from off-chain operations.
+The financial architecture of our perpetual contract is based on the proven design of perpetual contracts in the CeFi space. The trading price is soft pegged to the index price. The maximum leverage of the MCDEX perpetual contract is 10x. In addition, we provide a working mechanism that can be completely decoupled from off-chain operations.
 
-Our perpetual contract introduces the AMM (Automated Market Maker) to provide on-chain liquidity and generate the funding rate to ensure complete decentralization. The AMM acts as a gateway to trade perpetual contracts for other smart contracts on-chain.
+Our perpetual contract introduces an AMM (Automated Market Maker) to provide on-chain liquidity and generate the funding rate to ensure complete decentralization. The AMM acts as a gateway to trade perpetual contracts with other smart contracts on-chain.
  
-Since the AMM has higher slippage than traditional CeFi exchanges, we have introduced an off-chain high-speed order book for liquidity sensitive users. The order book, which provides better liquidity, is used as the main entry point for trading the perpetual contracts. Because the arbitrageurs transmit liquidity and trading demand from the order book to the AMM, the AMM can provide funding rates for the whole market.
+Since the AMM has higher slippage than traditional CeFi exchanges, we have introduced an off-chain high-speed order book for liquidity sensitive users. The order book, which provides better liquidity, is used as the main entry point for trading with the perpetual contracts. Because the arbitrageurs transmit liquidity and trading demand from the order book to the AMM, the AMM can provide funding rates for the whole market.
 
 
-Perpetual contracts are very flexible underlying assets, but a large number of regular traders lack the trading skills to trade them. Using our upcoming structured financial products namely the automated robotic and social trading smart contracts, more users will profit by investing in DeFi. The funds deposited in these smart contracts are locked (for safety purposes) and the contract trades our perpetual contract based on its trading strategy to make profits for the users.
+Perpetual contracts are very flexible underlying assets, but a large number of regular traders lack the financial literacy to effectively trade them. Using our upcoming structured financial products namely the automated robotic and social trading smart contracts, more users will profit by investing in DeFi. The funds deposited in these smart contracts are locked (for safety purposes) and the contract trades our perpetual contract based on its trading strategy to make profits for the users.
 
-The trading strategy of a robot smart contract is fully disclosed on the chain, whereas the trading strategy of a social smart contract is laid down by social traders or quantitative funds. 
+The trading strategy of the robot smart contract is fully disclosed on chain, whereas the trading strategy of the social trading smart contract is specified by traders or quantitative funds. 
 
-The security of our exchange, our contracts, and most importantly your money is our top priority. To ensure the highest order of security, Open Zeppelin and ConsenSys Diligence have audited our smart contract codes. We will continuously improve our system’s security, including oracles, risk control, and global settlement mechanisms. 
+The security of our exchange, our contracts, and most importantly, funds deposited is our top priority. To ensure the highest order of security, OpenZeppelin and ConsenSys Diligence have audited our smart contract codes. We will continuously improve our system’s security architecture, including oracles, risk control, and global settlement mechanisms. 
 
-We will issue the platform’s native token, the MCB.  MCB token will be used for governance, capture value for holders, providing liquidity for AMM, taking the risk of liquidation and enjoying its benefits. These functionalities and use-cases of the MCB token will gradually expand with the increase in the liquidity of the MCB tokens. Regarding distribution, 25% will go to the team and initial investors, 25% will go to the foundation for token sales, 50% will be used as incentives for stakeholders. After the fund product is released, we will launch the liquidity mining and allocate MCB to fund holders. 
+We will issue the platform’s native token, the MCB.  MCB token will be used for governance, capturing value for holders, providing liquidity for AMM, taking the risk of liquidation and enjoying its benefits. Our token will form an integral part of our platform and will function better with increased network usage. Regarding distribution, 25% will be allocated to the team and initial investors, 25% will be allocated to the foundation for token sales, 50% will be used as incentives for stakeholders. After the fund product is released, we will launch the liquidity mining and allocate MCB to fund holders. 
 
 ## 2. Perpetual contracts
 
