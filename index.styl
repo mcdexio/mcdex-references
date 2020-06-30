@@ -1,0 +1,249 @@
+:root
+  --theme-color #24292e
+  --highlight-color #ffffff
+  --article-caption-color #24292e
+  --text-color #4a4a4a
+
+body
+  font-size 16px
+  font-family -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+html
+  font-size 100px
+
+@media screen and (min-width: 1367px)
+  html
+    font-size 108.34px
+
+// @media screen and (min-width: 1920px)
+//   html
+//     font-size 116.67px
+
+@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 1280px)
+  html
+    font-size 91.67px
+
+@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px)
+  html
+    font-size 83.34px
+
+@media screen and (max-width: 768px)
+  body.close .sidebar-toggle
+    padding 0.1rem
+    background transparent
+
+.app-nav li ul li
+  line-height 20px
+
+.sidebar ul li a
+  font-size 0.14rem
+
+.sidebar
+  background #f5f7f9
+  &>h1
+    margin 0 auto 0.16rem
+    font-size 0.16rem
+
+.sidebar-nav
+  .app-sub-sidebar
+    li::before
+      display none
+
+.sidebar-nav > ul > li > a
+  font-size 0.14rem
+  font-weight 700
+
+.sidebar-toggle
+  width 0.38rem !important
+  height @width
+  padding 0.1rem
+  background-color #f5f7f9
+  position fixed
+  top 0
+  left 0
+  bottom auto
+  span
+    background-color #6C9EF5
+
+.search
+  margin-top 0.38rem
+  padding 0 6px !important
+
+.app-name .app-name-link
+  display inline-block
+  max-width 1rem
+
+.search input:focus
+  box-shadow none !important
+
+.markdown-section
+  max-width 11.4rem
+  margin 0
+  padding 0.32rem 0.54rem
+
+@media screen and (max-width: 1000px)
+  .markdown-section
+    padding 0.3rem 0.15rem 0.4rem
+
+.markdown-section ol, .markdown-section p, .markdown-section ul
+  word-spacing 0
+
+.markdown-section ol, .markdown-section ul
+  padding-left 0.4rem
+  line-height 0.24rem
+
+.sidebar-toggle:hover .sidebar-toggle-button
+  opacity 1
+
+.markdown-section
+  h1
+    font-size 0.32rem
+    margin-bottom 0.16rem
+    padding-bottom 0.1rem
+
+  h2
+    font-size 0.24rem
+
+  h3
+    font-size 0.2rem
+
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+    text-decoration none
+
+  h4, h5, h6
+    font-size 0.18rem
+
+  h2, h3
+    margin 0.4rem 0 0.16rem 0
+
+  h4, h5, h6
+    margin 0.12rem 0 0.08rem 0
+
+  p
+    font-size 0.16rem
+    margin-bottom 0.16rem
+    line-height 1.5
+
+  img
+    max-width 100%
+
+  table
+    margin-bottom 0.16rem
+    border-spacing 0
+    border-collapse collapse
+
+    tr
+      vertical-align inherit
+      border-color inherit
+
+      td, th
+        font-size 0.16rem
+        line-height 0.24rem
+        padding 0.06rem 0.2rem
+
+      th
+        height 0.4rem
+
+      td
+        height 0.4rem
+
+  code
+    padding 0.03rem 0.06rem
+    margin 0
+    border-radius 0.03rem
+    font-size 0.14rem
+    line-height 0.2rem
+    font-family SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace
+
+  pre
+    padding 0.16rem
+    overflow auto
+    font-size 85%
+    line-height 1.45
+    border-radius 0.03rem
+    &:after
+      font-size 0.12rem
+    &:before
+      font-size 0.12rem
+
+    code
+      border-radius 0.03rem
+      word-break normal
+      white-space pre
+      display inline
+      max-width auto
+      padding 0
+      margin 0
+      overflow visible
+      line-height inherit
+      word-wrap normal
+      border 0
+      font-size 0.14rem
+      line-height 0.2rem
+
+  ul
+    font-size 0.16rem
+    padding-left 0.2rem
+    margin-block-start 0.16rem
+    margin-block-end 0.16rem
+    margin-inline-start 0px
+    margin-inline-end 0px
+    padding-inline-start 0.4rem
+    margin-top 0
+    margin-bottom 0.16rem
+
+    li
+      list-style-type disc
+      line-height 0.24rem
+      margin-top 0.02rem
+
+      &:first-of-type
+        margin-top 0
+  ol
+    font-size 0.16rem
+    li
+      list-style decimal
+      line-height 0.24rem
+
+      &:not(:first-of-type)
+        margin-top 0.02rem
+
+  h1, h2, h3, h4, h5, h6, p, table, ul, li, code
+    color var(--article-caption-color)
+
+  h1
+    border-bottom 1px solid #eaecef
+
+  blockquote
+    border-left 0.02rem solid #7984A1
+    color var(--text-color)
+
+  a
+    color #24292e !important
+    text-decoration underline
+
+    &:hover
+      color #000000 !important
+
+  table
+    tbody tr:nth-of-type(even)
+      background #F5F7F9 !important
+
+    tr
+      background transparent !important
+
+      td, th
+        border 1px solid rgba(229,229,229,1) !important
+
+  code
+    background-color rgba(27,31,35,.05) !important
+    color var(--article-caption-color) !important
+
+  pre
+    background-color rgba(27,31,35,.05) !important
+
+    code
+      background-color transparent !important
+      padding 10px 0 !important
