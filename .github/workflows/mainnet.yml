@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+      id: get_version
+      run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
     - uses: actions/checkout@v2 # without submodules
 
     - name: Build and upload to aliyun
