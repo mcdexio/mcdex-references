@@ -33,7 +33,7 @@ MP期货是一种创新的金融工具。
 
 ## 架构
 
-![mai-arch](asset/mai-arch.png)
+![mai-arch](../en/asset/mai-arch.png)
 
 ## 审计
 
