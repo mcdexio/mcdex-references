@@ -3,6 +3,7 @@ ENV CONFIG_FILE_PATH /srv/http
 COPY en /srv/http/en
 COPY cn /srv/http/cn
 COPY jp /srv/http/jp
+COPY en/perpetual-tech.md /srv/http/cn/perpetual-tech.md
 COPY _navbar.md /srv/http/
 COPY _sidebar.md /srv/http/
 COPY index.html /srv/http/
