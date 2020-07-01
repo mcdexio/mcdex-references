@@ -1,4 +1,5 @@
 * [白皮书](cn/white-paper.md)
 * [概览](cn/general-information.md)
 * [永续合约](cn/perpetual.md)
+* [永续合约技术指南](cn/perpetual-tech.md)
 * [MP到期合约](cn/mp-futures.md)
