@@ -9,5 +9,3 @@ COPY index.html /srv/http/
 COPY favicon.ico /srv/http/
 COPY index.css /srv/http/
 COPY logo.png /srv/http/
-
-CMD ["-fallback", "/index.html"]
