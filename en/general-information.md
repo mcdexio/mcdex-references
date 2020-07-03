@@ -35,8 +35,7 @@ Trade with order book:
 - Gas Fees: NIL (Gas costs for all trades are completely covered by MCDEX)
 
 Trade with AMM:
-- trading Fees: 0.075% (since users will always be the takers). 
-  20%(0.015%) goes to dev team and 80%(0.06%) goes to the liquidity provider
+- trading Fees: 0.3% goes to the liquidity provider
 - Gas Fees: Users will pay gas fees by themselves.
 
 For Order book & AMM:
