@@ -263,7 +263,7 @@ Features 2-4 rely heavily on the liquidity of the MCB. The last two functions, i
 
 The total supply of MCB tokens is 100,000,000, distributed as follows:
 
-- 25% to the founding team and early investors.
+- 25% to the founding team and early investors. 2.25% has a 2-year linear vesting period and 22.75% has a 4-year linear vesting period.
 - 25% to the MCDEX Foundation for token sales to cover expenses such as development, audits, market making, marketing, etc..
 - 50% to user incentives with a limit of up to 5% per year.
 
