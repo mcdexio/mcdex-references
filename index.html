@@ -28,18 +28,74 @@
     </ul>
 </nav>
 <div id="app"></div>
+<script src="./accept-language-parser.js"></script>
 <script>
-    var lang = 'en-US'
+    var langRegx = /#\/([a-zA-Z-]+)\//
+    // lang hash value
+    var langHash = langRegx.exec(window.location.hash)
+    var lang = null
+    var languages = navigator.languages ? Array.from(navigator.languages) : [] // language list
+
+    // added localeStorage lang to head of language list
     try {
-        lang = JSON.parse(localStorage.getItem('lang')) || 'en-US'
-        if (lang !== 'en-US' && lang !== 'zh-CN') {
-            lang = 'en-US'
+        var temp = JSON.parse(localStorage.getItem('lang'))
+        if (temp) {
+            languages.unshift(temp)
         }
     } catch (e) {
-        console.warn('use default lang')
     }
 
-    window.location.hash = '#/' + lang + '/white-paper'
+    // added hash lang to head of language list
+    // replace en to en-US
+    if (langHash) {
+        if (langHash[1] === 'en') {
+            languages.unshift('en-US')
+        } else if (langHash[1] === 'cn') {
+            languages.unshift('zh-CN')
+        } else {
+            languages.unshift(langHash[1])
+        }
+    }
+
+    // select lang
+    try {
+        let language = ""
+        let q = 1
+        const dq = 0.01
+        if (languages) {
+            languages.forEach(x => {
+                if (language != "") {
+                    language = language + ","
+                }
+                language = language + x + ';q=' + q
+                q = q - dq
+                if (q < dq) {
+                    q = dq
+                }
+            })
+
+        } else {
+            language = navigator.language || navigator.userLanguage
+        }
+
+        lang = window.$alp.pick(['en-US', 'zh-CN'], language)
+        console.log('pick language ' + lang + ' from ' + language)
+
+    } catch (e) {
+        console.warn("pick lang from navigator error:", e)
+        console.warn("use default lang en-US")
+        lang = 'en-US'
+    }
+
+    // reset hash, if no hash lang, set it
+    if (langHash) {
+        if (lang !== langHash[1]) {
+            window.location.hash = window.location.hash.replace(langRegx, '#/' + lang + '/')
+        }
+    } else {
+        window.location.hash = '#/' + lang + '/white-paper'
+    }
+
     setCurrentLang(lang)
 
     window.$docsify = {
@@ -49,14 +105,12 @@
         homepage: '/' + lang + '/white-paper.md',
         subMaxLevel: 2,
         auto2top: true,
-        // loadNavbar: true,
         externalLinkTarget: '_self',
         logo: '/logo.png',
         nameLink: 'https://mcdex.io/',
         noEmoji: true,
         routerMode: 'hash',
         loadSidebar: true,
-        // mergeNavbar: true,
         fallbackLanguages: ['en-US', 'zh-CN'],
 
         search: {
