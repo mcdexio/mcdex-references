@@ -13,7 +13,7 @@ The Mai Protocol V2 is mainly composed of three parts: Perpetual, AMM and Exchan
 
 This hybrid architecture is shown in the figure below:
 
-![mai2-arch](asset/mai2-arch.png)
+![mai2-arch](../en-US/asset/mai2-arch.png)
 
 We will explain this architecture from the perspective of different roles.
 
