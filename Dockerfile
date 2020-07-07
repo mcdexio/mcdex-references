@@ -9,3 +9,4 @@ COPY index.html /srv/http/
 COPY favicon.ico /srv/http/
 COPY index.css /srv/http/
 COPY logo.png /srv/http/
+COPY accept-language-parser.js /srv/http/
