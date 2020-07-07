@@ -121,7 +121,7 @@ Finally, the MCDEX perpetual contract charge/give interest to all margin account
 ### 2.3 Smart Contracts
 As shown below, MCDEX's perpetual contract consists of three smart contracts on Ethereum: the Perpetual, the AMM, and the Exchange. The relationships and functions of these three smart contracts are described below:
 
-![mai2-arch](https://github.com/mcdexio/documents/raw/master/en/asset/mai2-arch.png)
+![mai2-arch](https://github.com/mcdexio/documents/raw/master/en-US/asset/mai2-arch.png)
 
 #### 2.3.1 Perpetual
 
@@ -297,13 +297,13 @@ As the platform continues to grow and evolve, new products will be launched on a
   - Introducing more types of financial assets to the MCDEX platform.
 
 ## References
-[1] [Perpetual Reference.](https://mcdex.io/references/#/en/perpetual)
+[1] [Perpetual Reference.](https://mcdex.io/references/#/en-US/perpetual)
 
 [2] Y. Zhang, X. Chen, and D. Park, “Formal specification of constant product (xy=k) market maker model and implementation,” 2018.
 
 [3] [M. Lei and T. Zhu, MIP2: Proposal: A New Perpetual AMM Pricing Formula With High Capital Efficiency.](https://github.com/mcdexio/mips/issues/2)
 
-[4] [Perpetual Technical Guide.](https://mcdex.io/references/#/en/perpetual-tech)
+[4] [Perpetual Technical Guide.](https://mcdex.io/references/#/en-US/perpetual-tech)
 
 [5] [CHAINSECURITY, Security Audit of Mai Protocol Smart Contracts.](https://github.com/mcdexio/mai-protocol/blob/master/audit/ChainSecurity_MaiProtocol.pdf)
 

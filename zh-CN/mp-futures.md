@@ -29,11 +29,11 @@ MP期货是一种创新的金融工具。
 | 交割价格             | 如果唐纳德·特朗普赢得2020年美国总统大选，TRUMP合约将以$1交割，否则以$0交割。            | 
 | 交割方式             | 以保证金代币进行现金结算。      |  
 | 已到期但未交割时     | 在此期间，你仍然可以以任何合适的价格（如：交割价）提交委托来平仓。但要开仓的话，只能以低于交割价的价格开多，或以高于交割价的价格开空。 |
-| 费用                 | Gas费： 详见 [手续费](/cn/general-information.md#fee)  <br>Market Protocol交易费： 挂单方： 0.02%，吃单方： 0.07% | 
+| 费用                 | Gas费： 详见 [手续费](/zh-CN/general-information.md#fee)  <br>Market Protocol交易费： 挂单方： 0.02%，吃单方： 0.07% | 
 
 ## 架构
 
-![mai-arch](../en/asset/mai-arch.png)
+![mai-arch](../en-US/asset/mai-arch.png)
 
 ## 审计
 

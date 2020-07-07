@@ -113,7 +113,7 @@ ETH空头PNL=(1/Mark Price – 1/Entry Price) * Size
 ### 2.3 智能合约
 如下图所示，MCDEX的永续合约由以太坊上的三个智能合约组成：Perpetual、AMM和Exchange。这里介绍这三个智能合约的关系和功能。
 
-![mai2-arch](https://github.com/mcdexio/documents/raw/master/en/asset/mai2-arch.png)
+![mai2-arch](https://github.com/mcdexio/documents/raw/master/en-US/asset/mai2-arch.png)
 
 #### 2.3.1 Perpetual
 
@@ -283,13 +283,13 @@ MCB的总量为100,000,000个，MCB的分配方式如下：
   - 为MCDEX平台引入更多类型的金融资产
   
 ## 参考
-[1] [Perpetual Reference.](https://mcdex.io/references/#/en/perpetual)
+[1] [Perpetual Reference.](https://mcdex.io/references/#/en-US/perpetual)
 
 [2] Y. Zhang, X. Chen, and D. Park, “Formal specification of constant product (xy=k) market maker model and implementation,” 2018.
 
 [3] [M. Lei and T. Zhu, MIP2: Proposal: A New Perpetual AMM Pricing Formula With High Capital Efficiency.](https://github.com/mcdexio/mips/issues/2)
 
-[4] [Perpetual Technical Guide.](https://mcdex.io/references/#/en/perpetual-tech)
+[4] [Perpetual Technical Guide.](https://mcdex.io/references/#/en-US/perpetual-tech)
 
 [5] [CHAINSECURITY, Mai协议审计报告](https://github.com/mcdexio/mai-protocol/blob/master/audit/ChainSecurity_MaiProtocol.pdf)
 
