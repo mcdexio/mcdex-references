@@ -1,5 +1,0 @@
-* [White Paper](en/white-paper.md)
-* [General Information](en/general-information.md)
-* [Perpetual](en/perpetual.md)
-* [Perpetual Technical Guide](en/perpetual-tech.md)
-* [MP Futures](en/mp-futures.md)

@@ -112,7 +112,7 @@ Each trader has a margin account. A margin account consists of:
 
 This article details how to provide/remove liquidity to AMM.
 
-Because MCDEX Perpetual is a [vanilla contract](en/perpetual#vanilla-amp-inverse-contract) on the blockchain, the discussion here takes vanilla contract as an example. Note that ETH-PERP appears as a corresponding inverse contract on the UI.
+Because MCDEX Perpetual is a [vanilla contract](en-US/perpetual#vanilla-amp-inverse-contract) on the blockchain, the discussion here takes vanilla contract as an example. Note that ETH-PERP appears as a corresponding inverse contract on the UI.
 
 ### Trade with AMM
 

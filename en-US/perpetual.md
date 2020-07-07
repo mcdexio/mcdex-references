@@ -192,7 +192,7 @@ The liquidity provider gets the share tokens of the pool.
 
 When adding liquidity, the provider adds both collateral tokens & long position to the pool: 1.the provider sends collateral to the pool; 2. meanwhile the provider trade as a seller with the pool, which will increase the long position size of the pool. After adding, the provider has a short position in his/her margin account and shares of the pool's long position, the net position should be zero. However, when other traders trade with the pool, the position size of the pool changes. As a result, the provider's net position size is not zero, which is risk exposure. The provider gets the trading fee as an incentive.
 
-Check more examples [here](en/perpetual-tech#add-liquidity-to-amm).
+Check more examples [here](en-US/perpetual-tech#add-liquidity-to-amm).
 
 
 ### Remove Liquidity
@@ -202,7 +202,7 @@ Share token holders can remove liquidity from the pool and redeem the share toke
 
 It can be proved that the Mid Price ```x/y``` is not changed after this operation.
 
-Check more examples [here](en/perpetual-tech#remove-liquidity-from-amm).
+Check more examples [here](en-US/perpetual-tech#remove-liquidity-from-amm).
 
 
 ## Trade with the Order Book
