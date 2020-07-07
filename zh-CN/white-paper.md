@@ -113,7 +113,7 @@ ETH空头PNL=(1/Mark Price – 1/Entry Price) * Size
 ### 2.3 智能合约
 如下图所示，MCDEX的永续合约由以太坊上的三个智能合约组成：Perpetual、AMM和Exchange。这里介绍这三个智能合约的关系和功能。
 
-![mai2-arch](https://github.com/mcdexio/documents/raw/master/en-US/asset/mai2-arch.png)
+![mai2-arch](../en-US/asset/mai2-arch.png)
 
 #### 2.3.1 Perpetual
 
