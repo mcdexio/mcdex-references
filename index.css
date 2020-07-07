@@ -37,6 +37,14 @@ html {
 .app-nav li ul li {
   line-height: 20px;
 }
+@media screen and (max-width: 768px) {
+  .app-nav {
+    margin-top: 0;
+  }
+  .app-nav li {
+    margin: 0;
+  }
+}
 .sidebar ul li a {
   font-size: 0.14rem;
 }
