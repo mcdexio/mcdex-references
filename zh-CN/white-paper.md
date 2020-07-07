@@ -1,5 +1,4 @@
 # MCDEX: DeFi永续合约交易平台
-[PDF版](https://mcdexio.github.io/documents/cn/MCDEX-white-paper-cn.pdf)
 
 *刘杰*
 

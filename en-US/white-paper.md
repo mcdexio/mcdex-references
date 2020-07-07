@@ -1,5 +1,4 @@
 # MCDEX: DeFi Platform for Trading Perpetuals
-[中文版](https://mcdexio.github.io/documents/cn/MCDEX-white-paper-cn.pdf)
 
 *By Liu Jie, Founder of MCDEX*
 
