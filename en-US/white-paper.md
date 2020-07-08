@@ -268,6 +268,9 @@ The total supply of MCB tokens is 100,000,000, distributed as follows:
 
 As the platform continues to grow and evolve, new products will be launched on an ongoing basis which will bring different sets of users with different motivations. Going forward, there will be many types of user incentives for takers, liquidity providers, contributors of open-source trading strategies, social traders, holders of structured products, DeFi developers, and other stakeholders of the MCDEX ecosystem. The community will actively propose the incentives but the approval will be done by voting (by MCB holders). 
 
+**MCB Contract Address**: [0x4e352cf164e64adcbad318c3a1e222e9eba4ce42](https://etherscan.io/token/0x4e352cf164e64adcbad318c3a1e222e9eba4ce42)
+
+
 ## 5. Road map
 
 - Q2 2020
