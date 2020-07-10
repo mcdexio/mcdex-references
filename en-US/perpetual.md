@@ -77,7 +77,7 @@ The Mark Price is derived using both the Index and the Fair Price, by adding to 
 
 ```Mark Price = Index + 600 seconds EMA (Fair Price - Index)```
 
-Further, the Mark Price is hard limited by MCDEX's Index Price by +/- 0.5%. Under no circumstance, the future Mark Price will deviate from the Index Price by more than 0.5%.
+Further, the Mark Price is hard limited by MCDEX's Index Price by +/- 0.6%. Under no circumstance, the future Mark Price will deviate from the Index Price by more than 0.6%.
 
 The 600 seconds EMA is recalculated every second, so there are in total 600 time periods, where the measurement of the latest second has a weight of 2 / (600 + 1) = 0.333%
 
@@ -93,13 +93,13 @@ A positive Funding rate means longs (long position holders) pay to fund shorts (
 
 **Next we calculate the Funding Rate**
 
-From the Premium Rate, the Funding Rate can be calculated by applying a dampener. If the Premium Rate is between -0.05% and 0.05%, the Funding Rate is zero.
+From the Premium Rate, the Funding Rate can be calculated by applying a dampener. If the Premium Rate is between -0.2% and 0.2%, the Funding Rate is zero.
 
-If the premium rate is lower than -0.05%, then the Funding Rate will be Premium Rate + 0.05%.
+If the premium rate is lower than -0.2%, then the Funding Rate will be Premium Rate + 0.2%.
 
-If the premium rate is higher than 0.05%, then the Funding Rate will be Premium Rate - 0.05%.
+If the premium rate is higher than 0.2%, then the Funding Rate will be Premium Rate - 0.2%.
 
-In general, Funding Rate = Maximum (0.05%, Premium Rate) + Minimum (-0.05%, Premium Rate)
+In general, Funding Rate = Maximum (0.2%, Premium Rate) + Minimum (-0.2%, Premium Rate)
 
 **Finally we calculate the Time Fraction**
 

@@ -51,7 +51,7 @@ Mark Price = Index Price + EMA(Fair Price - Index Price)
 ```
 
 
-In the above equation, EMA is an exponential moving average function that calculates the moving average of the spread between the fair price and the index price. In practice, the mark price will be limited to a certain range of the index price (e.g. +-0.5%).
+In the above equation, EMA is an exponential moving average function that calculates the moving average of the spread between the fair price and the index price. In practice, the mark price will be limited to a certain range of the index price (e.g. +-0.6%).
 
 In turn, we can define the Premium Rate as:
 
