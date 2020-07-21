@@ -4,7 +4,7 @@
 
 ## 1. Overview
 
-People have been continuously exploring scenarios where blockchain technologycan realize its true potential through decentralized financial services. Some DeFi projects in the context of stable coins, lending, and trading have achieved initial success in terms of the number of users and the size of collateralized funds. However, the current DeFi products still have the following problems:
+People have been continuously exploring scenarios where blockchain technology can realize its true potential through decentralized financial services. Some DeFi projects in the context of stable coins, lending, and trading have achieved initial success in terms of the number of users and the size of collateralized funds. However, the current DeFi products still have the following problems:
 
 - Current DeFi products are mainly aimed at traders who have advanced trading skills and are not accessible to ordinary users.
 - The lack of structured products that will meet the investment needs of users with different risk appetites.
