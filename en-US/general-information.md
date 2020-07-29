@@ -31,7 +31,8 @@ This type of order is matched when the market price reaches the limit price set 
 **Perpetual contracts**
 
 Trade with order book:
-- Trading Fees: -0.025% for makers and 0.075% for takers.      
+- Trading Fees: 0% for makers and 0.15% for takers. 
+- Small order (Quantity < 12000 USD) trading fees: 0% for makers and 1% for takers. 
 - Gas Fees: NIL (Gas costs for all trades are completely covered by MCDEX)
 
 Trade with AMM:
