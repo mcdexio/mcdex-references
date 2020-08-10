@@ -30,13 +30,28 @@ Funding payments are automatically calculated every second and are added to or s
 | -------------------------|:---------------------------------------------------------: |
 |Underlying Asset/Ticker   |    ETH/USD price from Chainlink                            |
 |Trading Hours	           |24*7 days a week                                            |
-|Minimum Lot Size|100 USD|
+|Minimum Lot Size|10 USD|
 |Contract Size|1 USD|
 |Initial Margin|10%|
-|Maintenance Margin|7.5%|
+|Maintenance Margin|7.5%. Liquidate penalty 2.5%|
 |Mark Price|It is the price at which the Perpetual contract is valued during trading hours. This can (temporarily) vary from the actual Perpetual Market Price to protect against manipulative trading. Mark Price is calculated as Index price + 600 seconds EMA of (Perpetual Fair Price - Index Price).  The Perpetual Fair Price is the Mid Price of AMM.
 |Delivery/Expiration|	No Delivery/Expiration|
 |Delivery Method|	Cash settlement in ETH|
+|Contract Type| [Inverse Contract](#vanilla-amp-inverse-contract) |
+
+### LINK-PERP
+
+|Contract Symbol           | 	LINK-PERP                                                |
+| -------------------------|:---------------------------------------------------------: |
+|Underlying Asset/Ticker   |    LINK/USD price from Chainlink                            |
+|Trading Hours	           |24*7 days a week                                            |
+|Minimum Lot Size|100 USD|
+|Contract Size|1 USD|
+|Initial Margin|20%|
+|Maintenance Margin|10%. Liquidate penalty 10%|
+|Mark Price|It is the price at which the Perpetual contract is valued during trading hours. This can (temporarily) vary from the actual Perpetual Market Price to protect against manipulative trading. Mark Price is calculated as Index price + 600 seconds EMA of (Perpetual Fair Price - Index Price).  The Perpetual Fair Price is the Mid Price of AMM.
+|Delivery/Expiration|	No Delivery/Expiration|
+|Delivery Method|	Cash settlement in LINK|
 |Contract Type| [Inverse Contract](#vanilla-amp-inverse-contract) |
 
 ## Trading Examples
