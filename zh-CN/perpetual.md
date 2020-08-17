@@ -303,6 +303,6 @@ Mai2智能合约按以下方式计算保证金帐户（普通合约）：
 |Proxy          |自动做市商保证金账户                                      |[0x05c363D2B9AFc36b070fe2c61711280eDC214678](https://etherscan.io/address/0x05c363D2B9AFc36b070fe2c61711280eDC214678)|
 |GlobalConfig   |全局治理参数                            |[0x71e77Ffbbfd4418ED47981927738b5425c187F64](https://etherscan.io/address/0x71e77Ffbbfd4418ED47981927738b5425c187F64)|
 |Exchange       |订单簿交易逻辑                              |[0xbF5c98A4eD00C28957b6e15A01102DC2568D2650](https://etherscan.io/address/0xbF5c98A4eD00C28957b6e15A01102DC2568D2650)|
-|PriceFeeder    |指数预言机                                            |[0x9B2D7D7f7b2810Ef2be979fc2ACebe6097d9563A](https://etherscan.io/address/0x9B2D7D7f7b2810Ef2be979fc2ACebe6097d9563A)|
+|PriceFeeder    |指数预言机                                            |[0xcfa46E1b666fd91Bf39028055D506c1e4cA5aD6E](https://etherscan.io/address/0x9B2D7D7f7b2810Ef2be979fc2ACebe6097d9563A)|
 |ShareToken     |自动做市商的份额代币                                  |[0xAe694FB9DCD1E6195519c0056B2aB19380B26FF2](https://etherscan.io/address/0xAe694FB9DCD1E6195519c0056B2aB19380B26FF2)|
 |ContractReader |批量阅读器，以减少通信消耗   |[0x53C9Df248150AD849bD1BadD3C83b0f6cb735052](https://etherscan.io/address/0x53C9Df248150AD849bD1BadD3C83b0f6cb735052)|
