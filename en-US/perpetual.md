@@ -302,6 +302,6 @@ Due to the importance of global settlement, MCDEX will establish a community-led
 |Proxy          |AMM margin account                                      |[0x05c363D2B9AFc36b070fe2c61711280eDC214678](https://etherscan.io/address/0x05c363D2B9AFc36b070fe2c61711280eDC214678)|
 |GlobalConfig   |Common governance parameters                            |[0x71e77Ffbbfd4418ED47981927738b5425c187F64](https://etherscan.io/address/0x71e77Ffbbfd4418ED47981927738b5425c187F64)|
 |Exchange       |Order book exchange logic                                |[0xbF5c98A4eD00C28957b6e15A01102DC2568D2650](https://etherscan.io/address/0xbF5c98A4eD00C28957b6e15A01102DC2568D2650)|
-|PriceFeeder    |Price oracle                                            |[0x9B2D7D7f7b2810Ef2be979fc2ACebe6097d9563A](https://etherscan.io/address/0x9B2D7D7f7b2810Ef2be979fc2ACebe6097d9563A)|
+|PriceFeeder    |Price oracle                                            |[0xcfa46E1b666fd91Bf39028055D506c1e4cA5aD6E](https://etherscan.io/address/0x9B2D7D7f7b2810Ef2be979fc2ACebe6097d9563A)|
 |ShareToken     |Share token of the AMM                                  |[0xAe694FB9DCD1E6195519c0056B2aB19380B26FF2](https://etherscan.io/address/0xAe694FB9DCD1E6195519c0056B2aB19380B26FF2)|
 |ContractReader |A batch reader in order to reduce calling consumption   |[0x53C9Df248150AD849bD1BadD3C83b0f6cb735052](https://etherscan.io/address/0x53C9Df248150AD849bD1BadD3C83b0f6cb735052)|
