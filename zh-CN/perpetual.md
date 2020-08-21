@@ -294,6 +294,14 @@ Mai2智能合约按以下方式计算保证金帐户（普通合约）：
 
 ## 部署的合约
 
+### 通用工具
+
+|合约|描述|地址|
+|---|---|---|
+|GlobalConfig   |全局治理参数                            |[0x71e77Ffbbfd4418ED47981927738b5425c187F64](https://etherscan.io/address/0x71e77Ffbbfd4418ED47981927738b5425c187F64)|
+|Exchange       |订单簿交易逻辑                              |[0xbF5c98A4eD00C28957b6e15A01102DC2568D2650](https://etherscan.io/address/0xbF5c98A4eD00C28957b6e15A01102DC2568D2650)|
+|ContractReader |批量阅读器，以减少通信消耗   |[0x53C9Df248150AD849bD1BadD3C83b0f6cb735052](https://etherscan.io/address/0x53C9Df248150AD849bD1BadD3C83b0f6cb735052)|
+
 ### ETH-PERP
 
 |合约|描述|地址|
@@ -301,8 +309,15 @@ Mai2智能合约按以下方式计算保证金帐户（普通合约）：
 |Perpetual      |永续合约的核心逻辑，包括保证金账户，盈亏等|[0x220a9f0DD581cbc58fcFb907De0454cBF3777f76](https://etherscan.io/address/0x220a9f0DD581cbc58fcFb907De0454cBF3777f76)|
 |AMM            |自动做市商                             |[0xAAaC8434217575643B2D2aB6f12CE8600C625520](https://etherscan.io/address/0xAAaC8434217575643B2D2aB6f12CE8600C625520)|
 |Proxy          |自动做市商保证金账户                                      |[0x05c363D2B9AFc36b070fe2c61711280eDC214678](https://etherscan.io/address/0x05c363D2B9AFc36b070fe2c61711280eDC214678)|
-|GlobalConfig   |全局治理参数                            |[0x71e77Ffbbfd4418ED47981927738b5425c187F64](https://etherscan.io/address/0x71e77Ffbbfd4418ED47981927738b5425c187F64)|
-|Exchange       |订单簿交易逻辑                              |[0xbF5c98A4eD00C28957b6e15A01102DC2568D2650](https://etherscan.io/address/0xbF5c98A4eD00C28957b6e15A01102DC2568D2650)|
 |PriceFeeder    |指数预言机                                            |[0xcfa46E1b666fd91Bf39028055D506c1e4cA5aD6E](https://etherscan.io/address/0x9B2D7D7f7b2810Ef2be979fc2ACebe6097d9563A)|
 |ShareToken     |自动做市商的份额代币                                  |[0xAe694FB9DCD1E6195519c0056B2aB19380B26FF2](https://etherscan.io/address/0xAe694FB9DCD1E6195519c0056B2aB19380B26FF2)|
-|ContractReader |批量阅读器，以减少通信消耗   |[0x53C9Df248150AD849bD1BadD3C83b0f6cb735052](https://etherscan.io/address/0x53C9Df248150AD849bD1BadD3C83b0f6cb735052)|
+
+### LINK-PERP
+
+|合约|描述|地址|
+|---|---|---|
+|Perpetual      |永续合约的核心逻辑，包括保证金账户，盈亏等|[0xa04197e5f7971e7aef78cf5ad2bc65aac1a967aa](https://etherscan.io/address/0x220a9f0DD581cbc58fcFb907De0454cBF3777f76)|
+|AMM            |自动做市商                             |[0x7230d622d067d9c30154a750dbd29c035ba7605a](https://etherscan.io/address/0xAAaC8434217575643B2D2aB6f12CE8600C625520)|
+|Proxy          |自动做市商保证金账户                                      |[0x694baa24d46530e46bcd39b1f07943a2bddb01e6](https://etherscan.io/address/0x05c363D2B9AFc36b070fe2c61711280eDC214678)|
+|PriceFeeder    |指数预言机                                            |[0x8597eb9e005f39f8f70a17aea914b20450abfe60](https://etherscan.io/address/0x9B2D7D7f7b2810Ef2be979fc2ACebe6097d9563A)|
+|ShareToken     |自动做市商的份额代币                                  |[0xd78ba1d99dbbc4eba3b206c9c67a08879b6ec79b](https://etherscan.io/address/0xAe694FB9DCD1E6195519c0056B2aB19380B26FF2)|
