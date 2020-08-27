@@ -51,8 +51,54 @@ MCDEX永续合约持续计算永续合约的标记价格与Chainlink的ETH / USD
 | 维持保证金 | 15%。强制平仓罚金15% |
 | 标记价格 | 该永续合约交易时的估计价格。它可以（暂时）偏离实际的永续合约市场成交价，以防止有人恶意操纵市场。标记价格的计算方法是：指数价格+公允价-指数价格的600秒EMA。永续合约公允价是自动做市商（AMM）的中间价。 |
 | 交割/到期时间 |	没有交割/到期时间 |
-| 交割方式 | ETH现金交割 |
+| 交割方式 | LINK现金交割 |
 | 合约类型 | [反向合约](#普通合约和反向合约) |
+
+### COMP-PERP
+
+| 合约代号 | COMP-PERP |
+| ------------------- | :---------------------------------------------: |
+| 标的资产/代号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 来自Chainlink的COMP/USD价格 |
+| 交易时间 | 每周 7天 * 24小时 |
+| 最小合约数量 | 100 USD |
+| 合约价值 | 1 USD |
+| 初始保证金 | 20% |
+| 维持保证金 | 15%。强制平仓罚金15% |
+| 标记价格 | 该永续合约交易时的估计价格。它可以（暂时）偏离实际的永续合约市场成交价，以防止有人恶意操纵市场。标记价格的计算方法是：指数价格+公允价-指数价格的600秒EMA。永续合约公允价是自动做市商（AMM）的中间价。 |
+| 交割/到期时间 |	没有交割/到期时间 |
+| 交割方式 | COMP现金交割 |
+| 合约类型 | [反向合约](#普通合约和反向合约) |
+
+### LEND-PERP
+
+| 合约代号 | LEND-PERP |
+| ------------------- | :---------------------------------------------: |
+| 标的资产/代号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 来自Chainlink的LEND/USD价格 |
+| 交易时间 | 每周 7天 * 24小时 |
+| 最小合约数量 | 100 USD |
+| 合约价值 | 1 USD |
+| 初始保证金 | 20% |
+| 维持保证金 | 15%。强制平仓罚金15% |
+| 标记价格 | 该永续合约交易时的估计价格。它可以（暂时）偏离实际的永续合约市场成交价，以防止有人恶意操纵市场。标记价格的计算方法是：指数价格+公允价-指数价格的600秒EMA。永续合约公允价是自动做市商（AMM）的中间价。 |
+| 交割/到期时间 |	没有交割/到期时间 |
+| 交割方式 | LEND现金交割 |
+| 合约类型 | [反向合约](#普通合约和反向合约) |
+
+### SNX-PERP
+
+| 合约代号 | SNX-PERP |
+| ------------------- | :---------------------------------------------: |
+| 标的资产/代号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 来自Chainlink的SNX/USD价格 |
+| 交易时间 | 每周 7天 * 24小时 |
+| 最小合约数量 | 100 USD |
+| 合约价值 | 1 USD |
+| 初始保证金 | 20% |
+| 维持保证金 | 15%。强制平仓罚金15% |
+| 标记价格 | 该永续合约交易时的估计价格。它可以（暂时）偏离实际的永续合约市场成交价，以防止有人恶意操纵市场。标记价格的计算方法是：指数价格+公允价-指数价格的600秒EMA。永续合约公允价是自动做市商（AMM）的中间价。 |
+| 交割/到期时间 |	没有交割/到期时间 |
+| 交割方式 | SNX现金交割 |
+| 合约类型 | [反向合约](#普通合约和反向合约) |
+
 
 ## 交易示例
 
@@ -321,3 +367,33 @@ Mai2智能合约按以下方式计算保证金帐户（普通合约）：
 |Proxy          |自动做市商保证金账户                                      |[0x694baa24d46530e46bcd39b1f07943a2bddb01e6](https://etherscan.io/address/0x05c363D2B9AFc36b070fe2c61711280eDC214678)|
 |PriceFeeder    |指数预言机                                            |[0x8597eb9e005f39f8f70a17aea914b20450abfe60](https://etherscan.io/address/0x9B2D7D7f7b2810Ef2be979fc2ACebe6097d9563A)|
 |ShareToken     |自动做市商的份额代币                                  |[0xd78ba1d99dbbc4eba3b206c9c67a08879b6ec79b](https://etherscan.io/address/0xAe694FB9DCD1E6195519c0056B2aB19380B26FF2)|
+
+### COMP-PERP
+
+|合约|描述|地址|
+|---|---|---|
+|Perpetual      |永续合约的核心逻辑，包括保证金账户，盈亏等|[0xfa203e643D1FDDC5d8B91253eA23B3bD826cae9e](https://etherscan.io/address/0xfa203e643D1FDDC5d8B91253eA23B3bD826cae9e)|
+|AMM            |自动做市商                             |[0x5378B0388Ef594f0c2EB194504aee2B48d1eac18](https://etherscan.io/address/0x5378B0388Ef594f0c2EB194504aee2B48d1eac18)|
+|Proxy          |自动做市商保证金账户                                      |[0x69F3EbB9f14F7048E675443Fb6375F9D48D8a9d6](https://etherscan.io/address/0x69F3EbB9f14F7048E675443Fb6375F9D48D8a9d6)|
+|PriceFeeder    |指数预言机                                            |[0x78963E7cB9454cCf8412Cd0B5bC4C69AD5cDbBd3](https://etherscan.io/address/0x78963E7cB9454cCf8412Cd0B5bC4C69AD5cDbBd3)|
+|ShareToken     |自动做市商的份额代币                                  |[0x9ec63850650BC7aEC297BA023f0C1650CBbd6958](https://etherscan.io/address/0x9ec63850650BC7aEC297BA023f0C1650CBbd6958)|
+
+### LEND-PERP
+
+|合约|描述|地址|
+|---|---|---|
+|Perpetual      |永续合约的核心逻辑，包括保证金账户，盈亏等|[0xd48C88A18BFA81486862c6d1d172a39F1365e8AC](https://etherscan.io/address/0xd48C88A18BFA81486862c6d1d172a39F1365e8AC)|
+|AMM            |自动做市商                             |[0xBe83943d5CA2d66Fb7ba3A8d4A983782f31a42dc](https://etherscan.io/address/0xBe83943d5CA2d66Fb7ba3A8d4A983782f31a42dc)|
+|Proxy          |自动做市商保证金账户                                      |[0xD8642327B919295FE2733a73DE1D2355b589cb04](https://etherscan.io/address/0xD8642327B919295FE2733a73DE1D2355b589cb04)|
+|PriceFeeder    |指数预言机                                            |[0x784819cbA91Ed87C296565274fc150EaA11EBC04](https://etherscan.io/address/0x784819cbA91Ed87C296565274fc150EaA11EBC04 )|
+|ShareToken     |自动做市商的份额代币                                  |[0x3d4b40ca0f98fcce38aa1704cbdf134496c261e8](https://etherscan.io/address/0x3d4b40ca0f98fcce38aa1704cbdf134496c261e8)|
+
+### SNX-PERP
+
+|合约|描述|地址|
+|---|---|---|
+|Perpetual      |永续合约的核心逻辑，包括保证金账户，盈亏等|[0x4cC89906db523Af7C3bB240a959bE21Cb812b434](https://etherscan.io/address/0x4cC89906db523Af7C3bB240a959bE21Cb812b434)|
+|AMM            |自动做市商                             |[0x942Df696cd1995ba2eAB710D168B2D9CeE53B52c](https://etherscan.io/address/0x942Df696cd1995ba2eAB710D168B2D9CeE53B52c)|
+|Proxy          |自动做市商保证金账户                                      |[0x298BadDa419EECE0abe86FeDC2f0677a7e8E35a2](https://etherscan.io/address/0x298BadDa419EECE0abe86FeDC2f0677a7e8E35a2)|
+|PriceFeeder    |指数预言机                                            |[0xA2fe15e40f5cCc480b545eb8FFAbdCDB84a3D3Dc](https://etherscan.io/address/0xA2fe15e40f5cCc480b545eb8FFAbdCDB84a3D3Dc)|
+|ShareToken     |自动做市商的份额代币                                  |[0xf377810BFFc83DF177d7f992A8807943EA0a286F](https://etherscan.io/address/0xf377810BFFc83DF177d7f992A8807943EA0a286F)|
