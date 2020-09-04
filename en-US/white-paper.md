@@ -266,6 +266,8 @@ The total supply of MCB tokens is 100,000,000, distributed as follows:
 - 25% to the MCDEX Foundation for token sales to cover expenses such as development, audits, market making, marketing, etc..
 - 50% to user incentives with a limit of up to 5% per year.
 
+(On September 1st, 2020, team vesting will suspend for 6 months - lock up for 6 months. On March 1st, 2020, team vesting will be resumed.)
+
 As the platform continues to grow and evolve, new products will be launched on an ongoing basis which will bring different sets of users with different motivations. Going forward, there will be many types of user incentives for takers, liquidity providers, contributors of open-source trading strategies, social traders, holders of structured products, DeFi developers, and other stakeholders of the MCDEX ecosystem. The community will actively propose the incentives but the approval will be done by voting (by MCB holders). 
 
 **MCB Contract Address**: [0x4e352cf164e64adcbad318c3a1e222e9eba4ce42](https://etherscan.io/token/0x4e352cf164e64adcbad318c3a1e222e9eba4ce42)
@@ -280,6 +282,7 @@ As the platform continues to grow and evolve, new products will be launched on a
   - Launch automated trading and social trading products
   - Initial MCB token sale
   - Liquidity mining
+ 
 
 - Q4 2020
   - New AMM formula for perpetual contracts
