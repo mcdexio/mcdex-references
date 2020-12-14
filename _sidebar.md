@@ -3,3 +3,4 @@
 * [Perpetual](en-US/perpetual.md)
 * [Perpetual Technical Guide](en-US/perpetual-tech.md)
 * [MP Futures](en-US/mp-futures.md)
+* [Mai Protocol v3](en-US/mai-protocol-v3.md)
