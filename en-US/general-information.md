@@ -41,4 +41,4 @@ Trade with AMM:
 
 For Order book & AMM:
 - Deposits and Withdrawals: No fees associated with deposits and withdrawals on MCDEX. However, the user is responsible for the gas costs of deposit and withdrawal transactions.
-- Liquidations: Liquidations are charged a higher fee than normal. The surplus fees of liquidations will automatically fund the insurance fund. 2.5% penalty fee - 1.5% goes to the liquidator, 1% goes to the insurance fund.
+- Liquidations: Liquidations are charged a higher fee than normal. The surplus fees of liquidations will automatically fund the insurance fund. 7.5% penalty fee - 4.5% goes to the liquidator, 3% goes to the insurance fund.
