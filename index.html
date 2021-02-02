@@ -21,8 +21,8 @@
     <ul>
         <li><p id="current-lang">English</p>
             <ul>
-                <li><a data-name="en-US" href="#/en-US/white-paper">English</a></li>
-                <li><a data-name="zh-CN" href="#/zh-CN/white-paper" class="active">中文</a></li>
+                <li><a data-name="en-US" href="#/en-US/mai-protocol-v3">English</a></li>
+                <li><a data-name="zh-CN" href="#/zh-CN/mai-protocol-v3" class="active">中文</a></li>
             </ul>
         </li>
     </ul>
@@ -93,7 +93,7 @@
             window.location.hash = window.location.hash.replace(langRegx, '#/' + lang + '/')
         }
     } else {
-        window.location.hash = '#/' + lang + '/white-paper'
+        window.location.hash = '#/' + lang + '/mai-protocol-v3'
     }
 
     setCurrentLang(lang)
@@ -101,7 +101,7 @@
     window.$docsify = {
         name: 'mcdex',
         repo: '',
-        basePath: '/references',
+        basePath: '/',
         homepage: '/' + lang + '/mai-protocol-v3.md',
         subMaxLevel: 2,
         auto2top: true,

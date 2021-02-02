@@ -1,8 +1,6 @@
 # Mai Protocol v3: Permissionless Perpetual Swap Protocol based on an advanced AMM 
 
-# By Liu Jie, Founder of MCDEX
-
-
+*By Liu Jie, Founder of MCDEX*
 ## 1. Introduction
 
 Mai Protocol V3 designed by MCDEX is an AMM-based decentralized perpetual swap protocol. Perpetual swap is one of the most popular derivatives that has no expiration date, supports margin trading, and has its price soft pegged to index price. 
