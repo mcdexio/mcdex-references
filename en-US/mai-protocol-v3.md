@@ -13,18 +13,16 @@ The smart contract of the protocol has been strictly audited by a third party, a
 
 We believe that permissionless is the key feature of this protocol, which can empower the whole community to contribute to the MCDEX ecosystem - anyone can create the perpetual market of an on-chain or off-chain synthetic assets. With the evolvement of MCDEX community, more diversified perpetual market will be created, and trading volume will be generated.
 
-## 2. Perpetual Swaps
-
-### 2.1 Market Participants 
+## 2. Market Participants 
 This protocol is completely based on AMM. Please refer to the MAI v3 AMM Design document for detailed information regarding AMM. 
 
 There are following roles in the market: 
 
-#### AMM
+### AMM
 
 AMM plays the role of a central counterparty, providing liquidity for the perpetual swap. Like a normal trader, AMM has its independent margin account, and is able to hold positions. 
 
-#### Operator
+### Operator
 
 An operator is the creator and manager of the perpetual swap. 
 - How to become an Operator:
@@ -40,7 +38,7 @@ An operator is the creator and manager of the perpetual swap.
 
 - Risks: Not applicable 
 
-#### Liquidity provider: 
+### Liquidity provider: 
 - How to become a LP:
   - deposit collateral in the AMM pool
 - Benefits:
@@ -53,16 +51,16 @@ An operator is the creator and manager of the perpetual swap.
 - Risks
   - When AMM has position, there is a risk exposure. If the index price changes at this moment, there could be a loss on AMM. This loss will be shared by all LP. 
 
-#### Trader
+### Trader
 Traders are the major participants in the market. Traders realize PNL by trading against AMM and they are always the taker. In this protocol, all trades must go through AMM, and traders can’t bypass AMM to trade amongst themselves. For every trade, traders need to pay a certain amount of transaction fee. In addition, trader will pay or receive funding payment according to the funding rate policy.
 
-#### Keeper
+### Keeper
 Keeper is an auxiliary role. Anyone can be a keeper to liquidate accounts with insufficient margin (see section 2.4 liquidation). 
 
-#### Delegator
+### Delegator
 A delegator is a special role. There could be a delegator for every margin account. A delegator can operate over the account to trade (directly against AMM or through a broker), but they can’t withdraw fund from the account. The goal of delegator is to separate hot and cold wallets and realize the custody of trading strategies. 
 
-### 2.2 Funding Payment
+## 3. Funding Payment
 Similar with the traditional perpetual swap, this protocol utilizes funding payment to anchor the index price. 
 
 Since all trades must go through AMM, the market reaches balance when AMM doesn’t have any position. At this point AMM will provide the best bid and the best ask price around the index, then the current market price is close to the index. 
@@ -71,7 +69,7 @@ The AMM price shifts according to its position. When AMM longs, the AMM price wi
 
 On one hand, funding payment can prevent more traders from becoming the counterparty of AMM, which could lead to a further price deviation. On the other hand, a high funding rate will attract more LP to add liquidity or open the same position with AMM. Based on the AMM design, both adding liquidity to AMM and trading against AMM which reduces the AMM’s position size will decrease price deviation. In such a way, funding payment will push the market price back to the index. 
 
-### 2.3 Margin & PNL
+## 4. Margin & PNL
 Due to the permissionless nature of this protocol, anyone can create any perpetual swaps of different risk levels. To prevent the spread of risk across different perpetual swaps, the protocol uses isolated margin mechanism - each perpetual swap owned by a trader has its own independent margin account, and the PNL of this account won’t affect other margin accounts they trade. 
 
 When a trader enters long or short position of `ΔN` contracts at a certain entry price `P_entry`, `ΔN>0` indicates that the trader longs, `ΔN<0` indicates that the trader shorts. 
@@ -100,13 +98,13 @@ If the maintenance margin requirement cannot be met, the position will be liquid
 
 In the end, every perpetual swap has a “Keeper Gas Reward” parameter. When the position is liquidated, the keeper will receive a set amount of reward to pay for Gas. Therefore, our protocol requires that, as long as the position size of margin account is bigger than 0 (disregarding the position value), the margin balance has to be sufficient for the “Keeper Gas Reward”. Otherwise, the position will be liquidated. 
 
-### 2.4 Liquidation
+## 5. Liquidation
 When the margin balance is less than the maintenance margin, the position will be liquidated. The keeper initiates liquidation against positions with insufficient margin. Anyone could act as a keeper. There are two ways of liquidation:
 
 - Liquidation through AMM: Liquidated position will be closed through AMM, meaning that this position is transferred to AMM. Liquidation penalty also goes to AMM’s liquidity pool. The keeper will receive a certain amount of “Keeper Gas Reward”.
 - Taken over by Keeper: The liquidated position will be transferred to keeper. In this case, the keeper takes the position risk and receives the liquidation penalty. 
 
-### 2.5 Settlement
+## 6. Settlement
 
 Although it is a perpetual swap, there could be a liquidity deficiency in extreme situations. If there is a liquidation loss due to AMM liquidity deficiency or delayed liquidation, the insurance fund in AMM will prioritize making up the liquidation loss. If the AMM insurance fund is insufficient, the contract will enter settlement stage. The perpetual swap will settle at the latest index price, and the remaining asset will be distributed to traders according their margin balance. i.e. The liquidation loss is undertaken by all position-holding traders based on their margin balance. For those who doesn’t have any position, they will not be charged with any liquidation loss. We believe that under extreme circumstances, entering settlement promptly and allowing traders to withdraw margin will protect all sides. This mechanism is a form of circuit breaker. 
 
@@ -114,7 +112,7 @@ Besides, when Oracle does not provide updates for over 24 hours, the contract wi
 
 There are two stages of settlement. The first one is called “Emergency”, in which the Oracle stops updating. At this point, keepers will review all the margin accounts and obtain “Keeper Gas Reward”. During the review, the margin balance will be calculated based on the settlement price. When the review is completed, settlement enters a second stage called “Cleared”. Traders can then withdraw the remaining margin. 
 
-### 2.6 Insurance Fund
+## 7. Insurance Fund
 
 Every perpetual swap comes with one insurance fund to pay for liquidation loss: 
 
@@ -122,13 +120,13 @@ Anyone can donate to the insurance fund. We encourage operators to donate to the
 
 When trader’s position gets liquidated due to insufficient margin, a certain ratio (based on the AMM parameters) of the charged liquidation penalty goes to the insurance fund. The remaining part goes to the liquidator (AMM or keeper). Every insurance fund has a max fund size. When this maximum size is reached, the newly added fund goes into the liquidity pool of AMM. LP can increase this upper limit through governance, but it can’t be decreased. 
 
-### 2.7 Limit & Stop Orders
+## 8. Limit & Stop Orders
 
 Trading against AMM is similar to place a market order to the traditional order book. In the case of perpetual swaps, people are usually inclined to look for opportunities and control fill price through limit orders. Besides, Stop order is an important tool for high leveraged trades. Hence, we designed relatively centralized limit and stop orders. The trader can sign a limit or a stop order and send the order to an entrusted “Broker” server. The Broker sever will observe the AMM price on the chain and submit order to the contract when the AMM price meets the order’s requirement. When the smart contract receives order from Broker, it will proceed the order after verifying its validity.
 
 Keep in mind that Broker wouldn’t match the received orders, so all the orders will be traded against AMM in the first-in-first-service order. Broker will charge traders with the Gas fee. 
 
-### 2.8 Security
+## 9. Security
 
 We fully understand that security is the key factor of this type of protocols. Before getting published, all contracts and upgrades will go through strict audit. The design of AMM’s financial structure will be verified as well. 
 
@@ -136,11 +134,11 @@ To maximize the decentralized characteristic of this protocol, there is no admin
 
 Although operators have limited privileges over the perpetual swaps, which to an extent increase the security, traders need to carefully choose the perpetual swaps they would like to trade and trade at their own risk. We encourage operators to choose decentralized Oracles and limit the risk parameters in a smaller range (or set fixed parameters), so that the credibility can be increased. 
 
-### 2.9 Referral
+## 10. Referral
 
 Referral fee is supported in this protocol. The referrer will receive a certain amount of referral fee from the operator fee and LP fee when their referee trades against AMM or through a broker. The ratio of this referral fee will be set by AMM governance. In such way, institutional investors can profit from referring traders to AMM by running their own frontend. 
 
-### 2.10 The Parameters and Governance of AMM
+## 11. AMM Parameters
 
 The AMM parameters have two categories: the alterable ones and the unalterable ones. Operator and LP can adjust alterable parameters by voting. AMM has a group of risk parameters, and each has an effective range. According to the market, operator can freely adjust the risk parameters within the effective range. A voting procedure is required if there is a need to change the range. 
 
@@ -172,7 +170,7 @@ In addition to the proposals for revising AMM parameters, there are three specia
   - Make a perpetual swap enter settlement stage
   - Appoint an operator. LP can initiate this proposal only when there is no operator.
   
-### 2.11 Multi-chain deployment
+## 12. Multi-chain deployment
 
 MCDEX believes that various public chains have their own users and ecosystems. This protocol stays neutral when choosing public chains. In order to maximize our usability, the smart contracts of this protocol are able to run on various public chains. MCDEX DAO will support the development of this protocol on these public chains, growing the MCDEX ecosystem. 
 

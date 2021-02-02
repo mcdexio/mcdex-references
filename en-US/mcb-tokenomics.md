@@ -1,6 +1,6 @@
 # MCB Tokenomics
 
-Upon Jan 12th, 2021, **2016096** MCB has been issued, among which:
+Upon Jan 12th, 2021, 2,016,096 MCB has been issued, among which:
 
 - 1 million MCB belongs to the team and investors:
   - Dev Team: 510K
