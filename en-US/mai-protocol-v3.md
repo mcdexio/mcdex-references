@@ -38,6 +38,8 @@ An operator is the creator and manager of the perpetual swap.
 
 - Risks: Not applicable 
 
+An operator must check in every 10 days. If the operator fails to check-in within this 10-day period, the operator will be fired.
+
 ### Liquidity provider: 
 - How to become a LP:
   - deposit collateral in the AMM pool
