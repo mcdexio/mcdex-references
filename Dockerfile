@@ -2,7 +2,6 @@ FROM wlchn/gostatic:latest
 ENV CONFIG_FILE_PATH /srv/http
 COPY en-US /srv/http/en-US
 COPY zh-CN /srv/http/zh-CN
-COPY ja-JP /srv/http/ja-JP
 COPY _sidebar.md /srv/http/
 COPY index.html /srv/http/
 COPY favicon.ico /srv/http/
