@@ -3,4 +3,5 @@
 * [永续合约](zh-CN/perpetual.md)
 * [永续合约技术指南](zh-CN/perpetual-tech.md)
 * [MP到期合约](zh-CN/mp-futures.md)
-* [MAI协议v3](en-US/mai-protocol-v3.md)
+* [MAI协议V3](en-US/mai-protocol-v3.md)
+* [V3 AMM设计文档](en-US/amm-design.md)

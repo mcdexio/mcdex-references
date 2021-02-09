@@ -3,4 +3,5 @@
 * [Perpetual](en-US/perpetual.md)
 * [Perpetual Technical Guide](en-US/perpetual-tech.md)
 * [MP Futures](en-US/mp-futures.md)
-* [Mai Protocol v3](en-US/mai-protocol-v3.md)
+* [Mai Protocol V3](en-US/mai-protocol-v3.md)
+* [V3 AMM Design](en-US/amm-design.md)
