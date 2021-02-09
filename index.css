@@ -56,16 +56,18 @@ html {
   margin: 0 auto 0.16rem;
   font-size: 0.16rem;
 }
+
+.sidebar ul li.active > a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 .sidebar-nav .app-sub-sidebar li::before {
   display: none;
 }
 .sidebar-nav > ul > li > a {
   font-size: 0.14rem;
   font-weight: 600;
-}
-.sidebar-nav > ul > li.active > a {
-  font-weight: 700;
-  text-decoration: underline;
 }
 
 .sidebar-toggle {
@@ -289,4 +291,7 @@ html {
 .markdown-section pre code {
   background-color: transparent !important;
   padding: 10px 0 !important;
+}
+.markdown-section > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) code {
+  font-size: 0.16rem;
 }

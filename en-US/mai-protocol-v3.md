@@ -170,8 +170,9 @@ Please pay attention to the fact that all the risk parameters are effective with
 In addition to the proposals for revising AMM parameters, there are three special proposals that requires a vote quorum no less than 20% of the total LP share.
   - Upgrade the code of AMM smart contract
   - Make a perpetual swap enter settlement stage
-  - Appoint an operator. LP can initiate this proposal only when there is no operator.
-  
+  - Appoint an operator. LP can initiate this proposal only when there is no operator
+
+
 ## 12. Multi-chain deployment
 
 MCDEX believes that various public chains have their own users and ecosystems. This protocol stays neutral when choosing public chains. In order to maximize our usability, the smart contracts of this protocol are able to run on various public chains. MCDEX DAO will support the development of this protocol on these public chains, growing the MCDEX ecosystem. 
