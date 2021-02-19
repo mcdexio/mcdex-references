@@ -159,9 +159,11 @@ html
     padding 0.03rem 0.06rem
     margin 0
     border-radius 0.03rem
-    font-size 0.14rem
     line-height 0.2rem
     font-family SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace
+    
+    &:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)
+      font-size 0.14rem
 
   pre
     padding 0.16rem
@@ -186,8 +188,10 @@ html
       line-height inherit
       word-wrap normal
       border 0
-      font-size 0.14rem
       line-height 0.2rem
+      
+      &:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)
+        font-size 0.14rem
 
   ul
     font-size 0.16rem
