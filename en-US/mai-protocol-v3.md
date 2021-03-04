@@ -76,7 +76,6 @@ The AMM price shifts according to its position. When AMM longs, the AMM price wi
 
 On one hand, funding payment can prevent more traders from becoming the counterparty of AMM, which could lead to a further price deviation. On the other hand, a high funding rate will attract more LP to add liquidity or open the same position with AMM. Based on the AMM design, both adding liquidity to AMM and trading against AMM which reduces the AMM’s position size will decrease price deviation. In such a way, funding payment will push the market price back to the index. 
 
-There can be a funding interval time setting (e.g. 8 hours) for a perpetual contract. Whenever the interval arrives, the trader who holds the position will pay (or receive) funding payment. If the trader closes the position before the interval, there will be no such funding payment. Mai protocol also supports real-time funding (funding every second).
 ## 4. Margin & PNL
 Due to the permissionless nature of this protocol, anyone can create any perpetual swaps of different risk levels. To prevent the spread of risk across different perpetual swaps, the protocol uses isolated margin mechanism - each perpetual swap owned by a trader has its own independent margin account, and the PNL of this account won’t affect other margin accounts they trade. 
 
